@@ -1,0 +1,18 @@
+---
+title: "Project Proposal"
+author: "Jennifer Freeman & Jason Pekos"
+date: "11/11/2021"
+output: html_document
+---
+
+We are interested in the spatial movement for a data set of pet cats found on [movebank.org](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study64283289). The data set contains hundreds of cats from different countries and they were tracked with collars that activated on movement and were dormant when the cat was stationary.
+
+Plots of interest:
+
+1. Animated spatial plot, that would show how 1 individual or a group of close individuals move over time. We would add a layer on the plot to show buildings, roads and other landscape elements that might constrain their routes. *Are there patterns or cycles to their movement, or is it random? How do neighbouring cats interact spatially, do they respect territory boundaries?*
+
+2. Relationship plot between the maximum range travelled to the average distance from the city. The maximum range can be determined by the distance between the two farthest locations the cat has visited. *How does the range of travel change from cats living in urban areas versus non-urban areas?*
+
+3. Estimating the home range using dynamic Brownian Bridge Movement Model and graphing the density to show which areas are more frequently visited than others within the home range. *Are there characteristics that describe the home range for cats in general?*
+
+4. Time series plot. Possible response variables of interest are average distance travelled, time spent stationary, average speed of movement, time spent outdoors. If possible we might combine the data with temperature/weather data to explore how movement patterns change with this information. *Are there seasonal patterns to movement? How does their travel change from sunny days to rainy days?*
