@@ -82,6 +82,14 @@ ggplot(data = CDFNZ2, aes(x = timestamp, y = individual.local.identifier)) + geo
 
 ```{r}
 
+CatDFUK %>% filter(timestamps > "2017-01-15" && timestamps < "2017-01-15" ) -> CDFUK2
+
+ggplot(data = CDFUK2, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
+  theme_tufte() +
+  ggtitle("When are Certain Cats Tracked: United Kingdown, Truncated") +
+  labs(x = "Date", y = "Individual Cat") +
+  theme(axis.ticks.x = element_blank())
+
 
 ```
 
