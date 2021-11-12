@@ -1,0 +1,37 @@
+---
+title: "CatData"
+author: "Jason Pekos"
+date: "10/11/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# EDA
+
+```{r}
+library(tidyverse)
+library(ggthemes)
+library(ggmap)
+library(move)
+library(moveVis)
+
+CatDatAus = move("PetCatsAus.csv")  #Import Cat Data
+CatDatNZ = move("PetCatsNZ.csv")  #Import Cat Data
+CatDatUK = move("PetCatsUK.csv")  #Import Cat Data
+CatDatUS = move("PetCatsUS.csv")  #Import Cat Data
+
+
+CatDFAus =  as.data.frame(CatDatAus)   
+
+
+
+ggplot(data = CatDF, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
+  theme_tufte() +
+  ggtitle("When are Certain Cats Tracked?") +
+  labs(x = "Date", y = "Individual Cat") +
+  theme(axis.ticks.x = element_blank())
+
+```
