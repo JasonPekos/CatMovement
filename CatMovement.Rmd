@@ -25,10 +25,34 @@ CatDatUS = move("PetCatsUS.csv")  #Import Cat Data
 
 
 CatDFAus =  as.data.frame(CatDatAus)   
+CatDFUK =  as.data.frame(CatDatUK)   
+CatDFUS =  as.data.frame(CatDatUS)
+CatDFNZ =  as.data.frame(CatDatNZ)   
 
 
 
-ggplot(data = CatDF, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
+
+ggplot(data = CatDFAus, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
+  theme_tufte() +
+  ggtitle("When are Certain Cats Tracked?") +
+  labs(x = "Date", y = "Individual Cat") +
+  theme(axis.ticks.x = element_blank())
+
+ggplot(data = CatDFNZ, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
+  theme_tufte() +
+  ggtitle("When are Certain Cats Tracked?") +
+  labs(x = "Date", y = "Individual Cat") +
+  theme(axis.ticks.x = element_blank())
+
+
+ggplot(data = CatDFUK, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
+  theme_tufte() +
+  ggtitle("When are Certain Cats Tracked?") +
+  labs(x = "Date", y = "Individual Cat") +
+  theme(axis.ticks.x = element_blank())
+
+
+ggplot(data = CatDFUS, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
   theme_tufte() +
   ggtitle("When are Certain Cats Tracked?") +
   labs(x = "Date", y = "Individual Cat") +
