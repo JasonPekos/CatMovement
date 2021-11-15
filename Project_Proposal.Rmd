@@ -18,3 +18,8 @@ Plots of interest:
 4. Time series plot. Possible response variables of interest are average distance travelled, time spent stationary, average speed of movement, time spent outdoors. If possible we might combine the data with temperature/weather data to explore how movement patterns change with this information. *Are there seasonal patterns to movement? How does their travel change from sunny days to rainy days?*
 
 JD: These sound like cool ideas. Exploring the data set can help clarify them. How are the cats distributed around the world? Can you see neighboring cats in some cases? What info do you have about urbanization? Also worth thinking about how you can explore individual cats and then summarize across them for idea 3.
+
+BMB: (1) Random in space or time? (2) There are lots of tools for "home range overlap" - think about how methods (convex hull, utilization volumes, Brownian bridge etc.) interact with data viz? (3) for range, a standard approach to movement is to show a squared displacement plot (which grows linearly if animals are random-walking, quadratically if they are undergoing directed movement; again, there's a lot of theory here, e.g. Fleming 2014; I don't know if there are any natural visualizations corresponding to the theory). There are also a lot of R packages for analyses in this field (the more you can lean on existing packages, the more effort you can put into cool data viz)
+
+Fleming, Chris H., Justin M. Calabrese, Thomas Mueller, Kirk A. Olson, Peter Leimgruber, and William F. Fagan. “From Fine-Scale Foraging to Home Ranges: A Semivariance Approach to Identifying Movement Modes across Spatiotemporal Scales.” The American Naturalist 183, no. 5 (2014): E154–67.
+
