@@ -16,3 +16,5 @@ Plots of interest:
 3. Estimating the home range using dynamic Brownian Bridge Movement Model and graphing the density to show which areas are more frequently visited than others within the home range. *Are there characteristics that describe the home range for cats in general?*
 
 4. Time series plot. Possible response variables of interest are average distance travelled, time spent stationary, average speed of movement, time spent outdoors. If possible we might combine the data with temperature/weather data to explore how movement patterns change with this information. *Are there seasonal patterns to movement? How does their travel change from sunny days to rainy days?*
+
+JD: These sound like cool ideas. Exploring the data set can help clarify them. How are the cats distributed around the world? Can you see neighboring cats in some cases? What info do you have about urbanization? Also worth thinking about how you can explore individual cats and then summarize across them for idea 3.
