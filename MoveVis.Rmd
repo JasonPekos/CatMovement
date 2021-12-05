@@ -95,3 +95,5 @@ friends_frames <- (frames_spatial(friends_move,
 ## TO DO
 
 1. progress bar - remove or make larger
+2. check frames to see if, time points and location makes sense
+3. different backgrounds
