@@ -1,0 +1,84 @@
+---
+title: "Data_Join"
+date: "05/12/2021"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(ggthemes)
+library(ggmap)
+library(move)
+library(moveVis)
+library(directlabels)
+library(lubridate)#is this part of tidy?
+
+
+CatDatAus <- move("PetCatsAus.csv") 
+CatDatNZ <- move("PetCatsNZ.csv")  
+CatDatUK <- move("PetCatsUK.csv") 
+CatDatUS <- move("PetCatsUS.csv")  
+
+RefAus <- read.csv("Pet Cats Australia-reference-data.csv")
+RefUK <- read.csv("Pet Cats United Kingdom-reference-data.csv")
+RefNZ <- read.csv("Pet Cats New Zealand-reference-data.csv")
+RefUS <- read.csv("Pet Cats United States-reference-data.csv")
+
+
+#join movement and reference data
+CatDFAus<-(left_join(as.data.frame(CatDatAus), RefAus, by=c("trackId"="animal.id"))
+           %>% mutate(Country = "Australia")
+)
+
+CatDFUK<-(left_join(as.data.frame(CatDatUK), RefUK, by=c("trackId"="animal.id"))
+ %>% mutate(Country = "United Kingdom")
+)
+CatDFUS<-(left_join(as.data.frame(CatDatUS), RefUS, by=c("trackId"="animal.id"))
+ %>% mutate(Country = "United States")
+)
+CatDFNZ<-(left_join(as.data.frame(CatDatNZ), RefNZ, by=c("trackId"="animal.id"))
+ %>% mutate(Country = "New Zealand")
+)
+
+#union all data into one 
+cats<-union_all(CatDFAus, CatDFNZ)
+cats<-union_all(cats, CatDFUK)
+cats<-union_all(cats, CatDFUS)
+
+
+#distance per day per cat
+dist <- (cats
+         %>% arrange(Country, trackId, timestamp)
+           %>% mutate(dist_btw = distHaversine(cbind(location.long, location.lat),cbind(lag(location.long),lag(location.lat))))
+         %>% group_by(trackId, day =floor_date(timestamp, "day"))
+         %>% mutate(dist_per_day = sum(dist_btw))
+  
+)
+#fix first records
+#average per country?
+
+
+```
+
+
+```{r}
+#plot distance per day per cat over time
+g<-(ggplot(dist, aes(x=timestamp, y=dist_per_day, colour=Country))
+    + geom_point(alpha=0.3)
+    +scale_y_log10()
+)
+#box plot distance per day per cat by neuter status
+gg<-(ggplot(dist, aes(x=animal.reproductive.condition, y=dist_per_day))
+    + geom_boxplot()
+    +scale_y_log10()
+)
+
+
+
+#need to think about units
+#look at outliers
+
+
+
+
+```
