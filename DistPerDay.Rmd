@@ -12,6 +12,8 @@ library(move)
 library(moveVis)
 library(directlabels)
 library(lubridate)#is this part of tidy?
+library(zoo)#ma
+library(scales)
 
 
 CatDatAus <- move("PetCatsAus.csv") 
@@ -49,36 +51,89 @@ cats<-union_all(cats, CatDFUS)
 #distance per day per cat
 dist <- (cats
          %>% arrange(Country, trackId, timestamp)
-           %>% mutate(dist_btw = distHaversine(cbind(location.long, location.lat),cbind(lag(location.long),lag(location.lat))))
-         %>% group_by(trackId, day =floor_date(timestamp, "day"))
-         %>% mutate(dist_per_day = sum(dist_btw))
+         %>%group_by(Country,trackId,day=floor_date(timestamp, "day"))
+        %>% mutate(dist_btw = distHaversine(cbind(location.long, location.lat),cbind(lag(location.long),lag(location.lat))))
+
+        %>% mutate(dist_btw = if_else(is.na(dist_btw),0,dist_btw))
+        %>% group_by(Country, trackId, day)
+        %>% mutate(dist_per_day = sum(dist_btw))
+        #162 records with dist_per_day=0
+        %>% filter(dist_per_day !=0)
+        %>% ungroup()
+)
+#max per day is ~45km, Bagheera (Aus) - possible?
+
+country_dist <-(dist
+                %>% dplyr::select(Country,day,dist_per_day)
+                %>% group_by(Country,day)
+                %>% mutate(mean_dist=mean(dist_per_day),
+                           year =year(day),
+                           day = as.Date(day,format="%Y-%m-%d"))
+                %>% ungroup()
+                %>% dplyr::select(-dist_per_day)
+                %>% arrange(Country, day)
+                %>% distinct()
+                %>% group_by(Country)
+                %>% mutate(MA_2=zoo::rollmean(mean_dist, k=2, fill=NA))
+                %>% mutate(MA_3=zoo::rollmean(mean_dist, k=3, fill=NA))
+                %>% mutate(MA_5=zoo::rollmean(mean_dist, k=5, fill=NA))
+                %>% mutate(MA_10=zoo::rollmean(mean_dist, k=10, fill=NA))
+                %>% mutate(MA_15=zoo::rollmean(mean_dist, k=15, fill=NA))
+                %>% filter(year==2015)
+
   
 )
-#fix first records
-#average per country?
 
 
 ```
 
 
 ```{r}
-#plot distance per day per cat over time
-g<-(ggplot(dist, aes(x=timestamp, y=dist_per_day, colour=Country))
-    + geom_point(alpha=0.3)
-    +scale_y_log10()
+
+
+(ggplot(country_dist, aes(x=day, y=mean_dist))
+    + geom_point(alpha=0.4,aes(colour=Country))
+    + geom_line(aes(x=day,y=MA_5,colour=Country),lwd=0.8)
+    + scale_y_log10(labels = trans_format("log10", math_format(10^.x)))
+    + theme_bw()
+    + theme(legend.position="none",
+            panel.grid.minor.x=element_blank(),
+            panel.grid.major.y=element_blank(),
+            panel.grid.minor.y=element_blank())
+    + geom_dl(aes(label=Country,colour=Country),method="smart.grid",size=5)
+    + scale_x_date(labels=date_format("%b"), date_breaks = "1 month", expand=c(0.01,0.01))
+    + xlab("")
+    + ylab("Mean Distance Travelled (m)")
+    + scale_colour_manual(values = brewer.pal(3,"Dark2"))
+    + ggtitle("Per Day Distance Travelled by Pet Cats (2015)")
+
+
 )
-#box plot distance per day per cat by neuter status
-gg<-(ggplot(dist, aes(x=animal.reproductive.condition, y=dist_per_day))
-    + geom_boxplot()
-    +scale_y_log10()
-)
 
-
-
-#need to think about units
-#look at outliers
-
+ggsave("DistPerDay.png", width=6.5,height=4)
 
 
 
 ```
+
+
+### Data Viz Choices
+
+1. Data Cleaning
+  * Removed 162 records where the cat travelled 0 meters in a day. These occured when there was only 1 recorded measurement in a day.
+  * Chose to keep extreme values. One cat from Australia covered ~45km in one day, feasible but unusual. Next highest ~35km/day and ~21km/day.
+2. Data Plotting
+   * log-transformed distance axis to account for more extreme values
+   * 5-day moving average line to see patterns
+2. Aesthetics
+  * Colours - Dark2 from ColourBrewer, distinct
+  * Direct labelling Countries
+  * Include data with moving average line
+  * transparency of data points to hightlight lines
+  * Vertical gridlines to highlight the months
+  * Compressed math format for long scale
+  
+### Questions 
+
+* Are their cylces or patterns to the distance travelled? 
+* Are their differences between countries?
