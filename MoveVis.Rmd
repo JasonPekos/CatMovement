@@ -14,26 +14,18 @@ library(directlabels)
 
 
 CatDatAus <- move("PetCatsAus.csv")  #Import Cat Data
-CatDatNZ <- move("PetCatsNZ.csv")  #Import Cat Data
-CatDatUK <- move("PetCatsUK.csv")  #Import Cat Data
-CatDatUS <- move("PetCatsUS.csv")  #Import Cat Data
 
 RefAus <- read.csv("Pet Cats Australia-reference-data.csv")
-RefUK <- read.csv("Pet Cats United Kingdom-reference-data.csv")
-RefNZ <- read.csv("Pet Cats New Zealand-reference-data.csv")
-RefUS <- read.csv("Pet Cats United States-reference-data.csv")
+
 
 CatDFAus =  as.data.frame(CatDatAus)   
-CatDFUK =  as.data.frame(CatDatUK)   
-CatDFUS =  as.data.frame(CatDatUS)
-CatDFNZ =  as.data.frame(CatDatNZ)
 
 friends <- (CatDFAus
           %>% filter(trackId %in% c("Molly", "Max2"))
           
 )
 
-friends_ref <- (CatRefAus
+friends_ref <- (RefAus
           %>% filter(animal.id %in% c("Molly", "Max2"))
           
 )
@@ -41,25 +33,27 @@ friends_ref <- (CatRefAus
 friends_move <- move(friends)
 
 #'align' to the same time scale (4 min)
-friends_move <- align_move(friends_move, res=4, unit="mins")
+friends_move <- align_move(friends_move, res=15, unit="mins")
 
 #make frames
 friends_frames <- (frames_spatial(friends_move,
-                                  map_service="osm",
+                                   map_service="osm",
                                   #how do I make mapbox portable?
                                   #    map_service="mapbox",
                                   #    map_type="satellite",
                                   # map_token="pk.eyJ1IjoiZnJlZW1qYyIsImEiOiJja3d0dXZrZXkxa2d4Mm9ueWJ0MWp2cmowIn0.wJ4PSir_36Bc0dbKU2JZ0g",
                                   # map_dir="C:/Users/Jen/Stat744_project/CatMovement/mapbox/",
                                      trace_show = T, 
-                                     trace_colour = "white", 
+                                     tail_length=1000,
+                                     #trace_colour = c("#D95F02","#7570B3"), 
+                                     #tail_colour= "white",
                                      equidistant = F,
                                      path_fade=TRUE,
-                                     path_size = 3,
-                                     path_colours = c("#1B9E77","#7570B3"))
-                      %>% add_scalebar(colour = "white")
+                                     path_size = 2.5,
+                                     path_colours = c("#D95F02","#7570B3"))
+                      %>% add_scalebar(colour = "white", height=0.03, position="bottomright", label_margin=1)
                       %>% add_timestamps(friends_move, type = "label", size=5)
-                      %>% add_progress(size=5)
+                      %>% add_progress(size=8)
                       #remove lat and long
                       %>% add_gg(gg = expr(theme(axis.title.x=element_blank(),
                                                  axis.text.x=element_blank(),
@@ -70,7 +64,7 @@ friends_frames <- (frames_spatial(friends_move,
 )
 
 #make gif
-(animate_frames(friends_frames, out_file = "Molly_Max2.gif", overwrite=T) 
+(animate_frames(friends_frames, out_file = "Molly_Max2.gif", overwrite=T, end_pause=20) 
 
 )
 

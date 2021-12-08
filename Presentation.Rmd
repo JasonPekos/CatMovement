@@ -1,0 +1,35 @@
+---
+title: "Pet Cats"
+author: <span style="font-size:25px; color:black; font-weight:bold; float:left; left:170px; top:20px; position:relative;">Jennifer Freeman & Jason Pekos</span>
+output: 
+  ioslides_presentation:
+    css: style.css
+---
+
+## Data 
+
+- movebank.org
+- gps coordinates, timestamps, age, sex, reproductive status
+
+Country          |   Years  | Number of Cats
+-----------------| ---------| --------------
+Australia        | 2015-2016|  442
+New Zealand      | 2015-2017|  233
+United Kingdom   | 2017     |  101
+United States    | 2013-2016|  154
+
+
+
+## Spatial Movements {.smaller}
+```{r, out.width = "550px", echo=FALSE, fig.align="center"}
+knitr::include_graphics("Molly_Max2.gif")
+```
+
+
+---
+
+```{r, out.width = "780px",fig.align="center", echo=FALSE}
+knitr::include_graphics("DistPerDay.png")
+```
+
+

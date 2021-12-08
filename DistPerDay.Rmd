@@ -14,6 +14,7 @@ library(directlabels)
 library(lubridate)#is this part of tidy?
 library(zoo)#ma
 library(scales)
+library(RColorBrewer)
 
 
 CatDatAus <- move("PetCatsAus.csv") 
@@ -103,9 +104,9 @@ country_dist <-(dist
     + geom_dl(aes(label=Country,colour=Country),method="smart.grid",size=5)
     + scale_x_date(labels=date_format("%b"), date_breaks = "1 month", expand=c(0.01,0.01))
     + xlab("")
-    + ylab("Mean Distance Travelled (m)")
+    + ylab("Mean distance travelled (m)")
     + scale_colour_manual(values = brewer.pal(3,"Dark2"))
-    + ggtitle("Per Day Distance Travelled by Pet Cats (2015)")
+    + ggtitle("Distance travelled per day by pet cats (2015)")
 
 
 )
