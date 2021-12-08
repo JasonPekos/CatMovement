@@ -29,6 +29,10 @@ United States    | 2013-2016|  154
 
 - How we structure animations depends on the underlying timestamp intervals. 
 
+## Data Structure
+
+- Store name, speed, latitude, longitude, sex, repoductive condition, age
+
 
 ## Data Exploration --- Global
 

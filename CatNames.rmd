@@ -69,11 +69,25 @@ NamesTotal = rename(NamesTotal, NFreq = Freq)
 NamesTotal = arrange(NamesTotal, desc(NFreq))
 
 NamesTotal
+
+
+
 ```
 
 
 ```{r}
-ggplot(data = filter(NamesTotal, NFreq > 3), aes(x= Name, y = NFreq)) +
-  geom_point(stat="identity")
+ggplot(data = filter(NamesTotal, NFreq > 3), aes(x = reorder(Name, -NFreq), y = NFreq)) +
+  geom_point() +
+  theme_bw() +
+  labs(x = "", y = "Frequency") +
+  ggtitle("The most popular cat name is Charlie") +
+  geom_dl(aes(label=Name),method = list(dl.trans(x = x + 0.2), "last.points", cex = 0.8))  +
+  coord_flip() +
+  lims()+
+  scale_y_continuous(expand = c(0,1)) +
+  theme(axis.text.y  = element_blank())
+
+ggsave("CatNames.png", width=6.5,height=4)
+
 ```
 
