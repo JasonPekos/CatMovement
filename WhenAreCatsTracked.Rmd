@@ -80,7 +80,8 @@ FullPlot = ggplot() +
                 axis.text.y  = element_blank(),
                 axis.ticks.x  = element_blank(),
                 axis.text.x  = element_blank(),
-                axis.title.x = element_blank()) 
+                axis.title.x = element_blank(),
+                legend.position=c(0.2,0.2)  ) 
 
 DensityPlot = ggplot() +
               geom_density(data = cats, aes(x = timestamp, y = after_stat(count),
@@ -91,11 +92,11 @@ DensityPlot = ggplot() +
               axis.text.y  = element_blank(),
               legend.title = element_blank(),
               legend.position = "none") +
-              labs( y = "Density of Observations")
+              labs( y = "Density")
 
-plot_grid(FullPlot, DensityPlot, rel_heights = c(2, 0.7), ncol = 1 ,nrow = 2, align = "v")
+P1 = plot_grid(FullPlot, DensityPlot, rel_heights = c(2, 0.7), ncol = 1 ,nrow = 2, align = "v")
 
-
+P1
 ```
 
 
@@ -116,7 +117,8 @@ USPLOT = ggplot(data = CatDFUS, aes(x = timestamp, y = individual.local.identifi
         axis.text.y  = element_blank(),
         axis.ticks.x  = element_blank(),
         axis.text.x  = element_blank(),
-        axis.title.x = element_blank())  + 
+        axis.title.x = element_blank(),
+        legend.position=c(.9,0.2))  + 
   
         scale_colour_manual("", 
                             breaks = c("Kagin 2", "Lacey", "Oscar L."),
@@ -124,15 +126,17 @@ USPLOT = ggplot(data = CatDFUS, aes(x = timestamp, y = individual.local.identifi
 
 
 DensityPlot = ggplot() +
-    geom_density(data = CatDFUS, aes(x = timestamp, y = after_stat(count)), inherit.aes = FALSE)  +          theme_tufte() +
+    geom_density(data = CatDFUS, aes(x = timestamp, y = after_stat(count)), inherit.aes = FALSE)  +
+    theme_bw() +
     theme(axis.ticks.y = element_blank(), 
           axis.text.y  = element_blank(),
           legend.title = element_blank(),
           legend.position = "none") +
-  labs( y = "Density of Observations")
+  labs( y = "Density")
 
-plot_grid(USPLOT, DensityPlot, rel_heights = c(2, 0.7), ncol = 1 ,nrow = 2, align = "v")
+P2 = plot_grid(USPLOT, DensityPlot, rel_heights = c(2, 0.7), ncol = 1 ,nrow = 2, align = "v")
 
+P2
 ```
 
 
@@ -145,7 +149,7 @@ plot_grid(USPLOT, DensityPlot, rel_heights = c(2, 0.7), ncol = 1 ,nrow = 2, alig
 CatDFUK %>% filter(timestamps < "2017-09-30" ) %>% filter(timestamps > "2017-09-20")  ->CDFUK2
 
 UKPLOT = ggplot(data = CDFUK2, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
-                theme_tufte() +
+                theme_bw() +
                 ggtitle("When are Certain Cats Tracked: United Kingdown, Truncated") +
                 labs(x = "Date", y = "Individual Cat") +
                 theme(axis.ticks.y = element_blank(), 
@@ -156,19 +160,25 @@ UKPLOT = ggplot(data = CDFUK2, aes(x = timestamp, y = individual.local.identifie
 
 DensityPlot = ggplot() +
     geom_density(data = CDFUK2, aes(x = timestamp, y = after_stat(count)), inherit.aes = FALSE)  +
-    theme_tufte() +
+    theme_bw() +
     theme(axis.ticks.y = element_blank(), 
           axis.text.y  = element_blank(),
           legend.title = element_blank(),
           legend.position = "none") +
-  labs( y = "Density of Observations")
+  labs( y = "Density")
 
-plot_grid(UKPLOT, DensityPlot, rel_heights = c(2, 0.7), ncol = 1 ,nrow = 2, align = "v")
+P3 = plot_grid(UKPLOT, DensityPlot, rel_heights = c(2, 0.7), ncol = 1 ,nrow = 2, align = "v")
 
+P3
 ##Kagin2
 ```
 
 ```{r}
+##Save files:
+ggsave("CatTrackTime1.png", P1, width=6.5,height=4)
+ggsave("CatTrackTime2.png", P2, width=6.5,height=4)
+ggsave("CatTrackTime3.png", P3, width=6.5,height=4)
+
 
 
 ```
