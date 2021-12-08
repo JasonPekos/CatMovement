@@ -24,39 +24,87 @@ CatDatUK = move("PetCatsUK.csv")  #Import Cat Data
 CatDatUS = move("PetCatsUS.csv")  #Import Cat Data
 
 
-CatDFAus =  as.data.frame(CatDatAus)   
-CatDFUK =  as.data.frame(CatDatUK)   
-CatDFUS =  as.data.frame(CatDatUS)
-CatDFNZ =  as.data.frame(CatDatNZ)   
 
+CatDFAus<-(left_join(as.data.frame(CatDatAus), RefAus, by=c("trackId"="animal.id"))
+           %>% mutate(Country = "Australia")
+)
 
+CatDFUK<-(left_join(as.data.frame(CatDatUK), RefUK, by=c("trackId"="animal.id"))
+ %>% mutate(Country = "United Kingdom")
+)
+CatDFUS<-(left_join(as.data.frame(CatDatUS), RefUS, by=c("trackId"="animal.id"))
+ %>% mutate(Country = "United States")
+)
+CatDFNZ<-(left_join(as.data.frame(CatDatNZ), RefNZ, by=c("trackId"="animal.id"))
+ %>% mutate(Country = "New Zealand")
+)
 
+```
 
-ggplot(data = CatDFAus, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
+```{r}
+cats<-union_all(CatDFAus, CatDFNZ)
+cats<-union_all(cats, CatDFUK)
+cats<-union_all(cats, CatDFUS)
+
+cats <- cats %>% mutate(Country = factor(Country, levels = c("Australia", "New Zealand", "United Kingdom", "United States"))) %>%  arrange(desc(Country))
+
+AusTest = ggplot(data = CatDFAus, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
   theme_tufte() +
   ggtitle("When are Certain Cats Tracked: Australia?") +
   labs(x = "Date", y = "Individual Cat") +
-  theme(axis.ticks.x = element_blank())
+  theme(axis.ticks.y = element_blank(), 
+        axis.text.y  = element_blank())
 
-ggplot(data = CatDFNZ, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
+NZTest = ggplot(data = CatDFNZ, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
   theme_tufte() +
   ggtitle("When are Certain Cats Tracked: New Zealand") +
   labs(x = "Date", y = "Individual Cat") +
-  theme(axis.ticks.x = element_blank())
+  theme(axis.ticks.y = element_blank(), 
+        axis.text.y  = element_blank())
 
 
-ggplot(data = CatDFUK, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
+UKTest = ggplot(data = CatDFUK, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
   theme_tufte() +
   ggtitle("When are Certain Cats Tracked: United Kingdown") +
   labs(x = "Date", y = "Individual Cat") +
-  theme(axis.ticks.x = element_blank())
+  theme(axis.ticks.y = element_blank(), 
+        axis.text.y  = element_blank())
+
+FullPlot = ggplot(data = cats, aes(x = timestamp, y = individual.local.identifier, color = Country)) +     geom_line() +
+  theme_tufte() +
+  ggtitle("When are Certain Cats Tracked: Worldwide") +
+  labs(x = "Date", y = "Individual Cat") +
+  theme(axis.ticks.y = element_blank(), 
+        axis.text.y  = element_blank())
+
+FullPlot
+
+```
 
 
-ggplot(data = CatDFUS, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
+
+
+```{r}
+
+USPLOT = ggplot(data = CatDFUS, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
   theme_tufte() +
   ggtitle("When are Certain Cats Tracked: United States") +
   labs(x = "Date", y = "Individual Cat") +
-  theme(axis.ticks.x = element_blank())
+  
+  geom_line(data =  CatDFUS %>% filter(individual.local.identifier == "Kagin2" ), aes(color = "Kagin 2"))+
+  geom_line(data =  CatDFUS %>% filter(individual.local.identifier == "Lacey" ), aes(color = "Lacey"))+
+  geom_line(data =  CatDFUS %>% filter(individual.local.identifier == "Oscar.L" ), aes(color = "Oscar L."))+
+
+
+  
+  theme(axis.ticks.y = element_blank(), 
+        axis.text.y  = element_blank())  +
+  
+    scale_colour_manual("", 
+                      breaks = c("Kagin 2", "Lacey", "Oscar L."),
+                      values = c("blue", "red", "green") )
+
+USPLOT
 
 ```
 
@@ -68,6 +116,7 @@ ggplot(data = CatDFUS, aes(x = timestamp, y = individual.local.identifier)) + ge
 ```{r}
 
 CatDFNZ %>% filter(timestamps < "2017-01-15") -> CDFNZ2
+
 
 ggplot(data = CDFNZ2, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
   theme_tufte() +
@@ -81,7 +130,7 @@ ggplot(data = CDFNZ2, aes(x = timestamp, y = individual.local.identifier)) + geo
 ## Isolate a single timepoint and try to animate
 
 ```{r}
-CatDFUK %>% filter(timestamps < "2017-08-15" ) %>% filter(timestamps > "2017-07-15")  ->CDFUK2
+CatDFUK %>% filter(timestamps < "2017-09-30" ) %>% filter(timestamps > "2013-09-15")  ->CDFUK2
 
 ggplot(data = CDFUK2, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
   theme_tufte() +
@@ -89,6 +138,16 @@ ggplot(data = CDFUK2, aes(x = timestamp, y = individual.local.identifier)) + geo
   labs(x = "Date", y = "Individual Cat") +
   theme(axis.ticks.x = element_blank())
 
+
+CatDFUS %>% filter(timestamps < "2019-01-30" ) %>% filter(timestamps > "2016-01-01")  ->CDFUS2
+
+ggplot(data = CDFUS2, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
+  theme_tufte() +
+  ggtitle("When are Certain Cats Tracked: United States, Truncated") +
+  labs(x = "Date", y = "Individual Cat") +
+  theme(axis.ticks.x = element_blank())
+
+##Kagin2
 ```
 
 ```{r}
