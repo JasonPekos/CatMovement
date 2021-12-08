@@ -137,33 +137,33 @@ plot_grid(USPLOT, DensityPlot, rel_heights = c(2, 0.7), ncol = 1 ,nrow = 2, alig
 
 
 
-##Filter Weird Cat and Replot
 
-
-```{r}
-
-CatDFNZ %>% filter(timestamps < "2017-01-15") -> CDFNZ2
-
-
-ggplot(data = CDFNZ2, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
-  theme_tufte() +
-  ggtitle("When are Certain Cats Tracked: NZ First year") +
-  labs(x = "Date", y = "Individual Cat") +
-  theme(axis.ticks.x = element_blank())
-
-
-```
 
 ## Isolate a smaller timeframe to see all the cat labels.
 
 ```{r}
 CatDFUK %>% filter(timestamps < "2017-09-30" ) %>% filter(timestamps > "2017-09-20")  ->CDFUK2
 
-ggplot(data = CDFUK2, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
-  theme_tufte() +
-  ggtitle("When are Certain Cats Tracked: United Kingdown, Truncated") +
-  labs(x = "Date", y = "Individual Cat") +
-  theme(axis.ticks.x = element_blank())
+UKPLOT = ggplot(data = CDFUK2, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
+                theme_tufte() +
+                ggtitle("When are Certain Cats Tracked: United Kingdown, Truncated") +
+                labs(x = "Date", y = "Individual Cat") +
+                theme(axis.ticks.y = element_blank(), 
+                      axis.text.y  = element_blank(),
+                      axis.ticks.x  = element_blank(),
+                      axis.text.x  = element_blank(),
+                      axis.title.x = element_blank())   
+
+DensityPlot = ggplot() +
+    geom_density(data = CDFUK2, aes(x = timestamp, y = after_stat(count)), inherit.aes = FALSE)  +
+    theme_tufte() +
+    theme(axis.ticks.y = element_blank(), 
+          axis.text.y  = element_blank(),
+          legend.title = element_blank(),
+          legend.position = "none") +
+  labs( y = "Density of Observations")
+
+plot_grid(UKPLOT, DensityPlot, rel_heights = c(2, 0.7), ncol = 1 ,nrow = 2, align = "v")
 
 ##Kagin2
 ```
