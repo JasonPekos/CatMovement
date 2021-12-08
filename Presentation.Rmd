@@ -105,4 +105,9 @@ knitr::include_graphics("DistPerDay2.png")
 knitr::include_graphics("Molly_Max2.gif")
 ```
 
+---
+
+```{r, out.width = "750px", echo=FALSE, fig.align="center"}
+knitr::include_graphics("MapFull.png")
+```
 
