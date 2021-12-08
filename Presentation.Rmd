@@ -49,13 +49,29 @@ knitr::include_graphics("CatTrackTime3.png")
 ```
 
 
+## Distance Travelled
+
+- Are there seasonal patterns over time?
+
+- Are there differences between countries?
+
+
 ---
 
 ```{r, out.width = "780px",fig.align="center", echo=FALSE}
 knitr::include_graphics("DistPerDay.png")
 ```
 
-## Spatial Movements {.smaller}
+
+## Spatial Movements
+
+- Are there spatial or temporal cycles or patterns to their movement?
+
+- How do neighbouring cats interact spatially?
+
+
+## Spatial Movements
+
 ```{r, out.width = "550px", echo=FALSE, fig.align="center"}
 knitr::include_graphics("Molly_Max2.gif")
 ```
