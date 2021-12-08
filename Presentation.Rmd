@@ -48,10 +48,6 @@ knitr::include_graphics("CatTrackTime2.png")
 knitr::include_graphics("CatTrackTime3.png")
 ```
 
-## Spatial Movements {.smaller}
-```{r, out.width = "550px", echo=FALSE, fig.align="center"}
-knitr::include_graphics("Molly_Max2.gif")
-```
 
 ---
 
@@ -59,5 +55,9 @@ knitr::include_graphics("Molly_Max2.gif")
 knitr::include_graphics("DistPerDay.png")
 ```
 
+## Spatial Movements {.smaller}
+```{r, out.width = "550px", echo=FALSE, fig.align="center"}
+knitr::include_graphics("Molly_Max2.gif")
+```
 
 
