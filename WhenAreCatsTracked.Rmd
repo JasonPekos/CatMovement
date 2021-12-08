@@ -17,6 +17,7 @@ library(ggthemes)
 library(ggmap)
 library(move)
 library(moveVis)
+library(cowplot)
 
 CatDatAus = move("PetCatsAus.csv")  #Import Cat Data
 CatDatNZ = move("PetCatsNZ.csv")  #Import Cat Data
@@ -70,14 +71,23 @@ UKTest = ggplot(data = CatDFUK, aes(x = timestamp, y = individual.local.identifi
   theme(axis.ticks.y = element_blank(), 
         axis.text.y  = element_blank())
 
-FullPlot = ggplot(data = cats, aes(x = timestamp, y = individual.local.identifier, color = Country)) +     geom_line() +
+FullPlot = ggplot() +
+  geom_line(data = cats, aes(x = timestamp, y = individual.local.identifier, color = Country)) +     
   theme_tufte() +
   ggtitle("When are Certain Cats Tracked: Worldwide") +
-  labs(x = "Date", y = "Individual Cat") +
+  labs(x = "Date", y = "Individual Cat Recorded") +
+  theme(axis.ticks.y = element_blank(), 
+        axis.text.y  = element_blank()) 
+
+DensityPlot = ggplot() +
+  geom_density(data = cats, aes(x = timestamp, y = after_stat(count), color = Country, fill = Country), inherit.aes = FALSE)  + theme_tufte() +
   theme(axis.ticks.y = element_blank(), 
         axis.text.y  = element_blank())
 
-FullPlot
+DensityPlot
+
+plot_grid(FullPlot, DensityPlot, rel_heights = c(2, 0.7), ncol = 1 ,nrow = 2, align = "v")
+
 
 ```
 
