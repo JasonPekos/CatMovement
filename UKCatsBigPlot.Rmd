@@ -1,0 +1,53 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+
+CatDatAus = move("PetCatsAus.csv")  #Import Cat Data
+CatDatNZ = move("PetCatsNZ.csv")  #Import Cat Data
+CatDatUK = move("PetCatsUK.csv")  #Import Cat Data
+CatDatUS = move("PetCatsUS.csv")  #Import Cat Data
+
+
+
+
+
+CatDFAus<-(left_join(as.data.frame(CatDatAus), RefAus, by=c("trackId"="animal.id"))
+           %>% mutate(Country = "Australia")
+)
+
+CatDFUK<-(left_join(as.data.frame(CatDatUK), RefUK, by=c("trackId"="animal.id"))
+ %>% mutate(Country = "United Kingdom")
+)
+CatDFUS<-(left_join(as.data.frame(CatDatUS), RefUS, by=c("trackId"="animal.id"))
+ %>% mutate(Country = "United States")
+)
+CatDFNZ<-(left_join(as.data.frame(CatDatNZ), RefNZ, by=c("trackId"="animal.id"))
+ %>% mutate(Country = "New Zealand")
+)
+```
+
+
+```{r}
+#Did this manually because was running into a weird code error:
+#-110.7031 max long
+#-115.7919 min long
+
+#60.56856 max lat
+#55.62262 min lat
+
+#are the general outer bounds for all wolves
+
+amb = c(left = -5.105945, right = -5.058614, top  =50.16675 , bottom  = 50.11675)
+
+
+map = get_map(amb, source="stamen", maptype = "watercolor", zoom=8)
+
+ggmap(map)+
+   geom_path(data = CatDFUK, aes(x = location.long, y = location.lat, color = tag.id))+
+   theme(legend.position  = "none") +
+   ggtitle("Movement Pattern UK Cats") 
+```

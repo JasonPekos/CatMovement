@@ -44,11 +44,12 @@ knitr::include_graphics("CatNames.png")
 
 ## Good but unpopular names
 
-- Unfriendly  from Australia
 
 - Captain America from the UK
 
--
+- Unfriendly  from Australia
+
+- Catniss Everdeen from the UK (there is also a cat named Katniss Everdeen)
 
 
 
