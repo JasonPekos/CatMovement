@@ -33,6 +33,24 @@ United States    | 2013-2016|  154
 
 - Store name, speed, latitude, longitude, sex, repoductive condition, age
 
+- Names!
+
+---
+
+```{r, out.width = "700px", echo=FALSE, fig.align="center"}
+knitr::include_graphics("CatNames.png")
+```
+
+
+## Good but unpopular names
+
+- Unfriendly  from Australia
+
+- Captain America from the UK
+
+-
+
+
 
 ## Data Exploration --- Global
 
@@ -66,6 +84,12 @@ knitr::include_graphics("CatTrackTime3.png")
 knitr::include_graphics("DistPerDay.png")
 ```
 
+
+---
+
+```{r, out.width = "780px",fig.align="center", echo=FALSE}
+knitr::include_graphics("DistPerDay2.png")
+```
 
 ## Spatial Movements
 
