@@ -1,0 +1,79 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+library(tidyverse)
+library(ggthemes)
+library(ggmap)
+library(move)
+library(moveVis)
+library(cowplot)
+
+CatDatAus = move("PetCatsAus.csv")  #Import Cat Data
+CatDatNZ = move("PetCatsNZ.csv")  #Import Cat Data
+CatDatUK = move("PetCatsUK.csv")  #Import Cat Data
+CatDatUS = move("PetCatsUS.csv")  #Import Cat Data
+
+
+
+
+
+CatDFAus<-(left_join(as.data.frame(CatDatAus), RefAus, by=c("trackId"="animal.id"))
+           %>% mutate(Country = "Australia")
+)
+
+CatDFUK<-(left_join(as.data.frame(CatDatUK), RefUK, by=c("trackId"="animal.id"))
+ %>% mutate(Country = "United Kingdom")
+)
+CatDFUS<-(left_join(as.data.frame(CatDatUS), RefUS, by=c("trackId"="animal.id"))
+ %>% mutate(Country = "United States")
+)
+CatDFNZ<-(left_join(as.data.frame(CatDatNZ), RefNZ, by=c("trackId"="animal.id"))
+ %>% mutate(Country = "New Zealand")
+)
+
+cats<-union_all(CatDFAus, CatDFNZ)
+cats<-union_all(cats, CatDFUK)
+cats<-union_all(cats, CatDFUS)
+
+cats <- cats %>% mutate(Country = factor(Country, levels = c("Australia", "New Zealand", "United Kingdom", "United States"))) %>%  arrange(desc(Country))
+
+```
+
+
+```{r}
+library(tm)
+
+NamesAus = as.character(unique(CatDFAus$individual.local.identifier))
+NamesNZ = as.character(unique(CatDFNZ$individual.local.identifier))
+NamesUS = as.character(unique(CatDFUS$individual.local.identifier))
+NamesUK = as.character(unique(CatDFUK$individual.local.identifier))
+
+
+NamesTotal = c(NamesAus,NamesNZ,NamesUS,NamesUK)
+
+NamesTotal = removeNumbers(NamesTotal)
+
+NamesTotal = tibble(as.data.frame(table(NamesTotal)))
+
+NamesTotal = rename(NamesTotal, Name = NamesTotal)
+NamesTotal = rename(NamesTotal, NFreq = Freq)
+
+
+NamesTotal = arrange(NamesTotal, desc(NFreq))
+
+NamesTotal
+```
+
+
+```{r}
+ggplot(data = filter(NamesTotal, NFreq > 3), aes(x= Name, y = NFreq)) +
+  geom_point(stat="identity")
+```
+

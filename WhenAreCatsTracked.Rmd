@@ -120,7 +120,7 @@ USPLOT = ggplot(data = CatDFUS, aes(x = timestamp, y = individual.local.identifi
         axis.ticks.x  = element_blank(),
         axis.text.x  = element_blank(),
         axis.title.x = element_blank(),
-        legend.position=c(.9,0.2))  + 
+        legend.position=c(.9,0.3))  + 
   
         scale_colour_manual("", 
                             breaks = c("Kagin 2", "Lacey", "Oscar L."),
