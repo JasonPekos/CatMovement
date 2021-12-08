@@ -127,23 +127,14 @@ ggplot(data = CDFNZ2, aes(x = timestamp, y = individual.local.identifier)) + geo
 
 ```
 
-## Isolate a single timepoint and try to animate
+## Isolate a smaller timeframe to see all the cat labels.
 
 ```{r}
-CatDFUK %>% filter(timestamps < "2017-09-30" ) %>% filter(timestamps > "2013-09-15")  ->CDFUK2
+CatDFUK %>% filter(timestamps < "2017-09-30" ) %>% filter(timestamps > "2017-09-20")  ->CDFUK2
 
 ggplot(data = CDFUK2, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
   theme_tufte() +
   ggtitle("When are Certain Cats Tracked: United Kingdown, Truncated") +
-  labs(x = "Date", y = "Individual Cat") +
-  theme(axis.ticks.x = element_blank())
-
-
-CatDFUS %>% filter(timestamps < "2019-01-30" ) %>% filter(timestamps > "2016-01-01")  ->CDFUS2
-
-ggplot(data = CDFUS2, aes(x = timestamp, y = individual.local.identifier)) + geom_line() +
-  theme_tufte() +
-  ggtitle("When are Certain Cats Tracked: United States, Truncated") +
   labs(x = "Date", y = "Individual Cat") +
   theme(axis.ticks.x = element_blank())
 
