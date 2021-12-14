@@ -6,10 +6,10 @@ output: html_document
 
 ```{r}
 library(tidyverse)
-library(ggthemes)
-library(ggmap)
+#library(ggthemes)
+#library(ggmap)
 library(move)
-library(moveVis)
+#library(moveVis)
 library(directlabels)
 library(lubridate)#is this part of tidy?
 library(zoo)#ma
@@ -52,7 +52,7 @@ cats<-union_all(cats, CatDFUS)
 #distance per day per cat
 dist <- (cats
          %>% arrange(Country, trackId, timestamp)
-         %>%group_by(Country,trackId,day=floor_date(timestamp, "day"))
+         %>% group_by(Country,trackId, day=floor_date(timestamp, "day"))
         %>% mutate(dist_btw = distHaversine(cbind(location.long, location.lat),cbind(lag(location.long),lag(location.lat))))
 
         %>% mutate(dist_btw = if_else(is.na(dist_btw),0,dist_btw))
@@ -85,7 +85,48 @@ country_dist <-(dist
   
 )
 
+#day/night distances
+day_night <- (cats
+         %>% arrange(Country, trackId, timestamp)
+         #drop time
+         %>% mutate(dy=floor_date(timestamp, "day"),
+                    hr = hour(round_date(timestamp, "hour")),
+                    diurnal = ifelse((hr < 6 | hr > 18), "Night", "Day"))
+         %>% group_by(Country, trackId)
+         #distance computed between each successive timestamp
+         #each change from "Day" to "Night" will contain distance spillover
+         %>% mutate(dist_btw = distHaversine(cbind(location.long, location.lat),cbind(lag(location.long),lag(location.lat))))
+         # set first record for each cat to 0 distance
+         %>% mutate(dist_btw = if_else(is.na(dist_btw),0,dist_btw))
+         %>% ungroup() #do I need to ungroup?
+         %>% group_by(Country, trackId, diurnal)
+         %>% summarize(Total_diurnal=sum(dist_btw))
 
+)
+
+#number of days each cat is tracked
+days_tracked<- (cats
+         %>% arrange(Country, trackId, timestamp)
+         #drop time
+         %>% mutate(dy=floor_date(timestamp, "day"))
+         %>% group_by(Country, trackId)
+         #number of days each cat is tracked
+         %>% summarize(days = n_distinct(dy), .groups="keep")
+)
+
+avg_day_night <- (left_join(day_night, days_tracked, by=c("Country"="Country", "trackId"="trackId"))
+                  %>% mutate(avg = Total_diurnal/days)
+                  %>% filter(avg < 5000) #look at outliers, decide on threshold
+)
+```
+
+```{r}
+
+(ggplot(avg_day_night, aes(x=diurnal,y=avg))
+ + geom_boxplot()
+ #+ geom_point(aes(colour=diurnal, alpha=0.3))
+ #+ geom_smooth()
+ )
 ```
 
 
