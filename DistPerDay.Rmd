@@ -118,15 +118,129 @@ avg_day_night <- (left_join(day_night, days_tracked, by=c("Country"="Country", "
                   %>% mutate(avg = Total_diurnal/days)
                   %>% filter(avg < 5000) #look at outliers, decide on threshold
 )
+
+
+ref <- (cats
+        %>% dplyr::select(Country, trackId, animal.sex, animal.life.stage, animal.reproductive.condition)
+        %>% mutate(animal.life.stage = readr::parse_number(animal.life.stage))
+        %>% distinct()
+  
+)
+#drop 0 ages and NAs
+
+total <- (left_join(avg_day_night, ref, by=c("Country"="Country", "trackId"="trackId"))
+          %>% filter(!is.na(animal.life.stage), animal.life.stage!=0, animal.sex %in% c('f','m'), avg!=0)
+          %>% mutate(sex_diurnal = interaction(animal.sex, diurnal))
+          #bin less that 1 year as 0, so consistent with all age binning
+          %>% mutate(animal.life.stage = ifelse(animal.life.stage<1,0,animal.life.stage))
+          
+  
+)
+
+age_distinct <- (ref
+        %>% dplyr::select(animal.life.stage)
+         %>% filter(!is.na(animal.life.stage), animal.life.stage!=0)
+        %>% distinct()
+        %>% arrange(animal.life.stage)
+  
+)
+
+
+#TO DO combine day night, to see if changes in sex
+# see if I can add age to this plot somehow
+# distance by latitude
+# speed of cat over time
 ```
+
+
+```{r}
+#best plot so far, age, sex, average distance per day/night
+g <- (ggplot(total, aes(x=animal.life.stage,y=avg, colour=animal.sex))
+ #+ geom_boxplot()
+ + geom_jitter(aes(alpha = 0.4,size=1), width=0.3, height=0)
+ #+ geom_point(aes(alpha = 0.4,size=4), position =position_dodge())
+ + geom_smooth()
+ + scale_y_log10()
+  + facet_grid(cols = vars(diurnal))
+  #+ scale_color_gradient(low = "yellow", high = "red")
+  + theme_bw()
+ )
+
+ggsave("Plot1.png")
+
+# Average distance travel fairly flat across age groups 
+# youger males (<6 year) move farther than females of the same age group
+# For the (6-12) age group, males travelled farther at night, and females and males travelled about the same during the day
+# cats older than 12 ?, less data
+
+# Questions
+#1. What smoothing should be used?
+
+#ToDo
+# colour
+# smoother
+# legend
+# aspect ration
+```
+
+
 
 ```{r}
 
-(ggplot(avg_day_night, aes(x=diurnal,y=avg))
- + geom_boxplot()
- #+ geom_point(aes(colour=diurnal, alpha=0.3))
- #+ geom_smooth()
+(ggplot(avg_day_night, aes(x=trackId,y=avg, colur=diurnal))
+ #+ geom_boxplot()
+ + geom_point(aes(colour=diurnal, alpha=0.3))
+ + geom_smooth()
+ + scale_y_log10()
  )
+
+
+(ggplot(avg_day_night, aes(x=diurnal,y=avg, colur=diurnal))
+ + geom_boxplot()
++ scale_y_log10()
+ )
+
+#age
+(ggplot(total, aes(x=seq(1,1660,by=1),y=avg, colour=animal.life.stage))
+ #+ geom_boxplot()
+ + geom_point(aes(colour=animal.life.stage, size=4))
+ #+ geom_smooth()
+ + scale_y_log10()
+  + facet_grid(rows = vars(diurnal))
+  + scale_color_gradient(low = "white", high = "red")
+  + theme_bw()
+ )
+
+#sex, facet by day/night
+(ggplot(total, aes(x=seq(1,1660,by=1),y=avg, colour=animal.sex))
+ #+ geom_boxplot()
+ + geom_point(aes(colour=animal.sex, alpha = 0.4,size=4))
+ + geom_smooth()
+ + scale_y_log10()
+  + facet_grid(cols = vars(diurnal))
+  #+ scale_color_gradient(low = "yellow", high = "red")
+  + theme_bw()
+ )
+
+
+
+#sex
+(ggplot(total, aes(x=seq(1,1660,by=1),y=avg, colour=sex_diurnal))
+ #+ geom_boxplot()
+ + geom_point(aes(colour=sex_diurnal, alpha = 0.4,size=4))
+ + geom_smooth()
+ + scale_y_log10()
+  #+ facet_grid(rows = vars(diurnal))
+  #+ scale_color_gradient(low = "yellow", high = "red")
+  + theme_bw()
+ )
+
+
+(ggplot(total, aes(x=animal.sex,y=avg, colur=animal.sex))
+ + geom_boxplot()
++ scale_y_log10()
+ )
+
 ```
 
 
