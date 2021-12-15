@@ -157,7 +157,7 @@ age_distinct <- (ref
 #best plot so far, age, sex, average distance per day/night
 g <- (ggplot(total, aes(x=animal.life.stage,y=avg, colour=animal.sex))
  #+ geom_boxplot()
- + geom_jitter(aes(alpha = 0.4,size=1), width=0.3, height=0)
+ + geom_jitter(aes(alpha = 0.3), width=0.3, height=0)
  #+ geom_point(aes(alpha = 0.4,size=4), position =position_dodge())
  + geom_smooth()
  + scale_y_log10()
@@ -166,7 +166,7 @@ g <- (ggplot(total, aes(x=animal.life.stage,y=avg, colour=animal.sex))
   + theme_bw()
  )
 
-ggsave("Plot1.png")
+
 
 # Average distance travel fairly flat across age groups 
 # youger males (<6 year) move farther than females of the same age group
