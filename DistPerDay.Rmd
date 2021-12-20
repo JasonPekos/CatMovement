@@ -133,6 +133,12 @@ total <- (left_join(avg_day_night, ref, by=c("Country"="Country", "trackId"="tra
           %>% mutate(sex_diurnal = interaction(animal.sex, diurnal))
           #bin less that 1 year as 0, so consistent with all age binning
           %>% mutate(animal.life.stage = ifelse(animal.life.stage<1,0,animal.life.stage))
+          %>% mutate(animal.reproductive.condition = case_when(
+            animal.reproductive.condition %in% c("Spayed", "Neutered") ~ "Fixed",
+            animal.reproductive.condition %in% c("Not Fixed", "Not fixed") ~ "Not Fixed",
+            TRUE ~ "Other"
+            ))
+          %>% filter(animal.reproductive.condition!="Other")
           
   
 )
@@ -156,13 +162,15 @@ age_distinct <- (ref
 ```{r}
 #best plot so far, age, sex, average distance per day/night
 g <- (ggplot(total, aes(x=animal.life.stage,y=avg, colour=animal.sex))
- #+ geom_boxplot()
- + geom_jitter(aes(alpha = 0.3), width=0.3, height=0)
+# with reproductive status
+# + geom_jitter(aes(alpha = 0.3, shape = animal.reproductive.condition),width=0.3, height=0)
+ + geom_jitter(aes(alpha = 0.3),width=0.3, height=0)
  #+ geom_point(aes(alpha = 0.4,size=4), position =position_dodge())
  + geom_smooth()
  + scale_y_log10()
   + facet_grid(cols = vars(diurnal))
   #+ scale_color_gradient(low = "yellow", high = "red")
+ + scale_shape_manual(values = c(16,4))
   + theme_bw()
  )
 
@@ -172,6 +180,7 @@ g <- (ggplot(total, aes(x=animal.life.stage,y=avg, colour=animal.sex))
 # youger males (<6 year) move farther than females of the same age group
 # For the (6-12) age group, males travelled farther at night, and females and males travelled about the same during the day
 # cats older than 12 ?, less data
+#only 8 cats that are not fixed, with age and sex data, probably not worth including
 
 # Questions
 #1. What smoothing should be used?
