@@ -1,0 +1,151 @@
+---
+title: "Movement of Domestic Cats"
+author: "Jennifer Freeman & Jason Pekos"
+date: "21/12/2021"
+output:
+  html_document: default
+  pdf_document: default
+bibliography: references.bib
+---
+
+## Data set
+
+Over 900 domestic cats were tracked with GPS collars from six different countries. The large majority of the cats were from Australia, New Zealand, the United Kingdom and the United States. Their spatial-temporal data was recorded for a range of 1 to 541 days and was retrieved from  [movebank.org](https://movebank.org) [@AU_data][@NZ_data][@UK_data][@US_data]. The metadata consisted of age, sex, neutered/spayed status, and the owner reported number of prey killed. The focus of the study was to understand the spatial context of their movement to assess the ecological impacts of these predators [@Kays].
+
+```{r load, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(move)
+library(lubridate) #for dates
+library(scales)
+library(directlabels)
+
+#movement data
+CatDatAus <- move("PetCatsAus.csv") 
+CatDatNZ <- move("PetCatsNZ.csv")  
+CatDatUK <- move("PetCatsUK.csv") 
+CatDatUS <- move("PetCatsUS.csv")  
+
+#reference data
+RefAus <- read.csv("Pet Cats Australia-reference-data.csv")
+RefUK <- read.csv("Pet Cats United Kingdom-reference-data.csv")
+RefNZ <- read.csv("Pet Cats New Zealand-reference-data.csv")
+RefUS <- read.csv("Pet Cats United States-reference-data.csv")
+
+
+#join movement and reference data
+CatDFAus<-(left_join(as.data.frame(CatDatAus), RefAus, by=c("trackId"="animal.id"))
+           %>% mutate(Country = "Australia")
+)
+
+CatDFUK<-(left_join(as.data.frame(CatDatUK), RefUK, by=c("trackId"="animal.id"))
+ %>% mutate(Country = "United Kingdom")
+)
+CatDFUS<-(left_join(as.data.frame(CatDatUS), RefUS, by=c("trackId"="animal.id"))
+ %>% mutate(Country = "United States")
+)
+CatDFNZ<-(left_join(as.data.frame(CatDatNZ), RefNZ, by=c("trackId"="animal.id"))
+ %>% mutate(Country = "New Zealand")
+)
+
+#union all data into one 
+cats<-union_all(CatDFAus, CatDFNZ)
+cats<-union_all(cats, CatDFUK)
+cats<-union_all(cats, CatDFUS)
+
+```
+
+
+
+```{r day_night,echo=FALSE, message=FALSE}
+
+#day/night distances
+day_night <- (cats
+         %>% arrange(Country, trackId, timestamp)
+         #drop time
+         %>% mutate(dy=floor_date(timestamp, "day"),
+                    hr = hour(round_date(timestamp, "hour")),
+                    diurnal = ifelse((hr < 6 | hr > 18), "Night", "Day"))
+         %>% group_by(Country, trackId)
+         #distance computed between each successive timestamp
+         #each change from "Day" to "Night" will contain distance spillover
+         %>% mutate(dist_btw = distHaversine(cbind(location.long, location.lat),cbind(lag(location.long),lag(location.lat))))
+         # set first record for each cat to 0 distance
+         %>% mutate(dist_btw = if_else(is.na(dist_btw),0,dist_btw))
+         %>% ungroup() #do I need to ungroup?
+         %>% group_by(Country, trackId, diurnal)
+         %>% summarize(Total_diurnal=sum(dist_btw))
+
+)
+
+#number of days each cat is tracked
+days_tracked<- (cats
+         %>% arrange(Country, trackId, timestamp)
+         #drop time
+         %>% mutate(dy=floor_date(timestamp, "day"))
+         %>% group_by(Country, trackId)
+         #number of days each cat is tracked
+         %>% summarize(days = n_distinct(dy), .groups="keep")
+)
+
+avg_day_night <- (left_join(day_night, days_tracked, by=c("Country"="Country", "trackId"="trackId"))
+                  %>% mutate(avg = Total_diurnal/days)
+                  %>% filter(avg < 5000) #look at outliers, decide on threshold
+)
+
+
+ref <- (cats
+        %>% dplyr::select(Country, trackId, animal.sex, animal.life.stage, animal.reproductive.condition)
+        %>% mutate(animal.life.stage = readr::parse_number(animal.life.stage))
+        %>% distinct()
+  
+)
+#drop 0 ages and NAs
+
+total <- (left_join(avg_day_night, ref, by=c("Country"="Country", "trackId"="trackId"))
+          %>% filter(!is.na(animal.life.stage), animal.life.stage!=0, animal.sex %in% c('f','m'), avg!=0)
+          %>% mutate(animal.sex = if_else(animal.sex == "f","Female","Male"))
+          %>% mutate(sex_diurnal = interaction(animal.sex, diurnal))
+          #bin less that 1 year as 0, so consistent with all age binning
+          %>% mutate(animal.life.stage = ifelse(animal.life.stage<1,0,animal.life.stage))
+          %>% mutate(animal.reproductive.condition = case_when(
+            animal.reproductive.condition %in% c("Spayed", "Neutered") ~ "Fixed",
+            animal.reproductive.condition %in% c("Not Fixed", "Not fixed") ~ "Not Fixed",
+            TRUE ~ "Other"
+            ))
+          %>% filter(animal.reproductive.condition!="Other")
+          
+  
+)
+
+```
+
+## The story
+
+```{r, echo=FALSE,message=FALSE, fig.height=4}
+#best plot so far, age, sex, average distance per day/night
+g <- (ggplot(total, aes(x=animal.life.stage,y=avg, colour=animal.sex))
+# + geom_jitter(aes(alpha = 0.3, shape = animal.reproductive.condition),width=0.3, height=0)
+ + geom_jitter(alpha=0.2,width=0.3, height=0)
+ #+ geom_point(aes(alpha = 0.4,size=4), position =position_dodge())
+ + geom_smooth(se=F)
+ + scale_y_log10(labels = trans_format("log10", math_format(10^.x)))
+  + facet_grid(cols = vars(diurnal))
+#+ geom_dl(aes(label=c("Male","Female"),colour=animal.sex),method="smart.grid",size=5)
+  #+ scale_color_gradient(low = "yellow", high = "red")
+ + scale_shape_manual(values = c(16,4))
+  + theme_bw()
++ theme(panel.spacing.x = unit(0,"cm"), legend.position=c(0.92,0.15),
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank())
++ xlab("Age")
++ ylab("Average Distance Travelled (m)")
++ labs(colour="")
++ scale_colour_manual(values = c("#D95F02","#7570B3"))
+ )
+print(g)
+```
+
+## Methods
+ 
+ 
+## References
+
