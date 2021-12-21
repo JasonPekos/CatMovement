@@ -1,0 +1,929 @@
+ID,Study Area,Coyotes,DIY,Home Range Area (km2),Confidence Interval (km2),Correlogram levels off?,<5 days,age,sex,neutered
+Abba,UK,No,No,0.014,"(0.01, 0.018)",Yes,No,3,Female,Yes
+Adele,Australia,No,No,0.0034,"(0.0022, 0.0049)",Yes,No,0.9,Female,Yes
+Aggie,New Zealand,No,No,0.028,"(0.023, 0.023)",Yes,Yes,,,
+Ajax2,TN,Yes,No,0.015,"(0.019, 0.012)",Yes,No,3,Male,Yes
+Albert,Australia,No,No,0.0109,"(0.0082, 0.0139)",Yes,No,9,Male,Yes
+Alfie,Australia,No,No,0.0208,"(0.018, 0.0238)",Yes,No,,,
+Alfie,New Zealand,No,No,0.009,"(0.008, 0.008)",Yes,No,2,Male,Yes
+Alfie,UK,No,No,0.091,"(0.072, 0.113)",Yes,No,3,Male,Yes
+Ali,Australia,No,No,0.0103,"(0.0086, 0.0122)",Yes,No,0.7,Female,Yes
+Alice,New Zealand,No,No,0.034,"(0.028, 0.028)",Yes,No,5,Female,Yes
+Allie,New Zealand,No,No,0.064,"(0.049, 0.049)",Yes,No,8,Female,Yes
+Ally,Australia,No,No,,"(1.4159, 18.3596)",No,No,6,Female,Yes
+Alrari,Australia,No,No,0.0145,"(0.0111, 0.0184)",Yes,No,9,Male,Yes
+AmbaRose,Australia,No,No,0.0053,"(0.0042, 0.0066)",Yes,No,10,Female,Yes
+Amber,UK,No,No,0.089,"(0.066, 0.115)",Yes,No,4,Female,
+Amelia,Australia,No,No,0.0036,"(0.0028, 0.0046)",Yes,No,10,Female,Yes
+Anakin,Australia,No,No,0.0493,"(0.0419, 0.0573)",Yes,No,2,Male,Yes
+Angel,Australia,No,No,0.0188,"(0, 0.039)",Yes,No,3,Female,Yes
+Annie,Australia,No,No,0.0097,"(0.0081, 0.0114)",Yes,No,2,Female,Yes
+Anubis2,NC,Yes,No,0.017,"(0.02, 0.013)",Yes,No,2,Male,Yes
+Apples,New Zealand,No,No,0.011,"(0.009, 0.009)",Yes,No,10,Female,Yes
+Archie,New Zealand,No,No,0.014,"(0.012, 0.012)",Yes,No,4,Male,Yes
+Ares,New Zealand,No,No,0.035,"(0.028, 0.028)",Yes,No,14,Male,Yes
+Ares,UK,No,No,0.029,"(0.023, 0.037)",Yes,No,3,Male,Yes
+Ariel,Australia,No,No,0.0069,"(0.0057, 0.0082)",Yes,No,1,Male,Yes
+ArohaJools,New Zealand,No,No,0.016,"(0.013, 0.013)",Yes,No,,Female,Yes
+Arya,New Zealand,No,No,0.007,"(0.005, 0.005)",Yes,No,0.3,Female,Yes
+Ash,Australia,No,No,0.0437,"(0.035, 0.0533)",Yes,No,8,Male,Yes
+Ash,New Zealand,No,No,0.025,"(0.021, 0.021)",Yes,No,8,Male,Yes
+Ash2,Australia,No,No,0.0169,"(0.0138, 0.0202)",Yes,No,3,Male,Yes
+Asher2,NC,Yes,No,0.09,"(0.111, 0.071)",Yes,No,3,Male,Yes
+Asibo2,NC,Yes,No,0.037,"(0.044, 0.03)",Yes,No,2,Male,Yes
+Aslan,New Zealand,No,No,0.012,"(0.01, 0.01)",Yes,No,11,Male,Yes
+Astro,Australia,No,No,0.0528,"(0.0443, 0.0621)",Yes,No,2,Male,Yes
+Astryl,New Zealand,No,No,0.066,"(0.052, 0.052)",Yes,No,12,Female,Yes
+Athena,UK,No,No,0.011,"(0.008, 0.013)",Yes,No,3,Female,Yes
+Atik,Australia,No,No,0.0134,"(0.0109, 0.0161)",Yes,No,2,Female,Yes
+Atticus,NC,Yes,No,0.013,"(0.018, 0.009)",Yes,Yes,8,Male,Yes
+Ava,New Zealand,No,No,0.017,"(0.014, 0.014)",Yes,No,2,Female,Yes
+Axel,New Zealand,No,No,0.028,"(0.022, 0.022)",Yes,No,0.9,Male,Yes
+Aya2,Denmark,No,Yes,0.072,"(0.083, 0.062)",Yes,No,3,Male,Yes
+Babs1,New Zealand,No,No,0.011,"(0.009, 0.009)",Yes,No,0.8,Female,Yes
+BabyKitty2,NC,Yes,No,0.044,"(0.049, 0.038)",Yes,No,1,Male,No
+Bailee,New Zealand,No,No,0.039,"(0.032, 0.032)",Yes,No,8,Male,Yes
+Balu,UK,No,No,0.031,"(0.025, 0.039)",Yes,No,7,Female,Yes
+Bambi,Australia,No,No,0.0069,"(0.0055, 0.0085)",Yes,No,3,Female,Yes
+Bandit,Australia,No,No,0.0214,"(0.0183, 0.0247)",Yes,No,3,Female,Yes
+Banjo,Australia,No,No,0.0313,"(0.0203, 0.0447)",Yes,No,1,Male,Yes
+Banjo2,Australia,No,No,0.0071,"(0.0056, 0.0088)",Yes,No,9,Female,Yes
+Banjo2,NC,Yes,No,0.012,"(0.013, 0.01)",Yes,No,9,Female,Yes
+Banzai,New Zealand,No,No,0.116,"(0.089, 0.089)",Yes,No,3,Male,Yes
+Barnaby1,New Zealand,No,No,0.006,"(0.005, 0.005)",No,Yes,,Male,
+Barney,UK,No,No,0.028,"(0.023, 0.034)",Yes,No,11,Male,Yes
+Basil,Australia,No,No,0.0293,"(0.0236, 0.0357)",Yes,No,3,Male,Yes
+Basil,New Zealand,No,No,0.018,"(0.015, 0.015)",Yes,No,9,Male,Yes
+BB,Australia,No,No,0.0087,"(0.0071, 0.0106)",Yes,No,1,Female,Yes
+Bean2,NC,Yes,No,0.022,"(0.026, 0.02)",Yes,No,3,Male,Yes
+Beanie,UK,No,No,0.005,"(0.004, 0.007)",Yes,No,4,Male,Yes
+Bear,New Zealand,No,No,0.055,"(0.045, 0.045)",Yes,No,4,Female,Yes
+Bear,UK,No,No,0.254,"(0.173, 0.35)",Yes,No,6,Male,Yes
+Beatle2,NC,Yes,No,0.057,"(0.074, 0.042)",Yes,No,7,Male,Yes
+Bel,Australia,No,No,0.0583,"(0.0417, 0.0777)",Yes,Yes,1,Female,Yes
+Bel2,Australia,No,No,0.0053,"(0.004, 0.0068)",Yes,Yes,12,Female,Yes
+Bela2,NC,Yes,No,0.112,"(0.135, 0.091)",Yes,No,2,Male,Yes
+Bella,Australia,No,No,Error could not run,,Yes,No,14,Female,Yes
+Bella,New Zealand,No,No,0.012,"(0.01, 0.01)",Yes,No,4,Female,Yes
+Bella,UK,No,No,0.045,"(0.037, 0.054)",Yes,No,3,Female,Yes
+Bella2,NC,Yes,No,0.046,"(0.056, 0.037)",Yes,No,5,Female,Yes
+Bella5,Australia,No,No,0.0064,"(0.0046, 0.0084)",Yes,No,5,Female,Yes
+Bella6,Australia,No,No,0.0146,"(0.0098, 0.0205)",Yes,No,8,Female,Yes
+BellaBoo,Australia,No,No,0.1588,"(0.1286, 0.1919)",Yes,No,2,Female,Yes
+BellaII,New Zealand,No,No,0.057,"(0.049, 0.049)",Yes,No,8,Female,Yes
+BellaIII,New Zealand,No,No,0.044,"(0.033, 0.033)",Yes,No,4,Female,Yes
+Belle,Australia,No,No,0.0081,"(0.0064, 0.0099)",Yes,No,4,Female,Yes
+Beluga,NY,No,No,0.051,"(0.062, 0.041)",Yes,No,2,Male,Yes
+Benny,Australia,No,No,0.0042,"(0.0032, 0.0053)",Yes,No,7,Male,Yes
+Benny,NC,Yes,No,0.02,"(0.026, 0.016)",Yes,No,4,Male,Yes
+Bentley,Australia,No,No,0.0233,"(0.0196, 0.0274)",Yes,No,12,Male,Yes
+Bessy,Australia,No,No,0.0253,"(0.0196, 0.0317)",Yes,No,8,Female,Yes
+Bibi,Australia,No,No,0.0068,"(0.0055, 0.0081)",Yes,No,0,,
+BigFella,Australia,No,No,0.0152,"(0.0125, 0.0182)",Yes,No,7,,Yes
+Biggles,Australia,No,No,0.0087,"(0.0064, 0.0113)",Yes,No,4,Male,Yes
+Billy,Australia,No,No,0.0061,"(0.0049, 0.0075)",Yes,No,11,Male,Yes
+BillyWhiskers2,NC,Yes,No,0.037,"(0.044, 0.031)",Yes,No,2,Male,Yes
+Binky,UK,No,No,0.058,"(0.047, 0.071)",Yes,No,4,Male,Yes
+Bits,UK,No,No,0.012,"(0.01, 0.014)",Yes,Yes,13,Female,Yes
+Blackie,New Zealand,No,No,0.028,"(0.023, 0.023)",Yes,No,9,Male,Yes
+BlueNelson,New Zealand,No,No,2.122,"(1.493, 1.493)",Yes,No,,Male,
+Bluey,Australia,No,No,0.0071,"(0.0056, 0.0087)",Yes,No,9,Male,Yes
+Bo,Australia,No,No,0.0099,"(0.008, 0.0119)",Yes,No,4,Male,Yes
+Bob,Australia,No,No,0.0464,"(0.0373, 0.0563)",Yes,No,7,Male,Yes
+Bobs,UK,No,No,0.059,"(0.041, 0.081)",Yes,No,13,Female,Yes
+Bongo2,CT,Yes,No,0.062,"(0.072, 0.053)",Yes,No,4,Male,Yes
+Bonnie,New Zealand,No,No,0.031,"(0.025, 0.025)",Yes,No,8,Female,Yes
+Boo,Australia,No,No,0.005,"(0.0042, 0.0059)",Yes,No,4,Male,Yes
+BooBooKitty,NY,No,No,0.002,"(0.002, 0.001)",Yes,No,12,Female,Yes
+Boofy,Australia,No,No,0.0289,"(0.0224, 0.0363)",Yes,No,9,Male,Yes
+Boots,Australia,No,No,0.009,"(0.0078, 0.0103)",Yes,No,3,Female,Yes
+Boots,New Zealand,No,No,0.046,"(0.034, 0.034)",No,Yes,2,Female,Yes
+Boots,UK,No,No,0.056,"(0.041, 0.073)",Yes,No,16,Female,Yes
+Boots2,Australia,No,No,0.0044,"(0.0037, 0.0052)",Yes,No,14,Male,Yes
+BootsII,New Zealand,No,No,0.009,"(0.007, 0.007)",Yes,No,,,
+Boris2,NC,Yes,No,0.067,"(0.09, 0.047)",Yes,Yes,2,Male,Yes
+BorisdeJong,New Zealand,No,No,0.041,"(0.034, 0.034)",Yes,No,0.2,Male,
+Boz,Australia,No,No,0.0092,"(0.0076, 0.011)",Yes,No,6,Male,Yes
+Bramble,New Zealand,No,No,0.007,"(0.006, 0.006)",Yes,No,3,Female,Yes
+Bruce,Australia,No,No,0.0164,"(0.0129, 0.0204)",Yes,No,2,Male,Yes
+BruceWillisPussington,Australia,No,No,0.0133,"(0.0103, 0.0168)",Yes,No,7,Male,Yes
+Bruno,Australia,No,No,0.0206,"(0.0167, 0.0248)",Yes,No,0,,
+Buddha,Australia,No,No,0.0247,"(0.0201, 0.0297)",Yes,No,6,Male,Yes
+Buddy,Australia,No,No,0.0132,"(0.0103, 0.0164)",Yes,No,2,Male,Yes
+Buddy,New Zealand,No,No,0.025,"(0.021, 0.021)",Yes,No,7,Male,Yes
+Buddy2,Australia,No,No,0.0177,"(0.0144, 0.0214)",Yes,No,4,Male,Yes
+Bugsy,Australia,No,No,0.0433,"(0.0365, 0.0507)",Yes,No,5,Male,Yes
+Bumbles,UK,No,No,0.023,"(0.018, 0.028)",Yes,No,12,Female,Yes
+Bumbles2,CT,Yes,No,0.027,"(0.034, 0.021)",Yes,No,9,Male,Yes
+Bungey,Australia,No,No,0.0074,"(0.0055, 0.0096)",Yes,No,6,Male,Yes
+Buster,New Zealand,No,No,0.177,"(0.148, 0.148)",Yes,No,1,Male,Yes
+Buzz,New Zealand,No,No,0.025,"(0.021, 0.021)",Yes,No,2,Male,Yes
+Caddie,Australia,No,No,0.0163,"(0.0127, 0.0204)",Yes,No,6,Female,Yes
+CaptainAmerica2,NC,Yes,No,"Error, unable to run",,Yes,No,8,Male,Yes
+CaptainSoldier,Australia,No,No,0.0369,"(0.0304, 0.044)",Yes,No,3,Male,Yes
+Carbonel,UK,No,No,0.013,"(0.01, 0.015)",Yes,No,8,Male,Yes
+Carina,New Zealand,No,No,0.019,"(0.016, 0.016)",Yes,No,2,Female,Yes
+Carmello,Australia,No,No,0.0268,"(0.0224, 0.0316)",Yes,No,9,Male,Yes
+Carrots,UK,No,No,0.043,"(0.035, 0.051)",Yes,No,3,Male,Yes
+Casper,Australia,No,No,0.0099,"(0.0074, 0.0128)",Yes,No,8,Male,Yes
+Casper,New Zealand,No,No,0.03,"(0.023, 0.023)",Yes,No,4,Male,Yes
+Casper,UK,No,No,0.019,"(0.015, 0.025)",Yes,No,6,Male,Yes
+Caspian,Australia,No,No,0.018,"(0.015, 0.0213)",Yes,No,10,Male,Yes
+Cat,Australia,No,No,0.023,"(0.019, 0.0274)",Yes,No,6,Male,Yes
+CatMarshall,NC,Yes,No,0.022,"(0.027, 0.018)",Yes,No,5,Female,Yes
+CatnissEverdeen,NC,Yes,No,0.013,"(0.016, 0.011)",Yes,No,1,Female,Yes
+Catsby,New Zealand,No,No,0.021,"(0.017, 0.017)",Yes,No,5,Female,Yes
+Cayden2,NC,Yes,No,0.024,"(0.032, 0.018)",Yes,Yes,4,Male,Yes
+Cazador,New Zealand,No,No,0.142,"(0.113, 0.113)",Yes,No,0.4,Male,Yes
+Cedar2,NC,Yes,No,0.006,"(0.008, 0.005)",Yes,No,14,Male,Yes
+Celine,Australia,No,No,0.0108,"(0.0083, 0.0137)",Yes,No,3,Unk,Yes
+Chanel,Australia,No,No,0.011,"(0.0089, 0.0133)",Yes,No,8,Female,Yes
+Charlie,Australia,No,No,0.011,"(0.0081, 0.0143)",Yes,No,5,Male,Yes
+Charlie,New Zealand,No,No,0.018,"(0.015, 0.015)",Yes,No,1,Male,Yes
+Charlie,UK,No,No,0.017,"(0.014, 0.021)",Yes,No,6,Male,Yes
+Charlie2,Australia,No,No,Error could not run,,Yes,No,3,Male,Yes
+Charlie2,UK,No,No,0.007,"(0.005, 0.009)",Yes,No,9,Male,Yes
+Charlie3,Australia,No,No,0.0039,"(0.0031, 0.0049)",Yes,No,12,Female,Yes
+Charlie3,UK,No,No,0.019,"(0.015, 0.023)",Yes,No,5,Male,
+Charlie4,Australia,No,No,0.026,"(0.0222, 0.0301)",Yes,No,6,Male,Yes
+Charlie6,Australia,No,No,0.0252,"(0.0215, 0.0292)",Yes,No,2,Male,Yes
+CharlieFrank,Australia,No,No,0.0165,"(0.013, 0.0204)",Yes,No,4,Male,Yes
+Charlotte,Australia,No,No,0.0421,"(0.0311, 0.0547)",Yes,No,5,Female,Yes
+Charlotte2,Australia,No,No,0.0101,"(0.0071, 0.0137)",Yes,No,1,Female,Yes
+Chase,Australia,No,No,0.0178,"(0.0145, 0.0215)",Yes,No,1,Female,Yes
+Cheeky,Australia,No,No,0.0136,"(0.0112, 0.0161)",Yes,Yes,15,Male,Yes
+Chess,New Zealand,No,No,0.013,"(0.011, 0.011)",Yes,No,9,Female,Yes
+Chester2,NY,No,No,0.109,"(0.126, 0.093)",Yes,No,4,Male,Yes
+Chicha2,NC,Yes,No,0.015,"(0.017, 0.014)",Yes,No,,,
+Chilli,New Zealand,No,No,"Error, unable to run",,Yes,No,1,Male,Yes
+Chloe,UK,No,No,0.013,"(0.009, 0.018)",Yes,No,7,Female,Yes
+ChuckNorris,Australia,No,No,0.0136,"(0.0109, 0.0167)",Yes,No,3,Male,Yes
+CJ,UK,No,No,0.114,"(0.081, 0.152)",Yes,No,5,Male,Yes
+Clancy,Australia,No,No,0.0089,"(0.0057, 0.0127)",Yes,No,9,Female,Yes
+Claude,Australia,No,No,0.007,"(0.0057, 0.0085)",Yes,No,8,Male,Yes
+Clawd,Australia,No,No,Error could not run,,Yes,No,7,Male,Yes
+Cleo,Australia,No,No,0.0175,"(0.0129, 0.0229)",Yes,No,4,Female,Yes
+Cleo2,Australia,No,No,0.0414,"(0.0314, 0.0529)",Yes,No,4,Female,Yes
+Climber2,NC,Yes,No,0.04,"(0.049, 0.032)",Yes,No,9,Male,Yes
+Coal,CT,Yes,No,0.044,"(0.056, 0.033)",Yes,No,7,Male,Yes
+Coco,Australia,No,No,0.0066,"(0.0051, 0.0083)",Yes,No,2,Female,Yes
+Coco,New Zealand,No,No,0.004,"(0.004, 0.004)",Yes,No,10,Female,Yes
+Coco,UK,No,No,0.031,"(0.025, 0.037)",Yes,No,7,Female,Yes
+CocoNelson,New Zealand,No,No,0.236,"(0.189, 0.189)",Yes,No,,,
+Colin,New Zealand,No,No,0.029,"(0.023, 0.023)",Yes,No,3,Male,Yes
+Collin,Australia,No,No,0.017,"(0.0139, 0.0204)",Yes,No,5,,Yes
+Conan,NC,Yes,No,0.112,"(0.138, 0.089)",Yes,Yes,13,Male,Yes
+Cookie,New Zealand,No,No,0.013,"(0.011, 0.011)",Yes,No,3,Female,Yes
+Cornflake,New Zealand,No,No,0.043,"(0.035, 0.035)",Yes,No,3,Female,Yes
+Cosi,Australia,No,No,0.0223,"(0.0172, 0.0281)",Yes,No,8,Female,Yes
+Crumpet,Australia,No,No,0.0788,"(0.0606, 0.0992)",Yes,No,4,Female,Yes
+Cutie-Girl,New Zealand,No,No,0.007,"(0.006, 0.006)",Yes,No,2,Female,Yes
+Daisy2,Australia,No,No,0.0089,"(0.0069, 0.0112)",Yes,No,6,Female,Yes
+Dana,Australia,No,No,0.0103,"(0.0078, 0.0133)",Yes,No,4,Female,Yes
+Dana,New Zealand,No,No,0.01,"(0.008, 0.008)",Yes,No,8,Male,Yes
+Darcy,Australia,No,No,0.0567,"(0.0472, 0.0671)",Yes,No,8,Male,Yes
+Darcy2,Australia,No,No,0.0067,"(0.0056, 0.0079)",Yes,No,8,Male,Yes
+Darkie,Australia,No,No,0.0125,"(0.0102, 0.015)",Yes,No,2,Female,Yes
+Dash,New Zealand,No,No,0.02,"(0.016, 0.016)",Yes,No,4,Male,Yes
+DC,Australia,No,No,0.0244,"(0.0198, 0.0296)",Yes,No,6,Male,Yes
+Delilah,Australia,No,No,0.0211,"(0.016, 0.0269)",Yes,No,2,Female,Yes
+Delilah2,Australia,No,No,0.0629,"(0.0478, 0.08)",Yes,No,6,Female,Yes
+Delphi,New Zealand,No,No,0.041,"(0.034, 0.034)",Yes,No,1,Female,Yes
+DetectiveTeddy,Australia,No,No,0.0153,"(0.0125, 0.0184)",Yes,No,8,Male,Yes
+Dexter,UK,No,No,0.039,"(0.03, 0.049)",Yes,No,3,Male,Yes
+Dexter2,UK,No,No,0.585,"(0.353, 0.878)",Yes,No,1,Male,Yes
+Dharma,Australia,No,No,0.0094,"(0.0075, 0.0114)",Yes,No,17,Male,Yes
+Diamond2,NC,Yes,No,0.04,"(0.046, 0.034)",Yes,No,2,Female,Yes
+Diamonds,Australia,No,No,0.0115,"(0.0097, 0.0134)",Yes,No,2,Female,Yes
+Diesel,Australia,No,No,0.0257,"(0.0196, 0.0326)",Yes,No,2,Male,Yes
+Diesel,New Zealand,No,No,0.012,"(0.008, 0.008)",Yes,Yes,,,
+Dingo,New Zealand,No,No,0.03,"(0.024, 0.024)",Yes,No,4,Male,Yes
+DonaldFluffypants,NC,Yes,No,0.021,"(0.025, 0.018)",Yes,No,3,Male,Yes
+DonCarlos2,NC,Yes,No,0.011,"(0.014, 0.009)",Yes,No,4,Male,Yes
+Dory,UK,No,No,0.024,"(0.017, 0.032)",Yes,No,1,Female,No
+Dotti,New Zealand,No,No,0.011,"(0.01, 0.01)",Yes,No,7,Female,Yes
+Douglas,NC,Yes,No,0.01,"(0.012, 0.008)",Yes,No,7,Male,Yes
+Drake,Australia,No,No,0.0462,"(0.0353, 0.0585)",Yes,No,10,Female,Yes
+Drake2,Australia,No,No,0.0107,"(0.0092, 0.0123)",Yes,No,0,,
+Ebby,UK,No,No,0.024,"(0.013, 0.039)",Yes,No,10,Female,Yes
+Eddie,Australia,No,No,0.0059,"(0.0049, 0.007)",Yes,No,11,Male,Yes
+Eesti,Australia,No,No,0.0104,"(0.0088, 0.0122)",Yes,No,5,Male,Yes
+Eldrick,Australia,No,No,0.0757,"(0.0603, 0.0927)",Yes,No,2,Male,Yes
+Elle,NC,Yes,No,0.115,"(0.139, 0.094)",Yes,No,5,Female,Yes
+Ellie,New Zealand,No,No,0.027,"(0.021, 0.021)",Yes,No,8,Female,Yes
+Elliot,New Zealand,No,No,0.189,"(0.151, 0.151)",Yes,No,2,Male,Yes
+Elmo,Australia,No,No,0.024,"(0.0201, 0.0282)",Yes,No,12,Male,Yes
+Emmy2,NC,Yes,No,0.027,"(0.035, 0.019)",Yes,Yes,4,Female,Yes
+Enzo,Australia,No,No,0.0128,"(0.0107, 0.0151)",Yes,No,2.1,Male,Yes
+Ernie,Australia,No,No,0.0448,"(0.036, 0.0544)",Yes,No,11,Male,Yes
+Ernie,UK,No,No,0.026,"(0.021, 0.032)",Yes,No,1,Male,Yes
+Ewok,New Zealand,No,No,0.012,"(0.01, 0.01)",Yes,No,2,2,Yes
+Fairclough,UK,No,No,0.008,"(0.006, 0.009)",Yes,No,4,Male,Yes
+FantaPants,Australia,No,No,0.0232,"(0.0185, 0.0284)",Yes,No,5,Male,Yes
+Felix,Australia,No,No,0.0107,"(0.0085, 0.0131)",Yes,No,2,Male,Yes
+Felix,New Zealand,No,No,0.014,"(0.012, 0.012)",Yes,No,7,Male,Yes
+Felix,UK,No,No,0.017,"(0.012, 0.023)",Yes,Yes,4,Male,Yes
+Felix2,Australia,No,No,Error could not run,,Yes,No,4,Female,Yes
+Felix3,Australia,No,No,0.0072,"(0.006, 0.0084)",Yes,No,2,Male,Yes
+FenimoreCooper2,CT,Yes,No,0.019,"(0.044, 0.004)",No,Yes,8,Male,Yes
+Fergie,Australia,No,No,0.0236,"(0.0181, 0.0297)",Yes,No,1,Female,Yes
+Fiona2,NC,Yes,No,0.011,"(0.013, 0.009)",Yes,No,1,Female,Yes
+Fizzgig,Australia,No,No,0.0496,"(0.0407, 0.0593)",Yes,No,6,Female,Yes
+Flanders,Australia,No,No,0.0168,"(0.0132, 0.0208)",Yes,No,1,Male,Yes
+Flash,UK,No,No,0.003,"(0.003, 0.004)",Yes,No,3,Female,Yes
+Fletcher2,NC,Yes,No,0.028,"(0.037, 0.02)",Yes,Yes,13,Male,Yes
+Floss,New Zealand,No,No,0.026,"(0.021, 0.021)",Yes,No,1,Female,Yes
+Flossie,Australia,No,No,0.0392,"(0.0309, 0.0483)",Yes,No,5,Female,Yes
+Fonzie,UK,No,No,0.021,"(0.016, 0.028)",Yes,No,10,Male,Yes
+Frank,Australia,No,No,0.0261,"(0.0204, 0.0325)",Yes,No,0.6,Male,No
+Frank,CT,Yes,No,0.046,"(0.053, 0.039)",Yes,No,3,Male,Yes
+Frank,UK,No,No,0.071,"(0.055, 0.091)",Yes,No,4,Male,Yes
+Frank_2,UK,No,No,0.04,"(0.033, 0.048)",Yes,No,7,Male,Yes
+Frankie,Australia,No,No,Error could not run,,Yes,No,0,,Yes
+Franklin,NC,Yes,No,0.052,"(0.057, 0.047)",Yes,No,8,Male,Yes
+Freya,UK,No,No,0.021,"(0.016, 0.027)",Yes,No,4,Female,Yes
+Friday,UK,No,No,0.011,"(0.009, 0.014)",Yes,No,1,Male,Yes
+Fritz,New Zealand,No,No,0.105,"(0.073, 0.073)",Yes,No,7,Male,Yes
+Frizzle,Australia,No,No,0.0156,"(0.0122, 0.0194)",Yes,No,3,Male,Yes
+Frosty,Australia,No,No,0.0375,"(0.0268, 0.0501)",Yes,No,1,Male,Yes
+FrostyNelson,New Zealand,No,No,0.008,"(0.007, 0.007)",Yes,No,,,
+Fudge,Australia,No,No,Error could not run,,Yes,No,4,Male,Yes
+Furry,Australia,No,No,0.0076,"(0.0055, 0.01)",Yes,No,6,Female,Yes
+GagglesHieronymus,Australia,No,No,0.0254,"(0.0219, 0.0292)",Yes,No,5,Male,Yes
+Garfield,Australia,No,No,0.0263,"(0.0208, 0.0325)",Yes,No,9,Male,Yes
+Garfield,New Zealand,No,No,0.044,"(0.034, 0.034)",Yes,Yes,,Male,
+Garry,Australia,No,No,0.0361,"(0.028, 0.0451)",Yes,No,6,Male,Yes
+Geezer,Australia,No,No,0.0096,"(0.008, 0.0113)",Yes,No,5,Male,Yes
+Genie,Australia,No,No,0.0156,"(0.0127, 0.0187)",Yes,No,4,Female,Yes
+Geordie,New Zealand,No,No,0.008,"(0.007, 0.007)",Yes,No,,Female,Yes
+George,Australia,No,No,0.0214,"(0.0176, 0.0255)",Yes,No,3,Male,Yes
+George,New Zealand,No,No,0.01,"(0.008, 0.008)",Yes,No,9,Male,Yes
+George2,Australia,No,No,0.0161,"(0.0133, 0.0192)",Yes,No,3,Male,Yes
+George2,NC,Yes,No,0.043,"(0.05, 0.037)",Yes,No,1,Male,Yes
+Georgie,Australia,No,No,0.0075,"(0.006, 0.0092)",Yes,No,9,Male,Yes
+Gertie,New Zealand,No,No,0.004,"(0.003, 0.003)",Yes,No,2,Female,Yes
+Gianni2,NC,Yes,No,0.029,"(0.037, 0.021)",Yes,No,10,Male,Yes
+Gigi,Australia,No,No,0.0138,"(0.0112, 0.0168)",Yes,No,13,Female,Yes
+Gin,New Zealand,No,No,0.008,"(0.007, 0.007)",Yes,No,5,Female,Yes
+Gina,Australia,No,No,0.0323,"(0.022, 0.0445)",Yes,No,3,Female,Yes
+Ginge,UK,No,No,0.166,"(0.14, 0.195)",Yes,No,3,Male,Yes
+Gingernut,New Zealand,No,No,0.126,"(0.108, 0.108)",Yes,No,2,Male,Yes
+GinII,New Zealand,No,No,0.013,"(0.011, 0.011)",Yes,No,5,Male,Yes
+Gizmo,Australia,No,No,0.0126,"(0.0096, 0.0161)",Yes,No,19,Male,Yes
+GizmoNelson,New Zealand,No,No,0.035,"(0.03, 0.03)",Yes,No,,,
+Goldfinger,Australia,No,No,0.0089,"(0.0072, 0.0108)",Yes,No,4,Male,Yes
+Goliath2,CO,Yes,Yes,0.07,"(0.085, 0.057)",Yes,No,6,Male,Yes
+Gomez,Australia,No,No,0.0065,"(0.0048, 0.0085)",Yes,No,0,,
+Gracie,NC,Yes,No,0.012,"(0.013, 0.012)",Yes,No,10,Female,Yes
+Gracie,New Zealand,No,No,0.095,"(0.07, 0.07)",Yes,No,,Female,Yes
+Gracie,UK,No,No,0.01,"(0.008, 0.013)",Yes,Yes,2,Female,Yes
+Gracie_2,UK,No,No,0.013,"(0.012, 0.015)",Yes,No,6,Female,Yes
+GracieL2,NC,Yes,No,0.025,"(0.031, 0.02)",Yes,No,16,Female,Yes
+GracieLouFreebush,Australia,No,No,0.0123,"(0.0103, 0.0144)",Yes,No,2,Female,Yes
+Greyskull2,New Zealand,No,No,0.512,"(0.299, 0.299)",No,Yes,,Male,
+Grimm,Australia,No,No,0.0072,"(0.0058, 0.0088)",Yes,No,0.6,Male,Yes
+Guinness,UK,No,No,0.025,"(0.019, 0.032)",Yes,No,7,Male,Yes
+Gus,Australia,No,No,0.0177,"(0.0144, 0.0214)",Yes,No,3,Male,Yes
+Gus,New Zealand,No,No,0.037,"(0.031, 0.031)",Yes,No,3,Male,Yes
+GusNelson,New Zealand,No,No,0.086,"(0.055, 0.055)",Yes,Yes,,Male,
+Guss,New Zealand,No,No,0.02,"(0.016, 0.016)",Yes,No,8,Male,Yes
+Gyhjor,Australia,No,No,0.0125,"(0.0095, 0.0159)",Yes,No,8,Male,Yes
+HaHa,Australia,No,No,0.0163,"(0.0133, 0.0196)",Yes,No,2,Male,Yes
+Hailey2,NC,Yes,No,0.009,"(0.01, 0.009)",Yes,Yes,10,Female,Yes
+Hamish2,Denmark,No,Yes,0.072,"(0.123, 0.035)",No,Yes,,,
+HappyFeet,New Zealand,No,No,0.043,"(0.037, 0.037)",Yes,No,4,Male,Yes
+Harley2,NC,Yes,No,0.059,"(0.071, 0.047)",Yes,No,5,Female,Yes
+Harry,Australia,No,No,Error could not run,,Yes,No,2,Male,Yes
+Harry2,Australia,No,No,0.0357,"(0.0293, 0.0428)",Yes,No,2,Male,Yes
+Harry3,Australia,No,No,0.0074,"(0.006, 0.0089)",Yes,No,4,Male,Yes
+Harvey,New Zealand,No,No,0.014,"(0.012, 0.012)",Yes,No,9,Male,Yes
+Hazel,Australia,No,No,0.0147,"(0.0119, 0.0178)",Yes,No,1,,Yes
+Hazel,New Zealand,No,No,0.009,"(0.007, 0.007)",Yes,No,1,Female,Yes
+Hemingway,NY,No,No,0.012,"(0.015, 0.009)",Yes,No,4,Male,Yes
+Henry,Australia,No,No,0.0152,"(0.0125, 0.0182)",Yes,No,1,Male,Yes
+Henry,New Zealand,No,No,0.02,"(0.015, 0.015)",Yes,No,6,Male,Yes
+Henry,UK,No,No,error,One of the lowest sample sizes,Yes,No,8,Male,Yes
+Henry2,Australia,No,No,0.0198,"(0.0152, 0.0249)",Yes,No,8,Male,Yes
+Herman2,NY,No,No,0.019,"(0.023, 0.016)",Yes,No,8,Male,Yes
+Hershey,NC,Yes,No,0.058,"(0.068, 0.049)",Yes,No,7,Male,Yes
+Hestor,Australia,No,No,0.0115,"(0.0095, 0.0137)",Yes,No,11,Male,Yes
+Holly,Australia,No,No,0.0176,"(0.0152, 0.0203)",Yes,No,3,Female,Yes
+Huffer,New Zealand,No,No,0.012,"(0.01, 0.01)",Yes,No,7,Male,Yes
+Hunter,Australia,No,No,0.0202,"(0.0168, 0.0239)",Yes,No,1,Male,Yes
+Iggy,New Zealand,No,No,0.032,"(0.027, 0.027)",Yes,No,5,Female,
+Imelda,Australia,No,No,0.0103,"(0.0081, 0.0127)",Yes,No,1,Female,Yes
+Indie,UK,No,No,0.027,"(0.02, 0.035)",Yes,No,3,Male,Yes
+InkyNelson,New Zealand,No,No,0.019,"(0.016, 0.016)",Yes,No,,,
+IronMan,Australia,No,No,0.022,"(0.016, 0.0291)",Yes,No,0,,
+Isabel,Australia,No,No,Error could not run,,Yes,No,3,Female,Yes
+Isobel,Australia,No,No,Error could not run,,Yes,No,8,Female,Yes
+Ivory,Australia,No,No,0.0061,"(0.0052, 0.0072)",Yes,No,2,Female,Yes
+Izzie,New Zealand,No,No,0.585,"(0.407, 0.407)",Yes,No,1,Female,Yes
+Jack,Australia,No,No,0.0223,"(0.0187, 0.0261)",Yes,No,6,Male,Yes
+Jack2,NY,No,No,0.563,"(0.902, 0.304)",Yes,No,5,Male,Yes
+JackNelson,New Zealand,No,No,0.041,"(0.035, 0.035)",Yes,No,,Male,
+Jago,UK,No,No,0.031,"(0.027, 0.036)",Yes,No,2,Male,Yes
+Jago2,UK,No,No,0.083,"(0.07, 0.098)",Yes,No,2,Male,Yes
+Jamie,Australia,No,No,0.0425,"(0.0356, 0.0501)",Yes,No,9,Male,Yes
+Jams2,NC,Yes,No,0.07,"(0.089, 0.052)",Yes,No,9,Male,Yes
+Jasmine,Australia,No,No,0.0069,"(0.0042, 0.0103)",Yes,Yes,11,Female,Yes
+Jasmine2,Australia,No,No,0.0133,"(0.0114, 0.0152)",Yes,No,8,Female,Yes
+Jasper,Australia,No,No,0.0097,"(0.0082, 0.0114)",Yes,No,5,Male,Yes
+Jasper,UK,No,No,0.02,"(0.015, 0.026)",Yes,No,2,Male,Yes
+Jasper2,Australia,No,No,0.0058,"(0.0046, 0.0071)",Yes,No,2,Male,Yes
+Jasper3,Australia,No,No,0.0069,"(0.0054, 0.0086)",Yes,No,1,Male,Yes
+Jasper4,Australia,No,No,0.0107,"(0.0085, 0.0133)",Yes,No,2,Male,Yes
+Jax,Australia,No,No,0.0179,"(0.0152, 0.0208)",Yes,No,2,Male,Yes
+Jax,New Zealand,No,No,0.046,"(0.03, 0.03)",Yes,No,,Female,Yes
+Jazzie,Australia,No,No,0.0111,"(0.0075, 0.0155)",Yes,No,1,Female,Yes
+Jedda,Australia,No,No,0.1164,"(0.0909, 0.145)",Yes,No,4,Female,Yes
+Jello2,NC,Yes,No,0.044,"(0.049, 0.039)",Yes,No,3,Male,Yes
+Jericho,Australia,No,No,0.0148,"(0.011, 0.0192)",Yes,Yes,12,Male,Yes
+Jess,New Zealand,No,No,0.115,"(0.086, 0.086)",Yes,No,11,Female,Yes
+Jessie,UK,No,No,0.006,"(0.005, 0.007)",Yes,No,5,Female,Yes
+JessieBeau,Australia,No,No,0.0324,"(0.0236, 0.0424)",Yes,No,2,Male,Yes
+Jessy,UK,No,No,0.036,"(0.027, 0.047)",Yes,Yes,11,Female,Yes
+Jester,Australia,No,No,0.0218,"(0.0181, 0.0259)",Yes,No,5,Male,Yes
+Jetpack,NC,Yes,No,0.049,"(0.067, 0.034)",Yes,No,2,Female,Yes
+Jezebel,UK,No,No,0.027,"(0.021, 0.033)",Yes,No,14,Female,Yes
+Jim,UK,No,No,0.008,"(0.007, 0.01)",Yes,No,8,Female,Yes
+Jingles,New Zealand,No,No,0.073,"(0.057, 0.057)",Yes,No,7,Female,Yes
+Jingles2,CT,Yes,No,0.057,"(0.066, 0.048)",Yes,No,8,Male,Yes
+Jinx,Australia,No,No,0.1434,"(0.1103, 0.1808)",Yes,No,1,Female,Yes
+Jinx,New Zealand,No,No,0.027,"(0.021, 0.021)",Yes,No,8,Male,Yes
+Jinx2,Australia,No,No,0.0338,"(0.028, 0.0401)",Yes,No,6,Female,Yes
+Jitterbug2,NC,Yes,No,0.047,"(0.058, 0.037)",Yes,No,2,Female,Yes
+Joey,Australia,No,No,0.0599,"(0.0443, 0.0779)",Yes,Yes,5,Male,Yes
+Joey,NC,Yes,No,0.005,"(0.006, 0.005)",Yes,No,10,Male,Yes
+Johnny,Australia,No,No,0.0221,"(0.0172, 0.0278)",Yes,No,2,Male,Yes
+Johnny,UK,No,No,0.048,"(0.037, 0.061)",Yes,Yes,,Male,Yes
+Jones,Australia,No,No,0.063,"(0.0536, 0.0731)",Yes,No,11,Male,Yes
+Junior2,NC,Yes,No,0.02,"(0.024, 0.017)",Yes,No,6,Male,Yes
+Junipurr,Australia,No,No,0.0291,"(0.0226, 0.0365)",Yes,No,8,Female,Yes
+Justice,CT,Yes,No,0.007,"(0.008, 0.005)",Yes,No,9,Male,Yes
+Kagin2,NC,Yes,No,0.029,"(0.041, 0.02)",Yes,No,5,Male,Yes
+Kagin3,NC,Yes,No,0.022,"(0.023, 0.021)",Yes,No,5,Male,Yes
+Kallie,Australia,No,No,0.0135,"(0.0111, 0.0162)",Yes,No,1,Female,Yes
+Kamir,Australia,No,No,0.0048,"(0.0039, 0.0058)",Yes,No,13,Female,Yes
+Kaos,New Zealand,No,No,0.06,"(0.048, 0.048)",Yes,No,7,Male,Yes
+KatnissEverdeen,NC,Yes,No,0.016,"(0.019, 0.013)",Yes,No,1,Female,Yes
+Katy,New Zealand,No,No,0.018,"(0.013, 0.013)",Yes,No,10,Female,Yes
+Keegan,UK,No,No,0.049,"(0.037, 0.062)",Yes,No,3,Male,No
+Kenny,Australia,No,No,0.0107,"(0.008, 0.0138)",Yes,No,4,Male,Yes
+Keytuyn,Australia,No,No,0.018,"(0.015, 0.0214)",Yes,No,1,Male,Yes
+KikkiDee,Australia,No,No,0.0356,"(0.0245, 0.0485)",Yes,No,8,Female,Yes
+Kimy,New Zealand,No,No,0.042,"(0.033, 0.033)",Yes,No,7,Female,Yes
+Kiri,New Zealand,No,No,0.033,"(0.027, 0.027)",Yes,No,0.8,Female,Yes
+Kitten,Australia,No,No,0.036,"(0.0272, 0.046)",Yes,No,0,,
+Kitty,Australia,No,No,0.0954,"(0.0739, 0.1196)",Yes,No,4,Male,Yes
+Kitty,New Zealand,No,No,"Error, unable to run",,Yes,No,14,Female,Yes
+Kitty2,Australia,No,No,0.031,"(0.0242, 0.0385)",Yes,No,5,Male,Yes
+Kitty3,Australia,No,No,0.0065,"(0.0051, 0.0081)",Yes,No,1,Female,Yes
+Kitty4,Australia,No,No,0.091,"(0.0698, 0.115)",Yes,No,2,Male,No
+Kitty5,Australia,No,No,0.0069,"(0.0054, 0.0087)",Yes,No,2,Female,Yes
+Kitty6,Australia,No,No,0.0241,"(0.0184, 0.0306)",Yes,No,5,Female,Yes
+KittyBoy,MN,Yes,Yes,0.04,"(0.046, 0.033)",Yes,No,,,
+KittyD2,NC,Yes,No,"Error, unable to run",,Yes,No,,,
+KittysaurusRex,New Zealand,No,No,0.116,"(0.09, 0.09)",Yes,No,5,Male,Yes
+Kramer,Australia,No,No,0.0109,"(0.009, 0.013)",Yes,No,12,Male,Yes
+Kyro,New Zealand,No,No,0.024,"(0.02, 0.02)",Yes,No,11,Male,Yes
+Lacey,NC,Yes,No,0.028,"(0.033, 0.024)",Yes,No,3,Female,Yes
+Ladybird2,NC,Yes,No,0.044,"(0.053, 0.035)",Yes,No,10,Female,Yes
+Ladyboyhawke,UK,No,No,0.176,"(0.124, 0.239)",Yes,No,5,Female,Yes
+LadyT,UK,No,No,0.008,"(0.007, 0.01)",Yes,No,2,Male,Yes
+LadyVelvet,Australia,No,No,0.0042,"(0.0034, 0.0052)",Yes,No,8,Female,Yes
+Laila,New Zealand,No,No,0.006,"(0.005, 0.005)",Yes,No,7,Female,Yes
+Latte,Australia,No,No,0.0183,"(0.0148, 0.0222)",Yes,No,4,Female,Yes
+Leila,Australia,No,No,0.0256,"(0.0188, 0.0335)",Yes,No,8,Female,Yes
+LemonSqueezy,New Zealand,No,No,0.005,"(0.004, 0.004)",Yes,No,7,Female,Yes
+Lenny,New Zealand,No,No,0.035,"(0.029, 0.029)",Yes,No,1,Male,Yes
+Leo,Australia,No,No,0.0077,"(0.0062, 0.0093)",Yes,No,2,Male,Yes
+Leo2,Australia,No,No,0.0121,"(0.0097, 0.0146)",Yes,No,10,Male,Yes
+Leo3,Australia,No,No,0.0056,"(0.0046, 0.0067)",Yes,No,6,Male,Yes
+Leo4,Australia,No,No,0.0262,"(0.0193, 0.0342)",Yes,No,16,Male,Yes
+Leopard2,NC,Yes,No,0.12,"(0.142, 0.1)",Yes,No,2,Male,Yes
+Lester,NC,Yes,No,0.025,"(0.027, 0.023)",Yes,No,13,Male,Yes
+Lexi,Australia,No,No,0.3546,"(0.2721, 0.4484)",Yes,No,4,Female,Yes
+LibertyBelle,Australia,No,No,0.0118,"(0.0095, 0.0143)",Yes,No,2,Female,Yes
+Lief,Australia,No,No,0.0167,"(0.0144, 0.0192)",Yes,No,3,Male,Yes
+LighteningBugg,UK,No,No,0.042,"(0.033, 0.05)",Yes,No,0,Male,Yes
+Lightning,Australia,No,No,0.0218,"(0.0182, 0.0256)",Yes,No,1,Female,Yes
+Lila,Australia,No,No,0.0256,"(0.0193, 0.0328)",Yes,No,7,Female,Yes
+Lilliput,Australia,No,No,0.0099,"(0.0079, 0.0121)",Yes,No,3,Female,Yes
+Lilly,Australia,No,No,0.0096,"(0.0079, 0.0116)",Yes,No,4,Female,Yes
+Lilly,New Zealand,No,No,0.026,"(0.021, 0.021)",Yes,No,3,Female,Yes
+Lily,Australia,No,No,0.0052,"(0.0041, 0.0065)",Yes,No,3,Female,Yes
+Lily,UK,No,No,"Error, unable to run",One of the lowest sample sizes,Yes,No,9,Female,Yes
+Lister,Australia,No,No,0.0424,"(0.0322, 0.0539)",Yes,No,19,Male,Yes
+Little2,NC,Yes,No,0.053,"(0.064, 0.044)",Yes,No,8,Male,Yes
+Lofty,Australia,No,No,"Error, unable to run",,Yes,No,13,Male,Yes
+Loki,Australia,No,No,0.0241,"(0.0203, 0.0284)",Yes,No,8,Male,Yes
+Loki,New Zealand,No,No,0.014,"(0.012, 0.012)",Yes,No,1,Male,Yes
+Lola,UK,No,No,0.03,"(0.024, 0.037)",Yes,No,10,Female,Yes
+Lorenzo,New Zealand,No,No,0.024,"(0.019, 0.019)",Yes,No,2,Male,Yes
+LouieTag,CT,Yes,No,0.113,"(0.137, 0.092)",Yes,No,5,Male,Yes
+Louis,Australia,No,No,0.0118,"(0.0091, 0.0148)",Yes,No,12,Male,Yes
+Louise,Australia,No,No,0.0079,"(0.0066, 0.0094)",Yes,No,4,Female,Yes
+LouisTheBruiser,Australia,No,No,0.0058,"(0.0047, 0.007)",Yes,No,12,Male,Yes
+LucarioBlack,Australia,No,No,0.0198,"(0.0167, 0.0232)",Yes,No,3,Male,Yes
+Lucims,Australia,No,No,0.0149,"(0.0124, 0.0176)",Yes,No,15,Female,Yes
+Lucky2,NJ,Yes,Yes,0.043,"(0.047, 0.039)",Yes,No,11,Female,Yes
+Lucy,New Zealand,No,No,0.015,"(0.011, 0.011)",Yes,No,7,Female,Yes
+Lucy,UK,No,No,0.008,"(0.006, 0.011)",Yes,No,5,Female,Yes
+Lucy2,Australia,No,No,0.0307,"(0.0256, 0.0362)",Yes,No,1,Female,Yes
+Lucy3,Australia,No,No,0.0323,"(0.0271, 0.0379)",Yes,No,3,Female,Yes
+Luna,Australia,No,No,0.015,"(0.0121, 0.0182)",Yes,No,0,Female,Yes
+Luna,New Zealand,No,No,0.008,"(0.007, 0.007)",Yes,No,2,Female,Yes
+Luna2,NC,Yes,No,0.035,"(0.043, 0.027)",Yes,No,4,Female,Yes
+Lupe2,MA,Yes,Yes,0.04,"(0.046, 0.034)",Yes,No,4,Male,Yes
+Lux,New Zealand,No,No,0.009,"(0.008, 0.008)",Yes,No,6,Female,Yes
+Mabel,New Zealand,No,No,0.017,"(0.014, 0.014)",Yes,No,3,Female,Yes
+Maca,Australia,No,No,0.0147,"(0.0117, 0.018)",Yes,No,10,Female,Yes
+MacaulayMccat,UK,No,No,0.021,"(0.017, 0.027)",Yes,Yes,6,Female,Yes
+Maddie,New Zealand,No,No,0.024,"(0.02, 0.02)",Yes,No,4,Female,Yes
+Maddie2,NC,Yes,No,0.042,"(0.052, 0.034)",Yes,No,10,Female,Yes
+Maeve,Australia,No,No,0.0095,"(0.0069, 0.0126)",Yes,No,3,Female,Yes
+Maggie,Australia,No,No,0.0328,"(0.0281, 0.038)",Yes,No,7,Female,Yes
+Maggie,New Zealand,No,No,0.015,"(0.013, 0.013)",Yes,No,4,Female,Yes
+Maggie,UK,No,No,0.016,"(0.012, 0.02)",Yes,No,3,Female,Yes
+MaggiePickles,NC,Yes,No,0.018,"(0.033, 0.007)",No,Yes,,,
+Magic,Australia,No,No,0.0377,"(0.0222, 0.0573)",Yes,No,6,Female,Yes
+Magic,UK,No,No,"Error, unable to run",One of the lowest sample sizes,Yes,Yes,3,Female,Yes
+Maisey2,NY,No,No,0.083,"(0.111, 0.059)",Yes,No,2,Female,Yes
+Malachie,Australia,No,No,0.1007,"(0.0791, 0.1244)",Yes,No,3,Male,Yes
+Mandy,Australia,No,No,0.013,"(0.0098, 0.0167)",Yes,No,1,Female,Yes
+Mango,Australia,No,No,0.0223,"(0.0182, 0.0268)",Yes,No,1,Male,Yes
+Maomao,New Zealand,No,No,0.024,"(0.02, 0.02)",Yes,No,8,Male,Yes
+MapleSyrup,Australia,No,No,0.0138,"(0.0121, 0.0157)",Yes,No,10,Female,Yes
+Marbles,Australia,No,No,0.0228,"(0.018, 0.0281)",Yes,No,7,Male,Yes
+Marbles2,Australia,No,No,0.003,"(0.0024, 0.0038)",Yes,No,2,Female,Yes
+MarcellusWallace,New Zealand,No,No,0.01,"(0.007, 0.007)",Yes,No,12,Male,Yes
+Marco2,UpstateNY,Yes,Yes,0.04,"(0.059, 0.024)",No,Yes,2,Male,Yes
+Marley,New Zealand,No,No,0.014,"(0.011, 0.011)",Yes,No,3,Male,Yes
+Marley,UK,No,No,0.095,"(0.068, 0.127)",Yes,No,1,Male,Yes
+Marmite,New Zealand,No,No,0.023,"(0.02, 0.02)",Yes,No,4,Female,Yes
+Martha,Australia,No,No,0.0291,"(0.025, 0.0336)",Yes,No,2,Female,Yes
+Martha2,Australia,No,No,0.003,"(0.0022, 0.0038)",Yes,No,3,Female,Yes
+MarthaWayne2,NC,Yes,No,0.022,"(0.026, 0.018)",Yes,No,3,Female,Yes
+Marty,New Zealand,No,No,0.012,"(0.009, 0.009)",Yes,No,2,Male,Yes
+Matilda,Australia,No,No,0.0182,"(0.0107, 0.0276)",Yes,No,8,Female,Yes
+Maverick,UK,No,No,0.045,"(0.037, 0.053)",Yes,No,7,Male,Yes
+Max,Australia,No,No,0.0214,"(0.0184, 0.0246)",Yes,No,8,Male,Yes
+Max,New Zealand,No,No,0.107,"(0.087, 0.087)",Yes,No,1,Male,Yes
+Max,UK,No,No,2.239,"(1.273, 3.478)",Yes,No,5,Male,Yes
+Max2,Australia,No,No,0.0355,"(0.0297, 0.0419)",Yes,No,3,Male,Yes
+Max3,Australia,No,No,0.0031,"(0.0024, 0.0039)",Yes,No,2,Male,Yes
+Maximus1,New Zealand,No,No,"Error, unable to run",,Yes,No,0.3,Male,Yes
+Maxwell,UK,No,No,0.031,"(0.027, 0.035)",Yes,No,6,Male,Yes
+McIvor,New Zealand,No,No,0.017,"(0.015, 0.015)",Yes,No,10,Male,Yes
+Meesha,Australia,No,No,0.0271,"(0.0224, 0.0324)",Yes,No,8,Female,Yes
+Meg,UK,No,No,0.018,"(0.015, 0.023)",Yes,No,8,Female,
+Meggsie,Australia,No,No,0.0081,"(0.0065, 0.0099)",Yes,No,6,Male,Yes
+Merlin,Australia,No,No,0.0182,"(0.0157, 0.0209)",Yes,No,1,Male,Yes
+Merlin,New Zealand,No,No,0.034,"(0.029, 0.029)",Yes,No,0.9,Male,Yes
+Merlin,UK,No,No,0.121,"(0.091, 0.154)",Yes,No,5,Male,Yes
+Merlin2,Australia,No,No,0.005,"(0.004, 0.006)",Yes,No,9,Male,Yes
+Merlot,Australia,No,No,0.0611,"(0.0494, 0.0742)",Yes,No,9,Male,Yes
+Merrie2,Newfoundland,Yes,Yes,0.004,"(0.005, 0.004)",Yes,No,7,Female,Yes
+Mia2,CO,Yes,Yes,0.207,"(0.253, 0.165)",Yes,No,4,Female,Yes
+Mickey,Australia,No,No,0.008,"(0.0062, 0.01)",Yes,No,4,Male,Yes
+Midnight,Australia,No,No,0.0087,"(0.0071, 0.0104)",Yes,No,11,Male,Yes
+Midnight,New Zealand,No,No,0.035,"(0.03, 0.03)",Yes,No,6,Female,Yes
+Midori,Australia,No,No,0.0082,"(0.0069, 0.0096)",Yes,No,7,Female,Yes
+Mifty,UK,No,No,0.054,"(0.045, 0.065)",Yes,No,2,Female,Yes
+Mika,Australia,No,No,0.0195,"(0.0159, 0.0236)",Yes,No,3,Female,Yes
+Milfred,Australia,No,No,0.0076,"(0.0063, 0.009)",Yes,No,3,Male,Yes
+MilkoMcCavity,Australia,No,No,0.0137,"(0.0109, 0.0168)",Yes,No,6,Male,Yes
+Milkshakes,New Zealand,No,No,0.026,"(0.02, 0.02)",Yes,No,3,Male,Yes
+Millie,UK,No,No,0.013,"(0.011, 0.014)",Yes,No,3,Female,Yes
+Millie2,Australia,No,No,"Error, unable to run",,Yes,No,11,Female,Yes
+Millie3,Australia,No,No,0.0056,"(0.0046, 0.0068)",Yes,No,7,Female,Yes
+MilliGal,New Zealand,No,No,0.01,"(0.007, 0.007)",Yes,No,7,Female,Yes
+Milly,Australia,No,No,0.0106,"(0.0086, 0.0128)",Yes,No,4,Female,Yes
+Milly2,Australia,No,No,0.0113,"(0.0092, 0.0136)",Yes,No,11,Female,Yes
+Milo,Australia,No,No,0.0373,"(0.0316, 0.0434)",Yes,No,0.6,Female,Yes
+Milo,CT,Yes,No,0.012,"(0.014, 0.01)",Yes,No,3,Male,Yes
+Milo,New Zealand,No,No,0.102,"(0.075, 0.075)",Yes,No,10,Female,Yes
+Milo2,Australia,No,No,0.0128,"(0.0102, 0.0156)",Yes,No,2,Male,Yes
+Milo3,Australia,No,No,"Error, unable to run",,Yes,No,4,Male,Yes
+Mimi,Australia,No,No,0.0085,"(0.0068, 0.0105)",Yes,No,14,Female,Yes
+Mindy2,NY,No,No,0.066,"(0.072, 0.06)",Yes,No,5,Female,Yes
+Minerva,New Zealand,No,No,0.008,"(0.007, 0.007)",Yes,No,6,Female,Yes
+Mingo,Australia,No,No,0.006,"(0.0047, 0.0074)",Yes,No,5,Female,Yes
+Minnie,New Zealand,No,No,0.021,"(0.017, 0.017)",Yes,No,,Female,
+Minnie2,NC,Yes,No,0.009,"(0.011, 0.008)",No,No,,,
+MinnieH,NC,Yes,No,"Error, unable to run",,No,Yes,14,Female,Yes
+Minty,Australia,No,No,0.0162,"(0.0112, 0.022)",Yes,No,3,Female,Yes
+MissChief,Australia,No,No,"Error, unable to run",,Yes,No,16,Female,Yes
+Missie,New Zealand,No,No,0.048,"(0.039, 0.039)",Yes,No,4,Female,Yes
+Missy,Australia,No,No,0.0051,"(0.0028, 0.0081)",Yes,Yes,3,Female,Yes
+Missy,UK,No,No,0.041,"(0.031, 0.051)",Yes,No,3,Female,Yes
+MissyMitz,Australia,No,No,0.0055,"(0.0044, 0.0067)",Yes,No,8,Female,Yes
+MissyMoo,Australia,No,No,0.0139,"(0.0107, 0.0175)",Yes,No,8,Female,Yes
+Misty,Australia,No,No,0.0389,"(0.031, 0.0479)",Yes,No,10,Female,Yes
+Misty,NY,No,No,0.005,"(0.006, 0.004)",Yes,Yes,3,Female,Yes
+Misty2,Australia,No,No,0.0127,"(0.0106, 0.0151)",Yes,No,8,Female,Yes
+Misty3,Australia,No,No,"Error, unable to run",,Yes,No,0,Female,Yes
+Misu2,CT,Yes,No,0.024,"(0.028, 0.02)",Yes,No,9,Male,Yes
+Mittens,Australia,No,No,0.0117,"(0.0103, 0.0133)",Yes,No,5,Female,Yes
+Mogadon,New Zealand,No,No,0.032,"(0.027, 0.027)",Yes,No,9,Female,Yes
+Moggy,Australia,No,No,0.017,"(0.0145, 0.0196)",Yes,No,11,Female,Yes
+Moka,New Zealand,No,No,"Error, unable to run",,Yes,No,4,Female,Yes
+Molly,Australia,No,No,0.0349,"(0.0267, 0.0443)",Yes,No,0,,
+Molly,New Zealand,No,No,0.068,"(0.056, 0.056)",Yes,No,8,Female,Yes
+Momo,Australia,No,No,0.0089,"(0.0068, 0.0112)",Yes,No,2,Female,Yes
+MonaLisa,Australia,No,No,0.0411,"(0.0299, 0.0543)",Yes,No,9,Female,Yes
+MonMon,Australia,No,No,0.263,"(0.1972, 0.3375)",Yes,No,4,Female,Yes
+Monty,Australia,No,No,0.0047,"(0.0038, 0.0057)",Yes,No,0,,
+Monty,New Zealand,No,No,0.023,"(0.019, 0.019)",Yes,No,2,Male,Yes
+Monty2,Australia,No,No,0.0159,"(0.0121, 0.0203)",Yes,No,7,Male,Yes
+MontyII,New Zealand,No,No,0.04,"(0.032, 0.032)",Yes,No,1,Male,Yes
+Moochie,Australia,No,No,"Error, unable to run",,Yes,No,4,Female,Yes
+Morpheus,UK,No,No,0.014,"(0.012, 0.017)",Yes,No,4,Male,Yes
+Moscow,Australia,No,No,0.0098,"(0.0082, 0.0116)",Yes,No,4,Male,Yes
+Moscow,UK,No,No,0.01,"(0.007, 0.014)",Yes,No,1,Male,Yes
+Moses,New Zealand,No,No,0.014,"(0.011, 0.011)",Yes,No,2,Male,Yes
+Motorcat,NC,Yes,No,0.046,"(0.05, 0.043)",Yes,No,14,Female,Yes
+Mowdii,Australia,No,No,0.0074,"(0.006, 0.0089)",Yes,No,8,Female,Yes
+MrGray,Australia,No,No,0.0989,"(0.0725, 0.1293)",Yes,No,1,Male,Yes
+MrLittleCat,Australia,No,No,0.011,"(0.0091, 0.013)",Yes,No,8,Male,Yes
+MrLucky,CT,Yes,No,0.084,"(0.107, 0.064)",Yes,No,3,Male,Yes
+MrThomas,Australia,No,No,0.0085,"(0.007, 0.01)",Yes,No,10,Male,Yes
+MrWhiskers,Australia,No,No,0.0032,"(0.0025, 0.0039)",Yes,No,5,Female,Yes
+Muffin,New Zealand,No,No,0.011,"(0.008, 0.008)",Yes,No,9,Female,Yes
+MuffinII,New Zealand,No,No,"Error, unable to run",,Yes,No,4,Female,Yes
+Muggins,Australia,No,No,0.0187,"(0.0155, 0.0221)",Yes,No,0,Male,Yes
+Multi,Australia,No,No,0.0345,"(0.0287, 0.0409)",Yes,No,0.5,Female,No
+Mungo,New Zealand,No,No,0.005,"(0.004, 0.004)",Yes,No,7,Male,Yes
+Murphy,New Zealand,No,No,0.024,"(0.02, 0.02)",Yes,No,5,Male,Yes
+Muss,Australia,No,No,0.0276,"(0.0234, 0.032)",Yes,No,7,Male,Yes
+Mynx,Australia,No,No,0.0068,"(0.0058, 0.0079)",Yes,No,2,Male,Yes
+Mysti,Australia,No,No,0.1423,"(0.119, 0.1673)",Yes,No,18,Female,Yes
+Mystic,Australia,No,No,0.035,"(0.0289, 0.0416)",Yes,No,2,Female,Yes
+Nala,New Zealand,No,No,0.032,"(0.026, 0.026)",Yes,No,1,Female,Yes
+NalaII,New Zealand,No,No,0.034,"(0.026, 0.026)",Yes,No,2,Female,Yes
+Natasha2,NC,Yes,No,0.034,"(0.041, 0.027)",Yes,No,2,Female,Yes
+NattyBumpo2,CT,Yes,No,0.061,"(0.076, 0.048)",Yes,No,8,Female,Yes
+Neil,UK,No,No,0.023,"(0.018, 0.028)",Yes,No,7,Male,Yes
+Neko,New Zealand,No,No,0.061,"(0.046, 0.046)",Yes,No,2,Male,Yes
+NekoII,New Zealand,No,No,0.008,"(0.007, 0.007)",Yes,No,4,Female,Yes
+NekoMei,Australia,No,No,0.0075,"(0.0061, 0.009)",Yes,No,9,Female,Yes
+Nellie,Australia,No,No,0.0032,"(0.0025, 0.0041)",Yes,No,4,Female,Yes
+Nelson,Australia,No,No,0.0741,"(0.0607, 0.0889)",Yes,No,3,Male,Yes
+Nelson3,Australia,No,No,0.0151,"(0.0118, 0.0188)",Yes,No,7,Male,Yes
+Nettle,UK,No,No,0.014,"(0.012, 0.017)",Yes,No,4,Female,Yes
+Neva,UK,No,No,0.006,"(0.005, 0.008)",Yes,No,4,Female,Yes
+Nia,GA,Yes,Yes,0.014,"(0.017, 0.01)",Yes,No,4,Female,Yes
+Nikki2,NY,No,No,0.071,"(0.082, 0.061)",Yes,No,8,Female,Yes
+Niko,New Zealand,No,No,0.014,"(0.012, 0.012)",Yes,No,1,Male,Yes
+Nimzy,New Zealand,No,No,0.009,"(0.007, 0.007)",Yes,No,4,Female,Yes
+Ninja,Australia,No,No,0.0181,"(0.013, 0.024)",Yes,No,1,Female,Yes
+Nola2Tag,NC,Yes,No,0.026,"(0.033, 0.02)",Yes,No,4,Female,Yes
+Nougie,New Zealand,No,No,0.028,"(0.023, 0.023)",Yes,No,12,Female,Yes
+Nugget,New Zealand,No,No,0.031,"(0.025, 0.025)",Yes,No,6,Female,Yes
+Oatmeal,NC,Yes,No,0.078,"(0.095, 0.062)",Yes,No,5,Male,Yes
+Okie,New Zealand,No,No,0.019,"(0.016, 0.016)",Yes,No,1,Female,Yes
+Oli,Australia,No,No,0.0115,"(0.0092, 0.0141)",Yes,No,1,Male,Yes
+Oliver2,CT,Yes,No,0.208,"(0.259, 0.162)",Yes,No,7,Male,Yes
+Ollie,Australia,No,No,0.0283,"(0.0234, 0.0337)",Yes,No,5,Male,Yes
+Ollie,New Zealand,No,No,0.039,"(0.033, 0.033)",Yes,No,2,Male,Yes
+Onyx,Australia,No,No,0.092,"(0.0651, 0.1238)",Yes,No,1,Female,Yes
+Orange,FL,Yes,Yes,0.005,"(0.006, 0.005)",Yes,No,4,Female,Yes
+Oreo2,NC,Yes,No,0.152,"(0.197, 0.112)",Yes,No,5,Male,Yes
+Oscar,Australia,No,No,0.0288,"(0.0231, 0.0353)",Yes,No,10,Male,Yes
+Oscar,New Zealand,No,No,0.056,"(0.037, 0.037)",No,Yes,,Male,
+Oscar2,Australia,No,No,0.0169,"(0.0136, 0.0205)",Yes,No,7,Male,Yes
+Oscar3,Australia,No,No,0.0369,"(0.0314, 0.0427)",Yes,No,8,Male,Yes
+OscarJ,NY,No,No,0.035,"(0.038, 0.032)",Yes,No,2,Male,Yes
+OscarL,CT,Yes,No,0.026,"(0.03, 0.022)",Yes,No,11,Male,Yes
+OscarN,NC,Yes,No,0.02,"(0.024, 0.016)",Yes,No,5,Male,Yes
+Pablo,New Zealand,No,No,0.109,"(0.086, 0.086)",Yes,No,3,Male,Yes
+Paloma,New Zealand,No,No,0.014,"(0.011, 0.011)",Yes,No,2,Female,Yes
+Panda,New Zealand,No,No,0.085,"(0.07, 0.07)",Yes,No,3,Female,Yes
+Panther,Australia,No,No,"Error, unable to run",,Yes,No,2,Female,Yes
+Pants,Australia,No,No,0.0072,"(0.005, 0.0099)",Yes,No,7,Male,Yes
+Pants,UK,No,No,0.01,"(0.007, 0.013)",Yes,No,8,Male,Yes
+Paris,Australia,No,No,"Error, unable to run",,Yes,No,13,Male,Yes
+Parker,CT,Yes,No,0.07,"(0.079, 0.062)",Yes,No,6,Male,Yes
+Patra,Australia,No,No,0.0278,"(0.0224, 0.0339)",Yes,No,8,Female,Yes
+Paul,Australia,No,No,0.0072,"(0.006, 0.0086)",Yes,No,0.4,Male,Yes
+Paula,Australia,No,No,0.0439,"(0.0294, 0.0613)",Yes,No,4,Female,Yes
+Peanut,NY,No,No,0.037,"(0.043, 0.031)",Yes,No,1,Female,Yes
+PeanutR,NC,Yes,No,0.014,"(0.016, 0.011)",Yes,No,4,Male,Yes
+Pearl,Australia,No,No,0.0058,"(0.0045, 0.0073)",Yes,No,0,Female,Yes
+PearlyNelson,New Zealand,No,No,0.017,"(0.013, 0.013)",Yes,No,,,
+Penelope2,CT,Yes,No,0.042,"(0.049, 0.036)",Yes,No,3,Female,Yes
+Penny,Australia,No,No,"Error, unable to run",,Yes,No,2,Female,Yes
+Penny,New Zealand,No,No,8.608,"(4.753, 4.753)",Yes,No,1,Female,Yes
+Pepper,Australia,No,No,0.0349,"(0.0283, 0.0421)",Yes,No,2,Male,Yes
+Pepper,New Zealand,No,No,0.045,"(0.032, 0.032)",Yes,No,10,Female,Yes
+Pepper2,Australia,No,No,0.0073,"(0.0061, 0.0087)",Yes,No,10,Female,Yes
+Percy,New Zealand,No,No,0.113,"(0.094, 0.094)",Yes,No,9,Male,Yes
+Pharos,New Zealand,No,No,0.017,"(0.014, 0.014)",Yes,No,8,Female,Yes
+Phoenix,Australia,No,No,0.0402,"(0.0316, 0.0497)",Yes,No,4,Male,Yes
+Picasso,Australia,No,No,0.0076,"(0.0064, 0.0089)",Yes,No,8,Female,Yes
+Picasso,NC,Yes,No,0.043,"(0.048, 0.039)",Yes,No,,,
+Picchu,NC,Yes,No,0.058,"(0.067, 0.05)",No,No,9,Male,Yes
+Pickles2,CT,Yes,No,0.08,"(0.092, 0.069)",Yes,No,3,Male,Yes
+PiggieSue,New Zealand,No,No,0.011,"(0.008, 0.008)",Yes,No,0.8,Female,Yes
+Piper2,NC,Yes,No,0.032,"(0.04, 0.025)",Yes,No,1,Female,Yes
+Pipi,New Zealand,No,No,"Error, unable to run",,Yes,No,7,Female,Yes
+Pippin,Australia,No,No,0.0681,"(0.0599, 0.0766)",Yes,No,5,Male,Yes
+Pixie,Australia,No,No,0.0046,"(0.0036, 0.0057)",Yes,No,5,Female,Yes
+Polly,Australia,No,No,0.0128,"(0.0092, 0.0171)",Yes,No,4,Female,Yes
+Polly,New Zealand,No,No,0.014,"(0.011, 0.011)",Yes,No,7,Male,Yes
+Polo,Australia,No,No,0.0079,"(0.0062, 0.0098)",Yes,Yes,7,Male,Yes
+Poly,CT,Yes,No,0.024,"(0.029, 0.02)",Yes,No,4,Female,Yes
+Poppet,UK,No,No,0.115,"(0.086, 0.149)",Yes,No,10,Female,Yes
+Poppy,New Zealand,No,No,0.034,"(0.027, 0.027)",Yes,No,16,Female,Yes
+PoppyII,New Zealand,No,No,0.032,"(0.025, 0.025)",Yes,No,15,Female,Yes
+PoppyIII,New Zealand,No,No,0.143,"(0.115, 0.115)",Yes,No,14,Female,Yes
+PoppyIV,New Zealand,No,No,0.029,"(0.023, 0.023)",Yes,No,2,Female,Yes
+Presley,New Zealand,No,No,0.054,"(0.043, 0.043)",Yes,No,3,Male,
+Princess,Australia,No,No,"Error, unable to run",,Yes,No,0,Female,Yes
+Pringle,NC,Yes,No,0.032,"(0.037, 0.027)",Yes,No,5,Female,Yes
+PsychoKitty2,NC,Yes,No,"Error, unable to run",,Yes,No,7,Female,Yes
+Puds,Australia,No,No,0.0081,"(0.0053, 0.0114)",Yes,No,11,Female,Yes
+Pumpkin2,NY,No,No,"Error, unable to run",,Yes,No,12,Male,Yes
+PumpkinKane,NC,Yes,No,0.019,"(0.021, 0.016)",Yes,No,8,Female,Yes
+Purrcy2,NC,Yes,No,0.073,"(0.085, 0.062)",Yes,No,5,Male,Yes
+Pushkin,New Zealand,No,No,0.045,"(0.035, 0.035)",Yes,No,8,Female,Yes
+Puss,Australia,No,No,0.0055,"(0.0045, 0.0065)",Yes,No,9,Female,Yes
+Pusskins,Australia,No,No,0.0628,"(0.0518, 0.0747)",Yes,No,7,Male,Yes
+PussNelson,New Zealand,No,No,0.047,"(0.04, 0.04)",Yes,No,,,
+Pussums,New Zealand,No,No,0.056,"(0.044, 0.044)",Yes,No,5,Male,Yes
+Pussy,UK,No,No,0.085,"(0.067, 0.105)",Yes,No,2,Male,Yes
+PussyGalore,Australia,No,No,"Error, unable to run",,Yes,No,0.3,Female,Yes
+Raffy,Australia,No,No,0.0074,"(0.0062, 0.0087)",Yes,No,14,Male,Yes
+Rafiki,Australia,No,No,0.2048,"(0.1422, 0.2789)",Yes,No,1,Female,Yes
+Raizor,Australia,No,No,0.0455,"(0.0382, 0.0533)",Yes,No,2,Female,Yes
+Ramses,Australia,No,No,0.0649,"(0.0522, 0.0788)",Yes,No,6,Male,Yes
+Rascal,Australia,No,No,"Error, unable to run",,Yes,Yes,0.7,Male,Yes
+RedNelson,New Zealand,No,No,0.126,"(0.101, 0.101)",Yes,No,,,
+Reggie,UK,No,No,0.023,"(0.018, 0.029)",Yes,No,8,Female,Yes
+Reggie2,NC,Yes,No,0.017,"(0.02, 0.014)",Yes,No,13,Male,Yes
+Remy,Australia,No,No,0.0761,"(0.063, 0.0904)",Yes,No,10,Male,Yes
+Richie,New Zealand,No,No,0.028,"(0.023, 0.023)",Yes,No,3,Male,Yes
+Riggs,New Zealand,No,No,0.034,"(0.029, 0.029)",Yes,No,1,Male,Yes
+Ringo,Australia,No,No,0.009,"(0.0075, 0.0106)",Yes,No,9,Male,Yes
+Rio,Australia,No,No,0.0067,"(0.0051, 0.0086)",Yes,No,4,Female,Yes
+Ripley,Australia,No,No,0.0033,"(0.0025, 0.0041)",Yes,No,3,Female,Yes
+Roady,VA,Yes,Yes,0.034,"(0.036, 0.032)",Yes,No,,,
+Rocky,Australia,No,No,0.0239,"(0.0194, 0.0289)",Yes,No,4,Male,Yes
+Rocky,New Zealand,No,No,0.016,"(0.013, 0.013)",Yes,No,8,Male,Yes
+Rocky,NY,No,No,0.038,"(0.047, 0.031)",Yes,No,9,Male,Yes
+Rodger,Australia,No,No,0.027,"(0.0223, 0.032)",Yes,No,5,Male,Yes
+Rodney,Australia,No,No,0.0089,"(0.007, 0.0109)",Yes,No,4,Male,Yes
+Roger,New Zealand,No,No,0.029,"(0.024, 0.024)",Yes,No,0.2,Male,Yes
+Roger,UK,No,No,0.012,"(0.01, 0.014)",Yes,No,6,Male,Yes
+Rogue,New Zealand,No,No,0.009,"(0.008, 0.008)",Yes,No,6,Female,Yes
+Ronaldo,Australia,No,No,0.0753,"(0.0569, 0.0963)",Yes,No,0.6,Male,Yes
+Roo,Australia,No,No,0.0041,"(0.0031, 0.0052)",Yes,No,5,Female,Yes
+Rosey,Australia,No,No,0.0235,"(0.0199, 0.0275)",Yes,No,6,Female,Yes
+Rosie,Australia,No,No,0.0096,"(0.0078, 0.0116)",Yes,No,4,Female,Yes
+Rosie,New Zealand,No,No,0.011,"(0.01, 0.01)",Yes,No,0.2,Female,Yes
+Rosie2,Australia,No,No,0.0644,"(0.0523, 0.0777)",Yes,No,11,Female,Yes
+RosieII,New Zealand,No,No,0.014,"(0.012, 0.012)",Yes,No,1,Female,Yes
+Roukus,ME,Yes,Yes,0.038,"(0.044, 0.032)",Yes,No,5,Female,Yes
+Roukus2,ME,Yes,Yes,0.004,"(0.005, 0.004)",Yes,Yes,6,Female,Yes
+Roukus3,ME,Yes,Yes,0.12,"(0.137, 0.103)",Yes,No,7,Female,Yes
+Roxi,Australia,No,No,0.0047,"(0.0039, 0.0054)",Yes,No,2,Female,Yes
+Ruby,Australia,No,No,0.0107,"(0.0088, 0.0129)",Yes,No,10,Female,Yes
+Ruby,New Zealand,No,No,0.005,"(0.004, 0.004)",Yes,No,1,Female,Yes
+Ruby2,Australia,No,No,"Error, unable to run",,Yes,No,2,Female,Yes
+Ruby3,Australia,No,No,0.006,"(0.0048, 0.0073)",Yes,No,9,Female,Yes
+Ruby4,Australia,No,No,"Error, unable to run",,Yes,No,3,Female,Yes
+Rudi,Australia,No,No,0.0213,"(0.0176, 0.0255)",Yes,No,2,Male,Yes
+Rudi2,Australia,No,No,0.0102,"(0.0077, 0.0131)",Yes,No,10,Female,Yes
+Rufus,Australia,No,No,0.0233,"(0.0177, 0.0296)",Yes,No,6,Male,Yes
+Rumpy,Australia,No,No,0.0101,"(0.0079, 0.0126)",Yes,No,11,Male,Yes
+Rupert,Australia,No,No,0.0047,"(0.0037, 0.0058)",Yes,No,1,Male,Yes
+Rupert2,Australia,No,No,0.0116,"(0.0092, 0.0142)",Yes,No,3,Male,Yes
+Rupert3,Australia,No,No,0.0116,"(0.0091, 0.0143)",Yes,No,10,Male,Yes
+Russel2,NC,Yes,No,0.04,"(0.049, 0.032)",Yes,No,3,Male,Yes
+Rusty,Australia,No,No,0.0059,"(0.0046, 0.0074)",Yes,No,15,Female,Yes
+Rusty,UK,No,No,0.031,"(0.026, 0.037)",Yes,No,4,Male,Yes
+Sabbath,New Zealand,No,No,0.028,"(0.024, 0.024)",Yes,No,9,Male,Yes
+Saffy,Australia,No,No,0.0053,"(0.0042, 0.0065)",Yes,No,2,Female,Yes
+Sally,Australia,No,No,0.0187,"(0.0158, 0.0219)",Yes,No,4,Female,Yes
+Samantha,New Zealand,No,No,0.032,"(0.027, 0.027)",Yes,No,9,Female,Yes
+Sammi,Australia,No,No,0.0032,"(0.0025, 0.004)",Yes,No,11,Female,Yes
+Sammy,Australia,No,No,0.009,"(0.0066, 0.0118)",Yes,No,7,Male,Yes
+Samson,Australia,No,No,0.0325,"(0.027, 0.0385)",Yes,No,5,Male,Yes
+Sandman,New Zealand,No,No,0.012,"(0.01, 0.01)",Yes,No,3,Male,Yes
+Sandstorm2,NC,Yes,No,0.035,"(0.038, 0.032)",Yes,No,4,Female,Yes
+Santi,New Zealand,No,No,0.02,"(0.015, 0.015)",Yes,No,2,Female,Yes
+Sapphire,Australia,No,No,0.0171,"(0.0139, 0.0205)",Yes,No,0,,
+Sasquatch2,NC,Yes,No,0.033,"(0.042, 0.025)",Yes,No,4,Male,Yes
+Sassy,Australia,No,No,0.0049,"(0.0037, 0.0062)",Yes,No,6,Female,Yes
+Sativa,New Zealand,No,No,0.033,"(0.027, 0.027)",Yes,No,5,Male,Yes
+Schnooz,Australia,No,No,0.0185,"(0.0156, 0.0216)",Yes,No,8,Male,Yes
+Schrodinger,New Zealand,No,No,0.015,"(0.012, 0.012)",Yes,No,4,Female,Yes
+Schubie2,NY,No,No,0.016,"(0.018, 0.014)",Yes,No,7,Female,Yes
+Scout,Australia,No,No,0.0092,"(0.0071, 0.0116)",Yes,No,8,Male,Yes
+Scratch,Australia,No,No,0.0058,"(0.0046, 0.0072)",Yes,No,14,Female,Yes
+Seb,New Zealand,No,No,0.011,"(0.009, 0.009)",Yes,No,6,Male,Yes
+Seb,UK,No,No,0.013,"(0.011, 0.016)",Yes,No,3,Male,Yes
+Selena,New Zealand,No,No,0.009,"(0.007, 0.007)",Yes,No,9,Female,Yes
+Selkie2,NC,Yes,No,0.035,"(0.039, 0.032)",Yes,No,5,Female,Yes
+Senor2,CT,Yes,No,0.009,"(0.012, 0.007)",Yes,No,13,Male,Yes
+Seth,Australia,No,No,0.0089,"(0.0073, 0.0106)",Yes,No,1.7,Male,Yes
+Seth2,NC,Yes,No,0.019,"(0.022, 0.016)",Yes,No,4,Male,Yes
+Shadow,Australia,No,No,0.0167,"(0.0139, 0.0199)",Yes,No,8,Female,Yes
+Shadow-Ninja,New Zealand,No,No,0.024,"(0.02, 0.02)",Yes,No,2,Male,Yes
+Shadow2,CT,Yes,No,0.003,"(0.003, 0.003)",Yes,Yes,3,Male,Yes
+Shakespeare2,NC,Yes,No,0.047,"(0.058, 0.037)",Yes,No,4,Male,Yes
+Shan,Australia,No,No,0.008,"(0.0062, 0.01)",Yes,No,3,Male,Yes
+Sheldon,CT,Yes,No,0.168,"(0.204, 0.135)",Yes,No,7,Female,Yes
+Shelly,Australia,No,No,0.0176,"(0.0144, 0.0212)",Yes,No,6,Female,Yes
+Shmiff,Australia,No,No,0.0073,"(0.0054, 0.0095)",Yes,No,6,Female,Yes
+Sibelius,Australia,No,No,0.0844,"(0.0703, 0.0997)",Yes,No,3,Male,Yes
+Siberia,UK,No,No,0.014,"(0.012, 0.017)",Yes,No,8,Male,Yes
+Sid,UK,No,No,0.01,"(0.008, 0.011)",Yes,No,4,Female,Yes
+Simba2,Australia,No,No,0.0112,"(0.0094, 0.0133)",Yes,No,0.4,Male,No
+Sissy,Australia,No,No,0.0069,"(0.0051, 0.0089)",Yes,No,3,Female,Yes
+Skittles,Australia,No,No,0.021,"(0.0181, 0.0241)",Yes,No,2,Male,Yes
+Skittles,New Zealand,No,No,0.027,"(0.022, 0.022)",Yes,No,2,Female,Yes
+Skitty,Australia,No,No,0.0238,"(0.0184, 0.0298)",Yes,No,5,Male,Yes
+Skoozie,Australia,No,No,0.0092,"(0.0074, 0.0113)",Yes,No,6,Female,Yes
+Sky,New Zealand,No,No,0.134,"(0.094, 0.094)",Yes,No,6,Male,Yes
+Skye,UK,No,No,0.005,"(0.004, 0.006)",Yes,No,5,Male,Yes
+SkyII,New Zealand,No,No,0.009,"(0.007, 0.007)",Yes,No,2,Female,Yes
+Slasher,Australia,No,No,0.0129,"(0.0105, 0.0156)",Yes,No,8,Unk,Yes
+Sleeky,New Zealand,No,No,0.029,"(0.024, 0.024)",Yes,No,11,Male,Yes
+Small,Australia,No,No,0.0228,"(0.0171, 0.0293)",Yes,No,9,Male,Yes
+Smattie,NC,Yes,No,0.024,"(0.027, 0.021)",Yes,No,6,Male,Yes
+Smokey,Australia,No,No,0.0118,"(0.0096, 0.0144)",Yes,No,3,Female,Yes
+Smokey2,CT,Yes,No,0.034,"(0.045, 0.024)",Yes,Yes,3,Male,Yes
+SmokeyLongnose,UK,No,No,0.02,"(0.013, 0.029)",Yes,No,9,Female,Yes
+Smudge,Australia,No,No,0.0122,"(0.0098, 0.0147)",Yes,No,9,Male,Yes
+Smudge,New Zealand,No,No,0.23,"(0.182, 0.182)",Yes,No,4,Male,Yes
+Smudge,UK,No,No,0.01,"(0.008, 0.013)",Yes,No,3,Male,Yes
+Smudge_2,UK,No,No,0.066,"(0.044, 0.092)",Yes,No,7,Male,Yes
+SmudgyBum,New Zealand,No,No,0.209,"(0.158, 0.158)",Yes,No,9,Male,Yes
+Snickerdoodle2,NC,Yes,No,0.024,"(0.031, 0.018)",Yes,No,5,Female,Yes
+Snifer,New Zealand,No,No,0.018,"(0.016, 0.016)",Yes,No,5,Female,Yes
+Snowy,Australia,No,No,0.006,"(0.0049, 0.0071)",Yes,No,0,,
+Snuffles,New Zealand,No,No,0.028,"(0.022, 0.022)",Yes,No,,Female,Yes
+Solo2,NC,Yes,No,"Error, unable to run",,Yes,No,2,Male,Yes
+Sookie,Australia,No,No,0.0076,"(0.0065, 0.0089)",Yes,No,6,Female,Yes
+Sooty,Australia,No,No,0.0109,"(0.0089, 0.0131)",Yes,No,10,Female,Yes
+Sooty,New Zealand,No,No,0.007,"(0.006, 0.006)",Yes,No,2,Female,Yes
+Sooty2,Australia,No,No,0.0204,"(0.0168, 0.0242)",Yes,No,11,Female,Yes
+Sophia,New Zealand,No,No,0.187,"(0.146, 0.146)",Yes,No,3,Female,Yes
+SophiePossum,Australia,No,No,0.0144,"(0.012, 0.0169)",Yes,No,3,Female,Yes
+Sox2,Australia,No,No,0.0125,"(0.0096, 0.0157)",Yes,No,0.4,Female,No
+Soxy,Australia,No,No,0.0051,"(0.0042, 0.006)",Yes,No,14,Male,Yes
+Soxy2,Australia,No,No,0.004,"(0.0033, 0.0047)",Yes,No,2,Male,Yes
+Sparkle,Australia,No,No,0.0084,"(0.0065, 0.0105)",Yes,No,4,Female,Yes
+Sparkles,Australia,No,No,0.0307,"(0.0261, 0.0357)",Yes,No,3,Female,Yes
+Sparkles,CA,Yes,Yes,0.042,"(0.053, 0.031)",Yes,No,4,Male,Yes
+Sparky,UK,No,No,0.025,"(0.021, 0.03)",Yes,No,8,Female,Yes
+Speckles1,New Zealand,No,No,0.055,"(0.044, 0.044)",Yes,No,0.8,Female,Yes
+Spencer2,NC,Yes,No,0.439,"(0.536, 0.35)",Yes,No,2,Male,Yes
+Spice,New Zealand,No,No,0.239,"(0.186, 0.186)",Yes,No,4,Male,Yes
+Spike,NC,Yes,No,0.024,"(0.028, 0.019)",Yes,No,4,Male,Yes
+Spike,UK,No,No,0.116,"(0.092, 0.143)",Yes,No,0,Male,Yes
+Spot,Australia,No,No,"Error, unable to run",,Yes,No,3,Male,Yes
+Spot,UK,No,No,0.017,"(0.013, 0.021)",Yes,No,2,Male,Yes
+Spud,New Zealand,No,No,0.015,"(0.012, 0.012)",Yes,No,10,Female,Yes
+Sputnik,Australia,No,No,0.0196,"(0.0154, 0.0245)",Yes,No,6,Male,Yes
+Squeak,Australia,No,No,"Error, unable to run",,Yes,No,2,Female,Yes
+Squeaky,Australia,No,No,0.0966,"(0.078, 0.1171)",Yes,No,0,Male,No
+Squiggle,Australia,No,No,0.0121,"(0.0092, 0.0154)",Yes,No,2,Male,Yes
+Stalky,Australia,No,No,"Error, unable to run",,Yes,No,10,Female,Yes
+Stanley,Australia,No,No,0.0123,"(0.0103, 0.0144)",Yes,No,7,Male,Yes
+Starbuck2,NY,No,No,0.011,"(0.013, 0.01)",Yes,No,6,Male,Yes
+Stealth,Australia,No,No,0.0129,"(0.0094, 0.0171)",Yes,No,1,Male,Yes
+Stefano,Australia,No,No,0.0127,"(0.011, 0.0145)",Yes,No,2,Male,Yes
+Stella,New Zealand,No,No,0.021,"(0.017, 0.017)",Yes,No,11,Female,Yes
+Stinkey,New Zealand,No,No,0.029,"(0.023, 0.023)",Yes,No,0.9,Male,Yes
+Stinky,Australia,No,No,0.0481,"(0.0375, 0.06)",Yes,No,14,Female,Yes
+Stitch,Australia,No,No,0.0279,"(0.0212, 0.0355)",Yes,No,6,Male,Yes
+Striper2,NC,Yes,No,0.008,"(0.009, 0.007)",Yes,No,10,Female,Yes
+Stumpy,Australia,No,No,0.0042,"(0.0033, 0.0053)",Yes,No,0,,
+Stumpy2,Australia,No,No,"Error, unable to run",,Yes,No,4,Female,Yes
+Subie,New Zealand,No,No,0.021,"(0.017, 0.017)",Yes,No,2,Female,Yes
+SugarRae,Australia,No,No,"Error, unable to run",,Yes,No,2,Female,Yes
+Sunny,Australia,No,No,0.0061,"(0.0049, 0.0075)",Yes,No,15,Male,Yes
+Sunny2,NC,Yes,No,"Error, unable to run",,Yes,No,9,Female,Yes
+Survivor2,NC,Yes,No,0.024,"(0.029, 0.019)",Yes,No,2,Male,Yes
+Sushi,Australia,No,No,0.0327,"(0.0224, 0.045)",Yes,No,3,Female,Yes
+Suss,New Zealand,No,No,0.008,"(0.006, 0.006)",Yes,No,4,Female,Yes
+Sweetpea,NC,Yes,No,0.019,"(0.02, 0.018)",Yes,No,7,Female,Yes
+Sylvester,Australia,No,No,0.0062,"(0.0049, 0.0075)",Yes,No,7,Male,Yes
+Sylvester,CT,Yes,No,0.026,"(0.032, 0.02)",Yes,No,7,Male,Yes
+Sylvester,New Zealand,No,No,0.036,"(0.029, 0.029)",Yes,No,7,Male,Yes
+Sylvia,Australia,No,No,0.0163,"(0.0138, 0.019)",Yes,No,10,Female,Yes
+Tabasco,NC,Yes,No,0.028,"(0.034, 0.024)",Yes,No,11,Male,Yes
+Tabitha,New Zealand,No,No,0.045,"(0.036, 0.036)",Yes,No,1,Female,Yes
+Tabs,New Zealand,No,No,0.012,"(0.009, 0.009)",Yes,No,5,Female,Yes
+Taco,New Zealand,No,No,0.012,"(0.01, 0.01)",Yes,No,1,Male,Yes
+Tallulah2,NC,Yes,No,0.017,"(0.023, 0.012)",No,Yes,1,Female,Yes
+TamariAlmond,New Zealand,No,No,0.016,"(0.011, 0.011)",Yes,No,5,Female,Yes
+Tara,New Zealand,No,No,0.021,"(0.018, 0.018)",Yes,No,7,Female,Yes
+Tara2,NC,Yes,No,0.014,"(0.017, 0.011)",Yes,Yes,14,Female,Yes
+Tarzan,Australia,No,No,0.0227,"(0.0173, 0.0288)",Yes,No,2,Male,Yes
+Tasha,Australia,No,No,0.0135,"(0.0106, 0.0168)",Yes,No,9,Female,Yes
+Tasha,New Zealand,No,No,"Error, unable to run",,No,Yes,,Female,
+Teddy,New Zealand,No,No,0.041,"(0.033, 0.033)",Yes,No,5,Male,Yes
+Teddy,UK,No,No,0.02,"(0.018, 0.022)",Yes,Yes,9,Female,Yes
+Tenzing,New Zealand,No,No,0.023,"(0.019, 0.019)",Yes,No,3,Female,Yes
+Terabyte,New Zealand,No,No,0.01,"(0.008, 0.008)",Yes,No,1,Female,Yes
+Tex2,NC,Yes,No,0.023,"(0.028, 0.018)",Yes,Yes,5,Female,Yes
+Theo,Australia,No,No,0.0064,"(0.0054, 0.0075)",Yes,No,6,Male,Yes
+Theo,New Zealand,No,No,0.033,"(0.027, 0.027)",Yes,No,5,Male,Yes
+Theo2,Australia,No,No,0.015,"(0.013, 0.0173)",Yes,No,0,,
+Thomas,Australia,No,No,0.0196,"(0.0162, 0.0233)",Yes,No,5,Male,Yes
+Thomas,New Zealand,No,No,0.018,"(0.014, 0.014)",Yes,No,,Male,
+ThomasII,New Zealand,No,No,0.02,"(0.016, 0.016)",Yes,No,5,Male,Yes
+Thornton,Australia,No,No,0.0143,"(0.0118, 0.0169)",Yes,No,2,Male,Yes
+Tia,Australia,No,No,0.0132,"(0.0098, 0.0171)",Yes,No,10,Female,Yes
+Tiger,Australia,No,No,"Error, unable to run",,Yes,No,5,Male,Yes
+Tiger,New Zealand,No,No,0.025,"(0.02, 0.02)",Yes,No,1,Male,Yes
+Tiger2,NC,Yes,No,0.032,"(0.038, 0.027)",Yes,No,5,Male,Yes
+Tiger3,Australia,No,No,0.0073,"(0.0057, 0.0091)",Yes,No,15,Male,Yes
+Tiger4,Australia,No,No,0.0075,"(0.0063, 0.0088)",Yes,No,7,Male,Yes
+Tiger5,Australia,No,No,0.0795,"(0.0617, 0.0996)",Yes,No,10,Male,Yes
+TigerNelson,New Zealand,No,No,0.344,"(0.281, 0.281)",Yes,No,,,
+Tigga,Australia,No,No,0.0275,"(0.0228, 0.0326)",Yes,No,12,Male,Yes
+Tigger,New Zealand,No,No,0.156,"(0.131, 0.131)",Yes,No,6,Male,Yes
+Tigger,UK,No,No,0.007,"(0.005, 0.01)",Yes,No,3,Male,Yes
+Tiggy,Australia,No,No,0.0353,"(0.0287, 0.0425)",Yes,No,2,Male,Yes
+Tilen,Australia,No,No,0.02,"(0.0165, 0.0238)",Yes,No,1,,Yes
+Tilly,Australia,No,No,0.0187,"(0.0148, 0.023)",Yes,No,7,Female,Yes
+Tilly,New Zealand,No,No,0.011,"(0.009, 0.009)",Yes,No,4,Male,Yes
+Tilly,UK,No,No,0.025,"(0.02, 0.031)",Yes,No,5,Female,Yes
+Tilly2,Australia,No,No,0.0097,"(0.0083, 0.0112)",Yes,No,10,Female,Yes
+Tilly3,Australia,No,No,0.0181,"(0.0142, 0.0225)",Yes,No,3,Female,Yes
+Timmy,Australia,No,No,0.0141,"(0.0116, 0.0169)",Yes,No,3,Male,Yes
+Timmy1,New Zealand,No,No,0.096,"(0.078, 0.078)",No,No,1,Male,Yes
+Timo,Australia,No,No,0.0067,"(0.0052, 0.0084)",Yes,No,5,Male,Yes
+Tina,New Zealand,No,No,0.009,"(0.008, 0.008)",Yes,No,4,Female,Yes
+Tippy,Australia,No,No,0.2145,"(0.181, 0.2509)",Yes,No,12,Male,No
+Tipsie,Australia,No,No,0.0061,"(0.005, 0.0072)",Yes,No,3,Female,Yes
+Tipsy,Australia,No,No,0.0125,"(0.0105, 0.0148)",Yes,No,10,,Yes
+Tipsy,UK,No,No,0.018,"(0.014, 0.022)",Yes,No,0,Female,Yes
+Tobin,Australia,No,No,0.0107,"(0.009, 0.0126)",Yes,No,6,Male,Yes
+Toby,Australia,No,No,0.1904,"(0.1568, 0.2269)",Yes,No,0,Male,Yes
+Toby,New Zealand,No,No,0.013,"(0.01, 0.01)",Yes,No,6,Male,Yes
+Toby2,Australia,No,No,0.0139,"(0.0115, 0.0166)",Yes,No,2,Male,Yes
+Tom,Australia,No,No,0.0066,"(0.0053, 0.0081)",Yes,No,12,Male,Yes
+Tom,UK,No,No,0.265,"(0.217, 0.319)",Yes,No,3,Female,Yes
+Tom2,Australia,No,No,0.0091,"(0.0073, 0.011)",Yes,No,7,Male,Yes
+Tommy,Australia,No,No,0.0201,"(0.0158, 0.0248)",Yes,No,2,Male,Yes
+Tommy,UK,No,No,0.012,"(0.009, 0.015)",Yes,No,11,Male,Yes
+Tonka2,NC,Yes,No,0.032,"(0.039, 0.025)",Yes,No,13,Male,Yes
+TriceraCat,New Zealand,No,No,0.031,"(0.025, 0.025)",Yes,No,4,Female,Yes
+Trixie,Australia,No,No,0.0163,"(0.0122, 0.021)",Yes,No,9,Unk,Yes
+Truffle,Australia,No,No,0.0136,"(0.011, 0.0166)",Yes,No,3,Female,Yes
+Truffles2,Australia,No,No,0.0076,"(0.0056, 0.0099)",Yes,No,14,Male,Yes
+Truffula,Australia,No,No,0.0414,"(0.0336, 0.05)",Yes,No,5,Female,Yes
+Tui,New Zealand,No,No,0.038,"(0.028, 0.028)",Yes,No,2,Female,Yes
+Turtle2,NC,Yes,No,"Error, unable to run",,Yes,No,12,Female,Yes
+Tux,Australia,No,No,0.0148,"(0.0124, 0.0175)",Yes,No,6,Male,Yes
+Twinkle,Australia,No,No,0.0096,"(0.0067, 0.013)",Yes,No,14,Male,Yes
+Tyson,New Zealand,No,No,0.009,"(0.007, 0.007)",Yes,No,8,Male,Yes
+Unfriendly,Australia,No,No,0.0056,"(0.0045, 0.0067)",Yes,No,10,Female,Yes
+Uno,Australia,No,No,0.0114,"(0.0093, 0.0136)",Yes,No,13,Male,Yes
+Venom,Australia,No,No,0.0049,"(0.0035, 0.0066)",Yes,No,7,Male,Yes
+Vinnie,New Zealand,No,No,0.028,"(0.022, 0.022)",Yes,No,1,Male,Yes
+VioletMae2,NC,Yes,No,0.04,"(0.047, 0.033)",Yes,No,7,Female,Yes
+Wally,Australia,No,No,0.0294,"(0.0231, 0.0365)",Yes,No,2,Male,Yes
+Weasel,Australia,No,No,0.1323,"(0.1029, 0.1653)",Yes,No,2,Male,Yes
+Whiskey,New Zealand,No,No,0.008,"(0.007, 0.007)",Yes,No,1,Male,Yes
+Whiskey,UK,No,No,0.034,"(0.029, 0.04)",Yes,No,5,Male,Yes
+Whisky,Australia,No,No,0.0283,"(0.0237, 0.0333)",Yes,No,4,Female,Yes
+Wiggles,Australia,No,No,0.05,"(0.0427, 0.0577)",Yes,No,2,Male,Yes
+Wilfred,UK,No,No,0.026,"(0.021, 0.031)",Yes,No,6,Male,Yes
+WillabelleNelson,New Zealand,No,No,0.011,"(0.009, 0.009)",Yes,No,,,
+Willow,New Zealand,No,No,0.005,"(0.004, 0.004)",Yes,No,15,Female,Yes
+Willy2,CT,Yes,No,0.024,"(0.028, 0.02)",Yes,No,13,Male,Yes
+Wilson,New Zealand,No,No,0.016,"(0.011, 0.011)",Yes,Yes,,Male,
+Winnie,Australia,No,No,"Error, unable to run",,Yes,No,14,Female,Yes
+Winnie,UK,No,No,0.011,"(0.01, 0.013)",Yes,No,12,Male,Yes
+Winston,New Zealand,No,No,0.006,"(0.004, 0.004)",Yes,No,13,Male,Yes
+Wizzer,Australia,No,No,0.0068,"(0.0054, 0.0083)",Yes,No,12,Female,Yes
+Worf,UK,No,No,0.162,"(0.122, 0.207)",Yes,No,8,Female,Yes
+Xander,Australia,No,No,0.0064,"(0.0053, 0.0076)",Yes,No,2,Male,Yes
+Xander,New Zealand,No,No,0.026,"(0.022, 0.022)",Yes,No,6,Male,Yes
+Yasas,New Zealand,No,No,0.024,"(0.02, 0.02)",Yes,No,9,Male,Yes
+Yoda,Australia,No,No,0.025,"(0.0193, 0.0315)",Yes,No,5,Male,Yes
+Yogi,Australia,No,No,0.3867,"(0.2833, 0.5063)",Yes,No,1,Male,Yes
+Yoriko,Australia,No,No,0.0117,"(0.0088, 0.015)",Yes,No,13,Female,Yes
+Zac,Australia,No,No,0.0049,"(0.0039, 0.0059)",Yes,No,2,Male,Yes
+Zak,Australia,No,No,0.0116,"(0.0094, 0.0141)",Yes,No,2,Male,Yes
+Zazzie,Australia,No,No,"Error, unable to run",,Yes,No,12,Male,Yes
+ZazzieM,Australia,No,No,0.0054,"(0.004, 0.007)",Yes,No,0,,
+Zelda2,TN,Yes,No,0.037,"(0.048, 0.027)",Yes,No,3,Female,Yes
+Zeno,New Zealand,No,No,0.016,"(0.013, 0.013)",Yes,No,4,Female,Yes
+Zepher,Australia,No,No,0.0308,"(0.0261, 0.036)",Yes,No,4,Male,Yes
+Zeus,New Zealand,No,No,0.054,"(0.044, 0.044)",Yes,No,1,Male,Yes
+ZeusII,New Zealand,No,No,0.024,"(0.02, 0.02)",Yes,No,1,Male,Yes
+Ziggy,MD,Yes,Yes,0.036,"(0.043, 0.029)",Yes,No,8,Male,Yes
+Ziva,Australia,No,No,0.1738,"(0.1383, 0.2135)",Yes,No,1,Female,Yes
+Zoe,Australia,No,No,0.0328,"(0.025, 0.0421)",Yes,No,7,Female,Unk
+Zoey,NC,Yes,No,0.008,"(0.01, 0.007)",Yes,No,5,Female,Yes
+Zorra,Australia,No,No,"Error, unable to run",,Yes,No,11,Female,Yes
+Zorro2,NC,Yes,No,"Error, unable to run",,Yes,No,4,Male,Yes
+Zulu,New Zealand,No,No,0.02,"(0.015, 0.015)",Yes,No,4,Female,Yes

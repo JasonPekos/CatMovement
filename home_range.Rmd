@@ -1,0 +1,19 @@
+---
+title: "home_range"
+author: "Jennifer Freeman"
+date: "20/12/2021"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+
+
+dat <- read_csv("home_range.csv")
+
+#remove NA and error in home range estimate
+dat <- (dat
+        %>% filter()
+  
+)
+```
