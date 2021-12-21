@@ -1,7 +1,5 @@
 ---
 title: "home_range"
-author: "Jennifer Freeman"
-date: "20/12/2021"
 output: html_document
 ---
 
@@ -11,9 +9,24 @@ library(tidyverse)
 
 dat <- read_csv("home_range.csv")
 
-#remove NA and error in home range estimate
+
 dat <- (dat
-        %>% filter()
+        # remove NAs and non-numeric values
+        %>% filter(`Home Range Area (km2)`!=is.na(as.numeric(`Home Range Area (km2)`)))
+        %>% mutate(Home_Range = as.numeric(`Home Range Area (km2)`))
+        # paper removed home ranges > 1km2 (3 cats)
+        %>% filter(Home_Range <= 1)
+        # bin <1 year to age 0 for consistency with remaining age structure
+        %>% mutate(age = if_else(age<1,0,age))
+        # bin cat aged to 1.7 to 1, bin  cat aged 2.1 to 2
+        %>% mutate(age = if_else(age==1.7,1,age), age = if_else(age==2.1,2,age))
+)
+
+(ggplot(dat, aes(x=age,y=Home_Range, colour =sex))
+  + geom_point(alpha=0.3)
+  + scale_y_log10()
   
 )
+
+
 ```
