@@ -11,7 +11,7 @@ bibliography: references.bib
 
 ## Data set
 
-Over 900 domestic cats were tracked with GPS collars from six different countries. The large majority of the cats were from Australia, New Zealand, the United Kingdom and the United States. Their spatial-temporal data was recorded for a range of 1 to 541 days and was retrieved from  [movebank.org](https://movebank.org) [@AU_data][@NZ_data][@UK_data][@US_data]. The metadata consisted of age, sex, neutered/spayed status, and the owner reported number of prey killed. The focus of the study was to understand the spatial context of their movement to assess the ecological impacts of these predators [@Kays].
+Over 900 domestic cats were tracked with GPS collars from six different countries. The large majority of the cats were from Australia, New Zealand, the United Kingdom and the United States. Their spatial-temporal data was recorded for a range of 1 to 549 days and was retrieved from  [movebank.org](https://movebank.org) [@AU_data][@NZ_data][@UK_data][@US_data]. The metadata consisted of age, sex, neutered/spayed status, and the owner reported number of prey killed. The focus of the study was to understand the spatial context of their movement to assess the ecological impacts of these predators [@Kays].
 
 ```{r load, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -223,7 +223,7 @@ A defining characteristic of animal movement data are when animals are tracked. 
 
 The first plot shows the length of time cats were tracked per region. We can immediately draw some useful information. Australia has the largest number of cats that were tracked. The United States had several cats that were tracked for longer than average periods. The cats from New Zealand were tracked in roughly the same time frame as Australia. 
 
-The densities below the plot show a clearer relationship of the time overlap between countries. They also provide more immediate information about the number of cats tracked in a time period than the line plot, since the lines tightly stacked together.
+The densities below the plot show a clearer relationship of the time overlap between countries. They also provide more immediate information about the number of cats tracked in a time period versus the line plot which consists of tightly packed lines.
 
 The interactivity allows us to gain more information about individual cats including name, country, date deployed and days tracked. By zooming in and using the tooltip we can find out that the longest cat tracked is from the United States, is named Oscar.L, and was tracked for 549 days starting in November 2014.
 
@@ -300,7 +300,7 @@ We chose to use average distance travelled to assess differences in day/night be
 
 This plot agrees with the findings in [@Kays] that on average young male cats travelled the furthest. Specifically, young males under 6 years old moved farther than females of the same age group. For cats in the 6-12 range, males on average travelled further at night than females. During the day, there were no noticeable differencs in this age group. There were minimal cats over the age of 12 so it is difficult to understand relationships for this age group.
 
-[@Kays] looked at the ten cats in the data set that were not spayed or neutered to evaluate average home range size by sex. Due to the limited numbers cats that were not fixed, these cats were not identified in this plot.
+[@Kays] looked at the ten cats in the data set that were not spayed or neutered to evaluate average home range size by sex. Due to the limited number of cats that were not fixed, these cats were not identified in this plot.
 
 ```{r Plot_2, echo=FALSE,message=FALSE, fig.height=4,fig.align = 'center',fig.width=10}
 #Average distance per day/night with age and sex
@@ -325,11 +325,11 @@ print(g)
 
 To further explore the relationships between the sexes for younger cats, we looked at the net-squared displacement (NSD) and movement tracks for one male cat named Moscow and one female cat named Monmon. These cats were chosen uniformly at random from the data after first narrowing down for 4 year-old cats that were tracked for 7 total days. 
 
-The NSD is the squared "Euclidean distance between the starting location of a movement path and each subsequent location."[@Bastille]. Vieweing the NSD over time can help classify common movement behaviours. Given the noisey but flat relationship between NSD over time for Moscow this suggests that he exhibits a sedentary movement pattern [@Bastille]. This can be verified by the track of Moscow that is tightly clustered in one area.
+The NSD is the squared "Euclidean distance between the starting location of a movement path and each subsequent location."[@Bastille]. Viewing the NSD over time can help classify common movement behaviours. Given the noisey but flat relationship between NSD over time for Moscow this suggests that he exhibits a sedentary movement pattern [@Bastille]. This can be verified by the track of Moscow that is tightly clustered in one area.
 
 The large distances from home that Monmon travels is typical with nomadic behaviour, however it is difficult to tell if the time spent at these farther distances would characterize true nomad behaviour. In the seven day period there appears to be a pattern to Monmon's movements between staying close to home and travelling farther distances. 
 
-[@Kays] suggests that the consistent food source from cat owners attribute to this sedentary behaviour. The study found that most cats travel within 100 m of their home. 
+[@Kays] suggests that the consistent food source from cat owners attribute to this sedentary behaviour. The study found that most cats stay within 100m of their home. 
 
 ```{r Plot_3, echo=FALSE,message=FALSE,fig.align = 'center',fig.width=7}
 #Track of female cat
@@ -361,7 +361,9 @@ n3 <- (ggplot(monmon_track_df, aes(x=date,y=R2n))
        + theme_bw()
        + theme(
           axis.text.x=element_blank(),
-          axis.ticks.x=element_blank())
+          axis.ticks.x=element_blank(),
+          panel.grid.major=element_blank(),
+          panel.grid.minor=element_blank())
        + ylab("Net Squared Displacement")
        + xlab("Time (7 days)")
 )
@@ -372,7 +374,9 @@ n4 <- (ggplot(moscow_track_df, aes(x=date,y=R2n))
        + theme_bw()
        + theme(
           axis.text.x=element_blank(),
-          axis.ticks.x=element_blank())
+          axis.ticks.x=element_blank(),
+          panel.grid.major=element_blank(),
+          panel.grid.minor=element_blank())
        + ylab("Net Squared Displacement")
        + xlab("Time (7 days)")
 )
@@ -390,9 +394,9 @@ The time tracking plot was ordered by country and date the GPS device was first 
 
 The density of cats tracked by country was added to provide a clearer measure of how many cats are tracked within a time period, and how the countries overlap in time periods.
 
-A quantitative colour scale was used for the four countries, and it is consistent across the line and density plots to allow for easy comparison between the two. The tooltip allows the user zero in on individuals or groups, which provides additional information that would not be possible to display 
+A quantitative colour scale was used for the four countries, and it is consistent across the line and density plots to allow for easy comparison between the two. The tooltip allows the user to focus in on individuals or groups, which provides additional information that would not be possible to display all at once for the whole dataset.
 
-The deployed date uses Cleveland's top hierarchy of position along a common sclae. The third hierarchy, length was used to encode the time cats were tracked. It is lower on the hierarchy, however we thought it was more intuitive to view the time cats were tracked. For example, graphing date versus days tracked would create a cloud of points for common tracked times, and it would create more visual load on the reader to understand the relationship.
+The deployed date uses Cleveland's top hierarchy of position along a common sclae. The third hierarchy, length was used to encode the time cats were tracked. It is lower on the hierarchy, however we thought it was more intuitive to view the time cats were tracked. For example, graphing date versus days tracked would create a cloud of points for common tracked times, and it would create more visual load on the reader to understand the relationship. In addition, we would not be able to display the overlapping relationship between cats tracked over the same time range which is important information.
 
 ### Plot 2
 
@@ -414,7 +418,7 @@ The colours from Plot 2 were reused so the user can associate between colours an
 
 The movement tracks were plotted using the same size area so the relative distances can be visually compared. Keeping a consistent scale in the movement tracks did make it difficult to see the details of Moscows tracks and the graph occupies a lot of empty space, however zooming in on Moscows track would mislead the reader about relative distances. Although perception of area is lower on the Cleveland hierarchy, it was important to be able to view the spatial tracks to relate to the NSD values. The latitude and longitude data was removed from the axis of the track plots as it did not provide any helpful information.
 
-The exact time scale was removed from the NSD plots as this was not as important to the interpretaion of the plots. The axis label indicates each cat was tracked for seven days  exact time of the data points was not important for the interpretation in this sense. In was more important to view the NSD over time in general.
+The exact time scale was removed from the NSD plots as this was not as important to the interpretaion of the plots. The axis label indicates each cat was tracked for seven days which is sufficient information for interpretation.
 
 
  
