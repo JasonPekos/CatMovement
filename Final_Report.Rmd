@@ -188,23 +188,47 @@ map_two = get_map(box_two, source="stamen", maptype = "watercolor", zoom=8)
 ```{r time_tracked,echo=FALSE, message=FALSE,warning=FALSE}
 #time cats are tracked
 cats_diff <- (cats
-              %>% mutate(diff = as_date(deploy.off.date)-as_date(deploy.on.date))
-              %>% mutate(Country = factor(Country, levels = c("United States", "New Zealand", "Australia", "United Kingdom"))) 
+              #%>% mutate(diff = as_date(deploy.off.date)-as_date(deploy.on.date))
+              %>% mutate(Country = factor(Country, levels = c("United States",
+                                                              "Australia",
+                                                              "New Zealand",
+                                                              "United Kingdom"))) 
               #there are cats with the same name in different countries
               %>% mutate(Country_name= paste0(Country,"_",trackId))
-             %>%  dplyr::arrange(Country,deploy.on.date)
+              #test
+              %>% group_by(Country_name)
+              %>% mutate(min_date=min(timestamp))
+              %>% mutate(max_date = max(timestamp))
+              %>% ungroup()
+              #some cats have no deploy date, using minimum timestamp instead
+              %>% mutate(deploy.on.date =if_else(is.na(deploy.on.date),
+                                          as_date(min_date),
+                                          as_date(deploy.on.date)))
+              %>% mutate(deploy.off.date =if_else(is.na(deploy.off.date),
+                                          as_date(max_date),
+                                          as_date(deploy.off.date)))
+              %>% mutate(diff = deploy.off.date-deploy.on.date)
+              %>%  dplyr::arrange(Country,deploy.on.date)
               %>% mutate(Country_name = forcats::fct_inorder(Country_name))
 )
 
 ```
  
- + Plots will likely need to be reordered
+
 
 ## The story
 
 ### Plot 1
 
-```{r Plot_1,echo=FALSE, message=FALSE,warning=FALSE,fig.height=5,fig.width=9}
+A defining characteristic of animal movement data are when animals are tracked. Often groups of animals are tracked in different time periods. Understanding this information is the first step before movement analysis can be performed. 
+
+The first plot shows the length of time cats were tracked per region. We can immediately draw some useful information. Australia has the largest number of cats that were tracked. The United States had several cats that were tracked for longer than average periods. The cats from New Zealand were tracked in roughly the same time frame as Australia. 
+
+The densities below the plot 
+
+Using the tooltip we can gain more information about individual cats including name, country, date deployed and days tracked. By zooming in and using the tooltip we can find out that the longest cat tracked is from the United States is named Oscar.L and was tracked for 549 days starting in November 2014.
+
+```{r Plot_1,echo=FALSE, message=FALSE,warning=FALSE,fig.height=5,fig.width=9,fig.align = 'center'}
 FullPlot = (ggplot(cats_diff, aes(x = timestamp, y = Country_name, colour = Country,
                                  text = paste('Name:',trackId,
                                               '<br>Country:',Country,
@@ -261,8 +285,10 @@ subplot(ggplotly(FullPlot,tooltip=c("text")),
         ggplotly(DensityPlot,tooltip=c("text")),
         nrows=2,heights=c(0.7, 0.2),shareX=TRUE)
 
-#tooltips for density need to be fixed
+#tooltips for density not passing
 #where is legend?
+#how to pass y-axis?
+#geom_rects not passing
 ```
 
 
@@ -277,7 +303,7 @@ This plot agrees with the findings in [@Kays] that on average young male cats tr
 
 Male
 
-```{r Plot_2, echo=FALSE,message=FALSE, fig.height=4}
+```{r Plot_2, echo=FALSE,message=FALSE, fig.height=4,fig.align = 'center'}
 #Average distance per day/night with age and sex
 g <- (ggplot(total, aes(x=animal.life.stage,y=avg, colour=animal.sex))
  + geom_jitter(alpha=0.2,width=0.3, height=0)
@@ -306,7 +332,7 @@ The large distances from home that Monmon travels is typical with nomadic behavi
 
 We can speculate that the consistent food source from cat owners attribute to this sedentary behaviour. The study found that most cats travel within 100 m of their home [@Kays]. 
 
-```{r Plot_3, echo=FALSE,message=FALSE}
+```{r Plot_3, echo=FALSE,message=FALSE,fig.align = 'center'}
 #Track of female cat
 n1<-(ggmap(map_one)
   + geom_path(data=monmon_df, aes(x=location.long, y=location.lat),colour="#D95F02")
@@ -360,6 +386,12 @@ print(n)
 ## Methods
 
 ### Plot 1
+
+The time tracking plot was ordered by country and date the GPS device was deployed on the cat. When there was no deployed starting date, the first recorded time stamp for the cat was used. This ordering is visually pleasing, and easily allows the user to assess when cats were tracked for different countries.
+
+The density of cats tracked by country was added to provide a clearer measure of how many cats are tracked within a time period, and how the countries overlap in time periods.
++ tooltop
+
  
 ### Plot 2
 
