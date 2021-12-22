@@ -4,7 +4,6 @@ author: "Jennifer Freeman & Jason Pekos"
 date: "21/12/2021"
 header: \singlespacing
 output:
-  pdf_document: default
   html_document: default
 bibliography: references.bib
 ---
@@ -23,6 +22,9 @@ library(scales)
 library(directlabels)
 library(cowplot) #arranging plots
 library(ggmap) #get_map()
+library(plotly)
+library(RColorBrewer)
+library(ggthemes) #theme_tufte
 
 #movement data
 CatDatAus <- move("PetCatsAus.csv") 
@@ -181,11 +183,79 @@ box_two = c(bottom = -35.08307, top =-35.0754, right  =138.5321 , left  = 138.52
 map_one = get_map(box_one, source="stamen", maptype = "watercolor", zoom=8)
 map_two = get_map(box_two, source="stamen", maptype = "watercolor", zoom=8)
 ```
+ 
+ 
+```{r time_tracked,echo=FALSE, message=FALSE,warning=FALSE}
+#time cats are tracked
+cats_diff <- (cats
+              %>% mutate(diff = as_date(deploy.off.date)-as_date(deploy.on.date))
+              %>% mutate(Country = factor(Country, levels = c("United States", "New Zealand", "Australia", "United Kingdom"))) 
+              #there are cats with the same name in different countries
+              %>% mutate(Country_name= paste0(Country,"_",trackId))
+             %>%  dplyr::arrange(Country,deploy.on.date)
+              %>% mutate(Country_name = forcats::fct_inorder(Country_name))
+)
+
+```
+ 
  + Plots will likely need to be reordered
 
 ## The story
 
 ### Plot 1
+
+```{r Plot_1,echo=FALSE, message=FALSE,warning=FALSE}
+FullPlot = ggplot(cats_diff, aes(x = timestamp, y = Country_name, colour = Country,
+                                 text = paste('Name:',trackId,
+                                              '<br>Country:',Country,
+                                              '<br>Date Deployed:',deploy.on.date,
+                                              '<br>Days tracked:',diff)
+                                 )
+                  ) +
+  geom_line() +     
+  theme_bw() +
+  # geom_rect(ymin = 829, ymax = Inf, 
+  #           xmin = -Inf, xmax = Inf, fill=Country) +
+  ggtitle("When are cats tracked?") +
+  labs(x = "Date", y = "Individual Cat Recorded") +
+  theme(axis.ticks.y = element_blank(), 
+        axis.text.y  = element_blank(),
+        axis.ticks.x  = element_blank(),
+        axis.text.x  = element_blank(),
+        axis.title.x = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        legend.position=c(0.13,0.3)  ) +
+  scale_y_discrete(breaks = NULL) +
+  scale_colour_manual(values = brewer.pal(4,"Dark2"))
+
+DensityPlot = ggplot() +
+              geom_density(data = cats_diff, aes(x = timestamp, y = after_stat(count),
+                                            color = Country, fill = Country),
+                                            inherit.aes = FALSE)  +
+              theme_tufte() +
+              theme(axis.ticks.y = element_blank(), 
+              axis.text.y  = element_blank(),
+              legend.title = element_blank(),
+              legend.position = "none") +
+              labs( y = "Density")
+
+fig <- ggplotly(FullPlot, tooltip=c("text"))
+fig
+
+# p1 <- plot_grid(fig, DensityPlot)
+# 
+# test <- ggplotly(DensityPlot)
+# subplot(fig, test, ncols = 1 ,nrows = 2,shareX = TRUE)
+# p1
+
+#don't know how to combine ggplotly with ggplot
+#better to have densities or tooptips
+```
+
+
+
+### Plot 2
 
 We were interested in determining if there were patterns in movement. We chose to look at the average distance travelled over day and night to assess differences in behaviour. We incorporated age and sex to determine if there was any underlying relationships. 
 This plot agrees with the findings in [@Kays] that on average young male cats travelled the furthest. Specifically, young males under 6 years old moved farther than females of the same age group. For cats in the 6-12 range, males on average travelled further at night than females. During the day, there were no noticeable differencs in this age group. 
@@ -195,7 +265,7 @@ This plot agrees with the findings in [@Kays] that on average young male cats tr
 
 Male
 
-```{r Plot_1, echo=FALSE,message=FALSE, fig.height=4}
+```{r Plot_2, echo=FALSE,message=FALSE, fig.height=4}
 #Average distance per day/night with age and sex
 g <- (ggplot(total, aes(x=animal.life.stage,y=avg, colour=animal.sex))
  + geom_jitter(alpha=0.2,width=0.3, height=0)
@@ -214,7 +284,7 @@ g <- (ggplot(total, aes(x=animal.life.stage,y=avg, colour=animal.sex))
 print(g)
 ```
 
-### Plot 2
+### Plot 3
 
 To further explore the relationships between the sexes for younger cats, we looked at the net-squared displacement (NSD) and movement tracks for one male cat named Moscow and one female cat named Monmon. These cats were chosen uniformly at random from the data after first narrowing down for 4 year-old cats that were tracked for 7 total days. 
 
@@ -224,7 +294,7 @@ The large distances from home that Monmon travels is typical with nomadic behavi
 
 We can speculate that the consistent food source from cat owners attribute to this sedentary behaviour. The study found that most cats travel within 100 m of their home [@Kays]. 
 
-```{r Plot_2, echo=FALSE,message=FALSE}
+```{r Plot_3, echo=FALSE,message=FALSE}
 #Track of female cat
 n1<-(ggmap(map_one)
   + geom_path(data=monmon_df, aes(x=location.long, y=location.lat),colour="#D95F02")
@@ -279,7 +349,7 @@ print(n)
 
 
  
-### Plot 1
+### Plot 2
 
 
 + need to think about outliers
@@ -290,7 +360,7 @@ position along a common scale
 The side-by-side facets allow for easy distance comparison between day and night. The legend was overlayed on the plot to allow for a wider aspect ratio to assess trends by age. For cats under 1-year old the age was reported in decimals. To be consistent with the rest of the data set, all cats under one year old were binned in the zero age group.
 The data was displayed with along with the LOESS trend-line to present the full picture. The data points were shown with some transparency to be able to distinguish the trend line clearly. To prevent dense overlapping of points with the binned age data, a small amount of horizontal jitter was added. The jitter is small enough to still be able to distinguish between ages.
 
-### Plot 2
+### Plot 3
 
 The NSD plots and movement tracks per animal were displayed side-by-side for easy comparison. The plots were consistenly coloured to assist the viewer in making this comparison. 
 
