@@ -2,11 +2,14 @@
 title: "Movement of Domestic Cats"
 author: "Jennifer Freeman & Jason Pekos"
 date: "21/12/2021"
+header: \singlespacing
 output:
   pdf_document: default
   html_document: default
 bibliography: references.bib
 ---
+
+
 
 ## Data set
 
@@ -166,13 +169,9 @@ moscow_df <- as(moscow,"data.frame")
 monmon_track <- as(monmon, 'ltraj')
 moscow_track <- as(moscow, 'ltraj')
 
-#get indices to plot
-x_monmon<-seq(1,length(monmon_track[[1]]$date))
-x_moscow<-seq(1,length(moscow_track[[1]]$date))
-
 #convert to data frame for plotting
-monmon_track_df<-cbind(x_monmon,as.data.frame(monmon_track[[1]]))
-moscow_track_df<-cbind(x_moscow,as.data.frame(moscow_track[[1]]))
+monmon_track_df<-as.data.frame(monmon_track[[1]])
+moscow_track_df<-as.data.frame(moscow_track[[1]])
 
 #bounding boxes of cats
 box_one = c(bottom = -35.070, top =-35.06233, right  =138.5321 , left  = 138.5239 )
@@ -182,14 +181,19 @@ box_two = c(bottom = -35.08307, top =-35.0754, right  =138.5321 , left  = 138.52
 map_one = get_map(box_one, source="stamen", maptype = "watercolor", zoom=8)
 map_two = get_map(box_two, source="stamen", maptype = "watercolor", zoom=8)
 ```
+ + Plots will likely need to be reordered
 
 ## The story
 
-+ Average distance travel fairly flat across age groups 
-+ youger males (<6 year) move farther than females of the same age group
-+ For the (6-12) age group, males travelled farther at night, and females and males travelled about the same during the day
-+ cats older than 12 ?, less data
+### Plot 1
+
+We were interested in determining if there were patterns in movement. We chose to look at the average distance travelled over day and night to assess differences in behaviour. We incorporated age and sex to determine if there was any underlying relationships. 
+This plot agrees with the findings in [@Kays] that on average young male cats travelled the furthest. Specifically, young males under 6 years old moved farther than females of the same age group. For cats in the 6-12 range, males on average travelled further at night than females. During the day, there were no noticeable differencs in this age group. 
+
++ minimal cats over 12
 + only 8 cats that are not fixed, with age and sex data, probably not worth including
+
+Male
 
 ```{r Plot_1, echo=FALSE,message=FALSE, fig.height=4}
 #Average distance per day/night with age and sex
@@ -210,7 +214,15 @@ g <- (ggplot(total, aes(x=animal.life.stage,y=avg, colour=animal.sex))
 print(g)
 ```
 
+### Plot 2
 
+To further explore the relationships between the sexes for younger cats, we looked at the net-squared displacement (NSD) and movement tracks for one male cat named Moscow and one female cat named Monmon. These cats were chosen uniformly at random from the data after first narrowing down for 4 year-old cats that were tracked for 7 total days. 
+
+The NSD is the squared "Euclidean distance between the starting location of a movement path and each subsequent location."[@Bastille]. Vieweing the NSD over time can help classify common movement behaviours. Given the noisey but flat relationship between NSD over time for Moscow this suggests that he exhibits a sedentary movement pattern [@Bastille]. This can be verified by the track of Moscow that is tightly clustered in one area.
+
+The large distances from home that Monmon travels is typical with nomadic behaviour, however it is difficult to tell if the time spent at these farther distances would characterize true nomad behaviour. In the seven day period there appears to be a pattern to Monmon's movements between staying close to home and travelling farther distances. 
+
+We can speculate that the consistent food source from cat owners attribute to this sedentary behaviour. The study found that most cats travel within 100 m of their home [@Kays]. 
 
 ```{r Plot_2, echo=FALSE,message=FALSE}
 #Track of female cat
@@ -237,7 +249,7 @@ n2<-(ggmap(map_two)
 )
 
 #NSD of female cat
-n3 <- (ggplot(monmon_track_df, aes(x=x_monmon,y=R2n))
+n3 <- (ggplot(monmon_track_df, aes(x=date,y=R2n))
        + geom_point(colour="#D95F02")
        + theme_bw()
        + theme(
@@ -248,7 +260,7 @@ n3 <- (ggplot(monmon_track_df, aes(x=x_monmon,y=R2n))
 )
 
 #NSD of male cat
-n4 <- (ggplot(moscow_track_df, aes(x=x_moscow,y=R2n))
+n4 <- (ggplot(moscow_track_df, aes(x=date,y=R2n))
        + geom_point(colour="#7570B3")
        + theme_bw()
        + theme(
@@ -264,7 +276,29 @@ print(n)
 ```
 
 ## Methods
+
+
  
+### Plot 1
+
+
++ need to think about outliers
++ colours from the viridis scheme with duetoron
+
+position along a common scale
+
+The side-by-side facets allow for easy distance comparison between day and night. The legend was overlayed on the plot to allow for a wider aspect ratio to assess trends by age. For cats under 1-year old the age was reported in decimals. To be consistent with the rest of the data set, all cats under one year old were binned in the zero age group.
+The data was displayed with along with the LOESS trend-line to present the full picture. The data points were shown with some transparency to be able to distinguish the trend line clearly. To prevent dense overlapping of points with the binned age data, a small amount of horizontal jitter was added. The jitter is small enough to still be able to distinguish between ages.
+
+### Plot 2
+
+The NSD plots and movement tracks per animal were displayed side-by-side for easy comparison. The plots were consistenly coloured to assist the viewer in making this comparison. 
+
+The movement tracks were plotted using the same latitude and longitude scale so the relative distances can be visually compared. Keeping a consistent scale in the movement tracks did make it difficult to see the details of Moscows tracks and the graph occupies a lot of empty space. The latitude and longitude data was removed from the axis of the track plots as it did not provide any helpful information.
+
+The exact time scale was removed from the NSD plots as the exact time of the data points was not important for the interpretation in this sense. In was more important to view the NSD over time in general.
+
+
  
 ## References
 
