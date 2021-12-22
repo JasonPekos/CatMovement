@@ -214,8 +214,8 @@ FullPlot = ggplot(cats_diff, aes(x = timestamp, y = Country_name, colour = Count
                   ) +
   geom_line() +     
   theme_bw() +
-  # geom_rect(ymin = 829, ymax = Inf, 
-  #           xmin = -Inf, xmax = Inf, fill=Country) +
+  # geom_rect(ymin = which(cats_diff$Country=="Australia"), ymax = Inf,
+  #           xmin = -Inf, xmax = Inf, fill="red") +
   ggtitle("When are cats tracked?") +
   labs(x = "Date", y = "Individual Cat Recorded") +
   theme(axis.ticks.y = element_blank(), 
@@ -246,8 +246,8 @@ scale_fill_manual(values = brewer.pal(4,"Dark2"))
 # fig <- ggplotly(FullPlot, tooltip=c("text"))
 # fig
 
-subplot(ggplotly(FullPlot,tooltip=c("text")),DensityPlot,
-        nrows=2,heights=c(0.7, 0.2))
+subplot(ggplotly(FullPlot,tooltip=c("text"),showlegend=TRUE),DensityPlot,
+        nrows=2,heights=c(0.7, 0.2),shareX=TRUE)
 
 #tooltips for density need to be fixed
 #where is legend?
