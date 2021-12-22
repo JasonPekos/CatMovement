@@ -20,13 +20,294 @@ dat <- (dat
         %>% mutate(age = if_else(age<1,0,age))
         # bin cat aged to 1.7 to 1, bin  cat aged 2.1 to 2
         %>% mutate(age = if_else(age==1.7,1,age), age = if_else(age==2.1,2,age))
+        # only keep valid male and female
+        %>% filter(sex %in% c("Female","Male"))
 )
 
 (ggplot(dat, aes(x=age,y=Home_Range, colour =sex))
   + geom_point(alpha=0.3)
-  + scale_y_log10()
+  + geom_smooth()
+  # + scale_y_log10()
   
 )
 
 
+```
+
+
+```{r}
+##Mostly Garbage
+
+# library(adehabitatLT)
+# 
+# CatDatAus <- move("PetCatsAus.csv") 
+# Aus_ltraj  <- as(CatDatAus, 'ltraj')
+# 
+# plot(Aus_ltraj[[109]]$date, Aus_ltraj[[109]]$R2n)
+# 
+# c<-(cats
+#            %>% filter(trackId=="Cleo2")
+#   
+# )
+# bo <-(cats
+#            %>% filter(trackId=="Bo")
+#   
+# )
+# cleo <- CatDatAus[["Cleo2"]]
+# 
+# #separate cleo by day
+# cleo_1 <-(as.data.frame(cleo)
+#           %>% filter(timestamp>'2016-05-07',timestamp < '2016-05-08')
+#           )
+# cleo_2 <-(as.data.frame(cleo)
+#           %>% filter(timestamp>'2016-05-08',timestamp < '2016-05-09')
+#           )
+# cleo_3 <-(as.data.frame(cleo)
+#           %>% filter(timestamp>'2016-05-09',timestamp < '2016-05-10')
+#           )
+# cleo_4 <-(as.data.frame(cleo)
+#           %>% filter(timestamp>'2016-05-10',timestamp < '2016-05-11')
+#           )
+# cleo_5 <-(as.data.frame(cleo)
+#           %>% filter(timestamp>'2016-05-11',timestamp < '2016-05-12')
+#           )
+# cleo_6 <-(as.data.frame(cleo)
+#           %>% filter(timestamp>'2016-05-12',timestamp < '2016-05-13')
+#           )
+# cleo_7 <-(as.data.frame(cleo)
+#           %>% filter(timestamp>'2016-05-13',timestamp < '2016-05-14')
+#           )
+# 
+# c1<-make_track(cleo_1, .x=location.lat, .y=location.long, .t=timestamp)
+# c2<-make_track(cleo_2, .x=location.lat, .y=location.long, .t=timestamp)
+# c3<-make_track(cleo_3, .x=location.lat, .y=location.long, .t=timestamp)
+# c4<-make_track(cleo_4, .x=location.lat, .y=location.long, .t=timestamp)
+# c5<-make_track(cleo_5, .x=location.lat, .y=location.long, .t=timestamp)
+# c6<-make_track(cleo_6, .x=location.lat, .y=location.long, .t=timestamp)
+# c7<-make_track(cleo_7, .x=location.lat, .y=location.long, .t=timestamp)
+# 
+# mean_sd <- c(msd(c1), msd(c2), msd(c3), msd(c4), msd(c5), msd(c6), msd(c7))
+# 
+# msd(c)
+# cleo_2 <-(as.data.frame(cleo)
+#           %>% filter(timestamp>'2016-05-08',timestamp < '2016-05-09')
+#           )
+# c2<-make_track(cleo_2, .x=location.lat, .y=location.long, .t=timestamp)
+# msd(c2)
+# cleo_1 <-(as.data.frame(cleo)
+#           %>% filter(timestamp>'2016-05-09',timestamp < '2016-05-10')
+#           )
+# cleo_1 <-(as.data.frame(cleo)
+#           %>% filter(timestamp>'2016-05-10',timestamp < '2016-05-11')
+#           )
+# cleo_1 <-(as.data.frame(cleo)
+#           %>% filter(timestamp>'2016-05-11',timestamp < '2016-05-12')
+#           )
+# cleo_1 <-(as.data.frame(cleo)
+#           %>% filter(timestamp>'2016-05-07',timestamp < '2016-05-08')
+#           )
+#   cleo_2 <-
+# bo <- CatDatAus[["Bo"]]
+# 
+# cleo_track <- as(cleo, 'ltraj')
+# #bo_track <- as(bo, 'ltraj')
+# 
+# c<-make_track(cleo, .x=location.lat, .y=location.long, .t=timestamp)
+# msd(c)
+# 
+# c<-as.ltraj(cleo_track)
+# plot(cleo_track[[1]]$date, cleo_track[[1]]$R2n)
+# 
+# cleo <- (cats
+#          %>% filter(trackId=="Cleo2")
+#          %>% mutate(dy=floor_date(timestamp, "day"),
+#                     hr = hour(round_date(timestamp, "hour")),
+#                     diurnal = ifelse((hr < 6 | hr > 18), "Night", "Day"))
+#          )
+# c<-make_track(cleo, .x=location.lat, .y=location.long, .t=timestamp, diurnal)
+# 
+# library(maptools)
+# DayNight <- rep("Day", n.locs(cleo)-1)
+# DayNight[solarpos(cleo[-n.locs(cleo)], timestamps(cleo)[-n.locs(cleo)])[,2] < -6 & solarpos(cleo[-1], timestamps(cleo)[-1])[,2] < -6] <- "Night"
+# 
+# cloe.burst <- burst(x=cleo, f=DayNight)
+# 
+# 
+# nsd
+# 
+# 
+# ###
+# unique(avg_tracked_female$trackId)
+# f1 <- CatDatAus[["Cleo2"]]
+# f2 <- CatDatAus[["Crumpet"]]
+# f3 <- CatDatAus[["Dana"]]
+# f4 <- CatDatAus[["Genie"]]
+# f5 <- CatDatAus[["Jedda"]]
+# f6 <- CatDatAus[["MonMon"]]
+# f7 <- CatDatAus[["Moochie"]]
+# f8 <- CatDatAus[["Rio"]]
+# f9 <- CatDatAus[["Sally"]]
+# f10 <- CatDatAus[["Bear"]]
+# 
+# f1_track<-make_track(f1, .x=location.lat, .y=location.long, .t=timestamp)
+# f2_track<-make_track(f2, .x=location.lat, .y=location.long, .t=timestamp)
+# 
+# f_tracks <- union_all(f1_track, f2_track)
+# "Cleo2"      "Crumpet"    "Dana"       "Genie"      "Jedda"      "MonMon"     "Moochie"   
+#  [8] "Rio"        "Sally"      "Bear"       "Bella"      "Maggie"     "Marmite"    "Missie"    
+# [15] "Nimzy" 
+# monmon <- CatDatAus[["MonMon"]]
+# monmon_track <- as(monmon, 'ltraj')
+# moscow <- CatDatAus[["Moscow"]]
+# moscow_track <- as(moscow, 'ltraj')
+# 
+# plot(seq(1,length(b_track[[1]]$date)), b_track[[1]]$R2n)
+# plot(seq(1,length(cleo_track[[1]]$date)), cleo_track[[1]]$R2n)
+# 
+# #look at their tracks
+# library(ggmap)
+# library(mapproj)
+# monmon_df <- as(monmon,"data.frame")
+# moscow_df <- as(moscow,"data.frame")
+# 
+# lat_min=138.5239 
+# lat_max=138.5321
+# long_min=-35.06233 
+# long_max=-35.08307
+# box_one = c(bottom = -35.070, top =-35.06233, right  =138.5321 , left  = 138.5239 )
+# box_two = c(bottom = -35.08307, top =-35.0754, right  =138.5321 , left  = 138.5239 )
+# m1 <- get_map(bbox(extent(cleo)), source="stamen", zoom=1)
+# m2 <- get_map(box,
+#               source="osm", maptype="watercolour")
+# m2 <- get_map(location=c(lon=138.5321 ,lat=-35.06233 ), source="osm", zoom=2)
+# 
+# map_one = get_map(box_one, source="stamen", maptype = "watercolor", zoom=8)
+# ggmap(map_one)
+# map_two = get_map(box_two, source="stamen", maptype = "watercolor", zoom=8)
+# ggmap(map_two)
+# ggmap(m1)+geom_path(data=cleo_df, aes(x=location.long, y=location.lat))
+# ggmap(m2)+geom_path(data=bo_df, aes(x=location.long, y=location.lat))
+# 
+# g1<-(ggmap(map_one)
+#   +geom_path(data=monmon_df, aes(x=location.long, y=location.lat)))
+# g1
+# g2<-(ggmap(map_two)
+#   +geom_path(data=moscow_df, aes(x=location.long, y=location.lat)))
+# )
+# 
+# ggplot()
+# 
+# plot(cleo)
+# plot(bo)
+# 
+# ggplot(cleo)
+```
+
+
+
+```{r}
+
+#4 year old cats, with time tracked
+young <-(cats
+         %>% mutate(diff = as_date(deploy.off.date)-as_date(deploy.on.date))
+         %>% mutate(age = readr::parse_number(animal.life.stage))
+         %>% filter(age ==4)
+  
+)
+
+#male and female cats tracked for seven days
+avg_tracked_male <- (young
+            %>% filter(diff==7)
+            %>% filter(animal.sex=="m")
+)
+
+avg_tracked_female <- (young
+                     %>% filter(diff==7)
+                     %>% filter(animal.sex=="f")
+)
+
+
+#randomly choose one male and one female
+set.seed(100)
+rand <- runif(2,1,min(length(unique(avg_tracked_male$trackId)),
+                      length(unique(avg_tracked_female$trackId))))
+round_rand = round(rand)
+
+female <- unique(avg_tracked_female$trackId)[round_rand[1]]
+male <-unique(avg_tracked_male$trackId)[round_rand[2]]
+
+
+monmon <- CatDatAus[["MonMon"]]
+moscow <- CatDatAus[["Moscow"]]
+
+monmon_df <- as(monmon,"data.frame")
+moscow_df <- as(moscow,"data.frame")
+
+
+#net squared displacement
+monmon_track <- as(monmon, 'ltraj')
+moscow_track <- as(moscow, 'ltraj')
+
+x_monmon<-seq(1,length(monmon_track[[1]]$date))
+x_moscow<-seq(1,length(moscow_track[[1]]$date))
+
+monmon_track_df<-cbind(x_monmon,as.data.frame(monmon_track[[1]]))
+moscow_track_df<-cbind(x_moscow,as.data.frame(moscow_track[[1]]))
+
+#bounding boxes of cats
+box_one = c(bottom = -35.070, top =-35.06233, right  =138.5321 , left  = 138.5239 )
+box_two = c(bottom = -35.08307, top =-35.0754, right  =138.5321 , left  = 138.5239 )
+
+#get maps
+map_one = get_map(box_one, source="stamen", maptype = "watercolor", zoom=8)
+map_two = get_map(box_two, source="stamen", maptype = "watercolor", zoom=8)
+
+g1<-(ggmap(map_one)
+  + geom_path(data=monmon_df, aes(x=location.long, y=location.lat),colour="#D95F02")
+  + theme(axis.title.x=element_blank(),
+          axis.text.x=element_blank(),
+          axis.ticks.x=element_blank(),
+          axis.title.y=element_blank(),
+          axis.text.y=element_blank(),
+          axis.ticks.y=element_blank())
+  + ggtitle("Track of Monmon")
+)
+g2<-(ggmap(map_two)
+  + geom_path(data=moscow_df, aes(x=location.long, y=location.lat),colour="#7570B3")
+  + theme(axis.title.x=element_blank(),
+          axis.text.x=element_blank(),
+          axis.ticks.x=element_blank(),
+          axis.title.y=element_blank(),
+          axis.text.y=element_blank(),
+          axis.ticks.y=element_blank())
+  + ggtitle("Track of Moscow")
+)
+
+
+g3 <- (ggplot(monmon_track_df, aes(x=x_monmon,y=R2n))
+       + geom_point(colour="#D95F02")
+       + theme_bw()
+       + theme(
+          axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())
+       + ylab("Net Squared Displacement")
+       + xlab("Time (7 days)")
+)
+
+g4 <- (ggplot(moscow_track_df, aes(x=x_moscow,y=R2n))
+       + geom_point(colour="#7570B3")
+       + theme_bw()
+       + theme(
+          axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())
+       + ylab("Net Squared Displacement")
+       + xlab("Time (7 days)")
+)
+
+
+library(gridExtra)
+g<-grid.arrange(g1,g2)
+
+
+g<-plot_grid(g3,g1,g4,g2,ncol=2)
 ```

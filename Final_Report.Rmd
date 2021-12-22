@@ -3,8 +3,8 @@ title: "Movement of Domestic Cats"
 author: "Jennifer Freeman & Jason Pekos"
 date: "21/12/2021"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 bibliography: references.bib
 ---
 
@@ -18,6 +18,8 @@ library(move)
 library(lubridate) #for dates
 library(scales)
 library(directlabels)
+library(cowplot) #arranging plots
+library(ggmap) #get_map()
 
 #movement data
 CatDatAus <- move("PetCatsAus.csv") 
@@ -119,29 +121,146 @@ total <- (left_join(avg_day_night, ref, by=c("Country"="Country", "trackId"="tra
 
 ```
 
+
+```{r NSD, echo=FALSE, message=FALSE,warning=FALSE}
+# net squared displacement
+
+#4 year old cats, with time tracked
+young <-(cats
+         %>% mutate(diff = as_date(deploy.off.date)-as_date(deploy.on.date))
+         %>% mutate(age = readr::parse_number(animal.life.stage))
+         %>% filter(age ==4)
+  
+)
+
+#male and female cats tracked for seven days
+avg_tracked_male <- (young
+            %>% filter(diff==7)
+            %>% filter(animal.sex=="m")
+)
+
+avg_tracked_female <- (young
+                     %>% filter(diff==7)
+                     %>% filter(animal.sex=="f")
+)
+
+
+#randomly choose one male and one female
+set.seed(100)
+rand <- runif(2,1,min(length(unique(avg_tracked_male$trackId)),
+                      length(unique(avg_tracked_female$trackId))))
+round_rand = round(rand)
+
+female <- unique(avg_tracked_female$trackId)[round_rand[1]]
+male <-unique(avg_tracked_male$trackId)[round_rand[2]]
+
+
+monmon <- CatDatAus[["MonMon"]]
+moscow <- CatDatAus[["Moscow"]]
+
+monmon_df <- as(monmon,"data.frame")
+moscow_df <- as(moscow,"data.frame")
+
+
+#net squared displacement
+monmon_track <- as(monmon, 'ltraj')
+moscow_track <- as(moscow, 'ltraj')
+
+#get indices to plot
+x_monmon<-seq(1,length(monmon_track[[1]]$date))
+x_moscow<-seq(1,length(moscow_track[[1]]$date))
+
+#convert to data frame for plotting
+monmon_track_df<-cbind(x_monmon,as.data.frame(monmon_track[[1]]))
+moscow_track_df<-cbind(x_moscow,as.data.frame(moscow_track[[1]]))
+
+#bounding boxes of cats
+box_one = c(bottom = -35.070, top =-35.06233, right  =138.5321 , left  = 138.5239 )
+box_two = c(bottom = -35.08307, top =-35.0754, right  =138.5321 , left  = 138.5239 )
+
+#get maps
+map_one = get_map(box_one, source="stamen", maptype = "watercolor", zoom=8)
+map_two = get_map(box_two, source="stamen", maptype = "watercolor", zoom=8)
+```
+
 ## The story
 
-```{r, echo=FALSE,message=FALSE, fig.height=4}
-#best plot so far, age, sex, average distance per day/night
++ Average distance travel fairly flat across age groups 
++ youger males (<6 year) move farther than females of the same age group
++ For the (6-12) age group, males travelled farther at night, and females and males travelled about the same during the day
++ cats older than 12 ?, less data
++ only 8 cats that are not fixed, with age and sex data, probably not worth including
+
+```{r Plot_1, echo=FALSE,message=FALSE, fig.height=4}
+#Average distance per day/night with age and sex
 g <- (ggplot(total, aes(x=animal.life.stage,y=avg, colour=animal.sex))
-# + geom_jitter(aes(alpha = 0.3, shape = animal.reproductive.condition),width=0.3, height=0)
  + geom_jitter(alpha=0.2,width=0.3, height=0)
- #+ geom_point(aes(alpha = 0.4,size=4), position =position_dodge())
  + geom_smooth(se=F)
  + scale_y_log10(labels = trans_format("log10", math_format(10^.x)))
-  + facet_grid(cols = vars(diurnal))
-#+ geom_dl(aes(label=c("Male","Female"),colour=animal.sex),method="smart.grid",size=5)
-  #+ scale_color_gradient(low = "yellow", high = "red")
+ + facet_grid(cols = vars(diurnal))
  + scale_shape_manual(values = c(16,4))
-  + theme_bw()
-+ theme(panel.spacing.x = unit(0,"cm"), legend.position=c(0.92,0.15),
+ + theme_bw()
+ + theme(panel.spacing.x = unit(0,"cm"), legend.position=c(0.92,0.15),
         panel.grid.major = element_blank(), panel.grid.minor = element_blank())
-+ xlab("Age")
-+ ylab("Average Distance Travelled (m)")
-+ labs(colour="")
-+ scale_colour_manual(values = c("#D95F02","#7570B3"))
+ + xlab("Age")
+ + ylab("Average Distance Travelled (m)")
+ + labs(colour="")
+ + scale_colour_manual(values = c("#D95F02","#7570B3"))
  )
 print(g)
+```
+
+
+
+```{r Plot_2, echo=FALSE,message=FALSE}
+#Track of female cat
+n1<-(ggmap(map_one)
+  + geom_path(data=monmon_df, aes(x=location.long, y=location.lat),colour="#D95F02")
+  + theme(axis.title.x=element_blank(),
+          axis.text.x=element_blank(),
+          axis.ticks.x=element_blank(),
+          axis.title.y=element_blank(),
+          axis.text.y=element_blank(),
+          axis.ticks.y=element_blank())
+  + ggtitle("Track of Monmon")
+)
+#Track of male cat
+n2<-(ggmap(map_two)
+  + geom_path(data=moscow_df, aes(x=location.long, y=location.lat),colour="#7570B3")
+  + theme(axis.title.x=element_blank(),
+          axis.text.x=element_blank(),
+          axis.ticks.x=element_blank(),
+          axis.title.y=element_blank(),
+          axis.text.y=element_blank(),
+          axis.ticks.y=element_blank())
+  + ggtitle("Track of Moscow")
+)
+
+#NSD of female cat
+n3 <- (ggplot(monmon_track_df, aes(x=x_monmon,y=R2n))
+       + geom_point(colour="#D95F02")
+       + theme_bw()
+       + theme(
+          axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())
+       + ylab("Net Squared Displacement")
+       + xlab("Time (7 days)")
+)
+
+#NSD of male cat
+n4 <- (ggplot(moscow_track_df, aes(x=x_moscow,y=R2n))
+       + geom_point(colour="#7570B3")
+       + theme_bw()
+       + theme(
+          axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())
+       + ylab("Net Squared Displacement")
+       + xlab("Time (7 days)")
+)
+
+#arrange
+n<-plot_grid(n3,n1,n4,n2,ncol=2)
+print(n)
 ```
 
 ## Methods
