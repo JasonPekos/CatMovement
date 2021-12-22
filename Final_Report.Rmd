@@ -2,7 +2,6 @@
 title: "Movement of Domestic Cats"
 author: "Jennifer Freeman & Jason Pekos"
 date: "21/12/2021"
-header: \singlespacing
 output:
   html_document: default
 bibliography: references.bib
@@ -25,6 +24,7 @@ library(ggmap) #get_map()
 library(plotly)
 library(RColorBrewer)
 library(ggthemes) #theme_tufte
+library(adehabitatLT) #ltraj - animal trajectories
 
 #movement data
 CatDatAus <- move("PetCatsAus.csv") 
@@ -204,49 +204,61 @@ cats_diff <- (cats
 
 ### Plot 1
 
-```{r Plot_1,echo=FALSE, message=FALSE,warning=FALSE,fig.height=5,fig.width=7}
-FullPlot = ggplot(cats_diff, aes(x = timestamp, y = Country_name, colour = Country,
+```{r Plot_1,echo=FALSE, message=FALSE,warning=FALSE,fig.height=5,fig.width=9}
+FullPlot = (ggplot(cats_diff, aes(x = timestamp, y = Country_name, colour = Country,
                                  text = paste('Name:',trackId,
                                               '<br>Country:',Country,
                                               '<br>Date Deployed:',deploy.on.date,
                                               '<br>Days tracked:',diff)
                                  )
-                  ) +
-  geom_line() +     
-  theme_bw() +
-  # geom_rect(ymin = which(cats_diff$Country=="Australia"), ymax = Inf,
-  #           xmin = -Inf, xmax = Inf, fill="red") +
-  ggtitle("When are cats tracked?") +
-  labs(x = "Date", y = "Individual Cat Recorded") +
-  theme(axis.ticks.y = element_blank(), 
-        axis.text.y  = element_blank(),
-        axis.ticks.x  = element_blank(),
-        axis.text.x  = element_blank(),
-        axis.title.x = element_blank(),
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        legend.position=c(0.13,0.3)  ) +
-  scale_y_discrete(breaks = NULL) +
-  scale_colour_manual(values = brewer.pal(4,"Dark2"))
+                  )
+            # + geom_rect(ymin = 826, ymax = 950,
+            #             xmin = -Inf, xmax = Inf, fill="grey98",
+            #             alpha=0.5,inherit.aes = FALSE)
+            # + geom_rect(ymin = 155, ymax = 387,
+            #             xmin = -Inf, xmax = Inf, fill="grey98",
+            #             alpha=0.2,inherit.aes = FALSE)
+            + geom_line()
+            + geom_dl(aes(label=Country,colour=Country),method="smart.grid",size=5)
+            + theme_bw()
 
+            + ggtitle("Individual tracking time by Country")
+            + labs(x = "Date", y = "Individual Cat Recorded")
+            + theme(axis.ticks.y = element_blank(), 
+                    axis.text.y  = element_blank(),
+                    axis.ticks.x  = element_blank(),
+                    axis.text.x  = element_blank(),
+                    axis.title.x = element_blank(),
+                    panel.grid.major = element_blank(),
+                    panel.grid.minor = element_blank(),
+                    legend.position=c(0.13,0.3)  
+                    )
+            + scale_y_discrete(breaks = NULL)
+            + scale_colour_manual(values = brewer.pal(4,"Dark2"))
+)
 
-DensityPlot = ggplot() +
-              geom_density(data = cats_diff, aes(x = timestamp, y = after_stat(count),
-                                            colour = Country,fill=Country),
-                                            inherit.aes = FALSE,alpha=0.3)  +
-              theme_tufte() +
-              theme(axis.ticks.y = element_blank(), 
-              axis.text.y  = element_blank(),
-              legend.title = element_blank(),
-              legend.position = "none") +
-              labs( y = "Density")+
-   scale_colour_manual(values = brewer.pal(4,"Dark2"))+
-scale_fill_manual(values = brewer.pal(4,"Dark2"))
+DensityPlot = (ggplot(data = cats_diff,
+                      aes(text=paste('Country',Country)))
+               + geom_density(data = cats_diff, 
+                              aes(x = timestamp, y = after_stat(count),
+                                  colour = Country,fill=Country),
+                              inherit.aes = FALSE, alpha=0.3)
+               + theme_tufte()
+               + theme(axis.ticks.y = element_blank(), 
+                       axis.text.y  = element_blank(),
+                       legend.title = element_blank(),
+                       legend.position = "none")
+               + labs( y = "Density", x="")
+               + scale_colour_manual(values = brewer.pal(4,"Dark2"))
+               + scale_fill_manual(values = brewer.pal(4,"Dark2"))
+)
 
 # fig <- ggplotly(FullPlot, tooltip=c("text"))
 # fig
 
-subplot(ggplotly(FullPlot,tooltip=c("text"),showlegend=TRUE),DensityPlot,
+subplot(ggplotly(FullPlot,tooltip=c("text")),
+        #DensityPlot,
+        ggplotly(DensityPlot,tooltip=c("text")),
         nrows=2,heights=c(0.7, 0.2),shareX=TRUE)
 
 #tooltips for density need to be fixed
@@ -347,7 +359,7 @@ print(n)
 
 ## Methods
 
-
+### Plot 1
  
 ### Plot 2
 
