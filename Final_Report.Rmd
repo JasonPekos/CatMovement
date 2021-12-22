@@ -204,7 +204,7 @@ cats_diff <- (cats
 
 ### Plot 1
 
-```{r Plot_1,echo=FALSE, message=FALSE,warning=FALSE}
+```{r Plot_1,echo=FALSE, message=FALSE,warning=FALSE,fig.height=5,fig.width=7}
 FullPlot = ggplot(cats_diff, aes(x = timestamp, y = Country_name, colour = Country,
                                  text = paste('Name:',trackId,
                                               '<br>Country:',Country,
@@ -229,28 +229,28 @@ FullPlot = ggplot(cats_diff, aes(x = timestamp, y = Country_name, colour = Count
   scale_y_discrete(breaks = NULL) +
   scale_colour_manual(values = brewer.pal(4,"Dark2"))
 
+
 DensityPlot = ggplot() +
               geom_density(data = cats_diff, aes(x = timestamp, y = after_stat(count),
-                                            color = Country, fill = Country),
-                                            inherit.aes = FALSE)  +
+                                            colour = Country,fill=Country),
+                                            inherit.aes = FALSE,alpha=0.3)  +
               theme_tufte() +
               theme(axis.ticks.y = element_blank(), 
               axis.text.y  = element_blank(),
               legend.title = element_blank(),
               legend.position = "none") +
-              labs( y = "Density")
+              labs( y = "Density")+
+   scale_colour_manual(values = brewer.pal(4,"Dark2"))+
+scale_fill_manual(values = brewer.pal(4,"Dark2"))
 
-fig <- ggplotly(FullPlot, tooltip=c("text"))
-fig
+# fig <- ggplotly(FullPlot, tooltip=c("text"))
+# fig
 
-# p1 <- plot_grid(fig, DensityPlot)
-# 
-# test <- ggplotly(DensityPlot)
-# subplot(fig, test, ncols = 1 ,nrows = 2,shareX = TRUE)
-# p1
+subplot(ggplotly(FullPlot,tooltip=c("text")),DensityPlot,
+        nrows=2,heights=c(0.7, 0.2))
 
-#don't know how to combine ggplotly with ggplot
-#better to have densities or tooptips
+#tooltips for density need to be fixed
+#where is legend?
 ```
 
 
