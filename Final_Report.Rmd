@@ -4,7 +4,6 @@ author: "Jennifer Freeman & Jason Pekos"
 date: "22/12/2021"
 output:
   html_document: default
-  pdf_document: default
 bibliography: references.bib
 ---
 
@@ -34,6 +33,7 @@ library(ozmaps)
 library(stars)
 library(osmdata)
 library(OpenStreetMap)
+
 #movement data
 CatDatAus <- move("PetCatsAus.csv") 
 CatDatNZ <- move("PetCatsNZ.csv")  
@@ -451,11 +451,11 @@ print(n)
 ```
 
 
-## Plot Four
+### Plot 4
 
-Drawing straight lines between cats can be useful, but it fails to capture the underlying uncertainty in animal tracking data. To deal with this, we utilize Dynamic Brownian Bridge Models to recover Utilization Distributions, which can more accurately capture the most likely home range of different cats. Along with more accurately answering questions around potential home area, Dynamic Brownian Bridge Models provide an interesting qualitative method for forming hypothesis around animal interaction and predation; although the cats do tend to stick within 100m of their homes, there is plenty of overlapping home range, especially in the southwest of Adelaide. Asking questions about predation in these areas of high overlap could be interesting. 
+Drawing straight lines between successive GPS locations can be useful, but it fails to capture the underlying uncertainty in animal tracking data. To deal with this, we utilize Dynamic Brownian Bridge Models (dBMM) to recover Utilization Distributions (UD), which can more accurately capture the most likely home range of different cats. Along with more accurately answering questions around potential home area, Dynamic Brownian Bridge Models provide an interesting qualitative method for forming hypothesis around animal interaction and predation; although cats do tend to stick within 100m of their homes, there is plenty of overlapping home range, especially in the southwest of Adelaide. Asking questions about predation in these areas of high overlap could be interesting. 
 
-The Individual plot of MonMon is plotted to give an example of a cat with an interesting (non-circular) utilization distribution.
+The individual plot of MonMon is plotted to give an example of a cat with an interesting (non-circular) utilization distribution.
 
 
 ```{r Plot_4, echo=FALSE,message=FALSE,results='hide', warning=FALSE,fig.keep='all',fig.align = 'center',fig.width=10}
@@ -469,6 +469,8 @@ bigplot = ggplot() + #Set up base of plot .
                 theme_bw() +
                 theme(legend.position = "none") +
                 ggtitle("UD - Adelaide Cats") +
+                xlab("") +
+                ylab("") +
                 theme(
                       axis.text.x=element_blank(),
                       axis.ticks.x=element_blank(),
@@ -510,6 +512,8 @@ smallplot = ggplot() + #plot of just monmon
      #Set up base of plot .
     theme_bw() +
     ggtitle("UD - MonMon") +
+    xlab("") +
+    ylab("") +
     theme(
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank(),
