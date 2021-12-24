@@ -38,16 +38,20 @@ CatDFNZ<-(left_join(as.data.frame(CatDatNZ), RefNZ, by=c("trackId"="animal.id"))
 
 #60.56856 max lat
 #55.62262 min lat
+library(RColorBrewer)
 
 #are the general outer bounds for all wolves
 
-amb = c(left = -5.105945, right = -5.058614, top  =50.16675 , bottom  = 50.11675)
+amb = c(left = -5.0955945, right = -5.058614, top  =50.163075 , bottom  = 50.14675)
 
 
-map = get_map(amb, source="stamen", maptype = "watercolor", zoom=8)
+map = get_map(amb, source="stamen", maptype = "toner-hybrid", zoom=15)
 
 ggmap(map)+
    geom_path(data = CatDFUK, aes(x = location.long, y = location.lat, color = tag.id))+
+    #scale_color_economist() +
    theme(legend.position  = "none") +
    ggtitle("Movement Pattern UK Cats") 
+
+ggsave("MapFull.png")
 ```

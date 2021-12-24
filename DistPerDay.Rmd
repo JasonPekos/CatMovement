@@ -348,6 +348,7 @@ ggsave("DistPerDay2.png", width=6.5,height=4)
 
 1. Data Cleaning
   * Removed 162 records where the cat travelled 0 meters in a day. These occured when there was only 1 recorded measurement in a day.
+  * Removed cats with values that broke the dBBM model / took 5min to compute for no recognizable reason. 
   * Chose to keep extreme values. One cat from Australia covered ~45km in one day, feasible but unusual. Next highest ~35km/day and ~21km/day.
 2. Data Plotting
    * log-transformed distance axis to account for more extreme values
@@ -362,5 +363,5 @@ ggsave("DistPerDay2.png", width=6.5,height=4)
   
 ### Questions 
 
-* Are their cylces or patterns to the distance travelled? 
+* Are their cycles or patterns to the distance travelled? 
 * Are their differences between countries?

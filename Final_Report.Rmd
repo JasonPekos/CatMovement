@@ -4,6 +4,7 @@ author: "Jennifer Freeman & Jason Pekos"
 date: "22/12/2021"
 output:
   html_document: default
+  pdf_document: default
 bibliography: references.bib
 ---
 
@@ -25,7 +26,14 @@ library(plotly)
 library(RColorBrewer)
 library(ggthemes) #theme_tufte
 library(adehabitatLT) #ltraj - animal trajectories
-
+library(viridis)
+library(sf)
+library(raster)
+library(ggpolypath)
+library(ozmaps)
+library(stars)
+library(osmdata)
+library(OpenStreetMap)
 #movement data
 CatDatAus <- move("PetCatsAus.csv") 
 CatDatNZ <- move("PetCatsNZ.csv")  
@@ -213,9 +221,65 @@ cats_diff <- (cats
 
 ```
  
+```{r dBBM,echo=FALSE, message=FALSE,warning=FALSE,results='hide'}
+#DBBM Setup 
+
+projectionReal = "+proj=robin" #different map projections for underlying maps. 
+projectionGoogle = "+proj=longlat +datum=WGS84" #this is what get_map uses
+extReal = 6.5 #extent term in DBBM model
+truncator = 0.95 #truncate all possible locations with < n% travel probability 
+
+mollybox = c(bottom = -34.98222, top = -34.97963, left = 138.619, right  = 138.6226) #box for molly plot (if used)
+map_molly = get_map(mollybox, source="stamen", maptype = "watercolor", zoom=8)
+
+#get maps
+#map_molly = get_map(mollybox, source="stamen", maptype = "watercolor", zoom=9) #get molly map (currently not used)
+
+dfmaker <- function(AusCatName){
+  #take any cat and get the corresponding raster as a dataframe, going through dBDDM -> Utilization Distributions -> spdf -> final dataframe, truncated. 
+  cat = CatDatAus[[AusCatName]]
+  dBB <-  brownian.bridge.dyn(object = spTransform(cat,CRS(projectionReal)),
+                                   ext = extReal,
+                                   raster = 40,
+                                   location.error = 1.5)
+  UD <- getVolumeUD(dBB)
+  
+  UDspdf <- as(UD, "SpatialPixelsDataFrame")
+  
+  DF <- filter(as.data.frame(UDspdf), layer < truncator)
+  
+  return(DF)
+}
 
 
-## The story
+                
+#NOTE FOR LATER: EMD doesn't care about time differences! Mention this!
+x1 = 138.5
+x2 = 138.7
+y1 = -35
+y2 = -34.9
+
+
+sf::sf_use_s2(FALSE) #ignore geom meshing error caused by transform + bounding box.
+
+maps = st_transform(ozmaps::abs_ced  %>% filter(NAME %in% c("Adelaide", "Boothby", "Hindmarsh", "Sturt", "Port Adelaide", "Mayo")), crs = projectionReal) #map of Aus cities.
+
+bboxAus = c(x1,y1, x2,y2)
+
+dispWin = st_coordinates(st_transform(st_sfc(st_point(c(x1,y1)), st_point(c(x2,y2)),crs = 4326), crs = projectionReal)) #Bounding box.
+
+                  
+q1 <- opq(bbox = bboxAus) %>%
+    add_osm_feature(key = 'highway', value = c("motorway", "primary", "trunk", "secondary", "motorway_link", "primary_link", "cycleway"))
+
+cway_AD <- osmdata_sf(q1)
+
+
+roads = st_transform(cway_AD$osm_lines, projection  = projectionReal)
+
+```
+
+## The Story
 
 ### Plot 1
 
@@ -296,9 +360,9 @@ subplot(ggplotly(FullPlot,tooltip=c("text")),
 
 We were interested in determining if there were patterns in cat movement between day and night. Mice are a common prey species of cats and are nocturnal so we might expect to see increased cat movement in the night time hours. Alternatively, homeowners might choose to keep pets indoors overnight so movement may be restricted.
 
-We chose to use average distance travelled to assess differences in day/night behaviour. We incorporated age and sex to determine if there was any underlying relationships. 
+We chose to use average distance traveled to assess differences in day/night behavior. We incorporated age and sex to determine if there was any underlying relationships. 
 
-This plot agrees with the findings in [@Kays] that on average young male cats travelled the furthest. Specifically, young males under 6 years old moved farther than females of the same age group. For cats in the 6-12 range, males on average travelled further at night than females. During the day, there were no noticeable differencs in this age group. There were minimal cats over the age of 12 so it is difficult to understand relationships for this age group.
+This plot agrees with the findings in [@Kays] that on average young male cats traveled the furthest. Specifically, young males under 6 years old moved farther than females of the same age group. For cats in the 6-12 range, males on average traveled further at night than females. During the day, there were no noticeable differences in this age group. There were minimal cats over the age of 12 so it is difficult to understand relationships for this age group.
 
 [@Kays] looked at the ten cats in the data set that were not spayed or neutered to evaluate average home range size by sex. Due to the limited number of cats that were not fixed, these cats were not identified in this plot.
 
@@ -386,6 +450,86 @@ n<-plot_grid(n3,n1,n4,n2,ncol=2,rel_widths = c(2,1))
 print(n)
 ```
 
+
+## Plot Four
+
+Drawing straight lines between cats can be useful, but it fails to capture the underlying uncertainty in animal tracking data. To deal with this, we utilize Dynamic Brownian Bridge Models to recover Utilization Distributions, which can more accurately capture the most likely home range of different cats. Along with more accurately answering questions around potential home area, Dynamic Brownian Bridge Models provide an interesting qualitative method for forming hypothesis around animal interaction and predation; although the cats do tend to stick within 100m of their homes, there is plenty of overlapping home range, especially in the southwest of Adelaide. Asking questions about predation in these areas of high overlap could be interesting. 
+
+The Individual plot of MonMon is plotted to give an example of a cat with an interesting (non-circular) utilization distribution.
+
+
+```{r Plot_4, echo=FALSE,message=FALSE,results='hide', warning=FALSE,fig.keep='all',fig.align = 'center',fig.width=10}
+
+
+#https://stackoverflow.com/questions/33227182/how-to-set-use-ggplot2-to-map-a-raster
+
+
+
+bigplot = ggplot() + #Set up base of plot .
+                theme_bw() +
+                theme(legend.position = "none") +
+                ggtitle("UD - Adelaide Cats") +
+                theme(
+                      axis.text.x=element_blank(),
+                      axis.ticks.x=element_blank(),
+                      axis.ticks.y=element_blank(),
+                      axis.text.y=element_blank(),
+                      panel.grid.major=element_blank(),
+                      panel.grid.minor=element_blank()) +
+                scale_fill_viridis(option = "magma") +
+                geom_sf(data = maps, fill = NA) +
+                geom_sf(data = roads) +
+                coord_sf(xlim = dispWin[,'X'],
+                         ylim = dispWin[,'Y'], 
+                         datum = projectionReal,
+                         expand = FALSE)
+
+
+cdf <- as.data.frame(CatDatAus) %>%  #Filter out the problem cats, and the cats too far away
+       filter(location.long < x2) %>%
+       filter(location.lat < y2) %>%
+       filter(location.lat > y1) %>%
+       filter(location.long > x1)  %>%
+       filter(individual.local.identifier != "Jasmine")%>%
+       filter(individual.local.identifier != "Costa") %>%
+       filter(individual.local.identifier != "Wally")
+
+
+min(CatDatAus[["MonMon"]]$location.lat)
+names = unique(cdf$individual.local.identifier) 
+
+#https://stackoverflow.com/questions/15987367/how-to-add-layers-in-ggplot-using-a-for-loop
+extReal = 20 #used by function (bad programming)
+for (name in names) { #using function to call dBBM pipeline for every cat + add to plot.
+  print(name)
+  bigplot = bigplot + geom_tile(data = dfmaker(name), aes(x = x, y = y, fill = layer, alpha = 0.5))
+  ggplot_build(bigplot)
+}
+
+smallplot = ggplot() + #plot of just monmon
+     #Set up base of plot .
+    theme_bw() +
+    ggtitle("UD - MonMon") +
+    theme(
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.text.y=element_blank(),
+        panel.grid.major=element_blank(),
+        panel.grid.minor=element_blank(),
+        aspect.ratio=1) +
+        scale_fill_viridis(option = "magma") +
+        theme(legend.position = "none") +
+        #geom_sf(data = roads) +
+        #coord_sf(xlim = dispWin[,'X'],ylim = dispWin[,'Y'], datum = projectionReal,expand = FALSE) + 
+  geom_tile(data = dfmaker("MonMon"), aes(x = x, y = y, fill = layer, alpha = 0.5)) 
+
+
+totalplot = plot_grid(bigplot, smallplot,ncol=2,rel_widths = c(2,1))
+print(totalplot)
+
+```
+
 ## Methods
 
 ### Plot 1
@@ -396,7 +540,7 @@ The density of cats tracked by country was added to provide a clearer measure of
 
 A quantitative colour scale was used for the four countries, and it is consistent across the line and density plots to allow for easy comparison between the two. The tooltip allows the user to focus in on individuals or groups, which provides additional information that would not be possible to display all at once for the whole dataset.
 
-The deployed date uses Cleveland's top hierarchy of position along a common sclae. The third hierarchy, length was used to encode the time cats were tracked. It is lower on the hierarchy, however we thought it was more intuitive to view the time cats were tracked. For example, graphing date versus days tracked would create a cloud of points for common tracked times, and it would create more visual load on the reader to understand the relationship. In addition, we would not be able to display the overlapping relationship between cats tracked over the same time range which is important information.
+The deployed date uses Cleveland's top hierarchy of position along a common scale. The third hierarchy, length was used to encode the time cats were tracked. It is lower on the hierarchy, however we thought it was more intuitive to view the time cats were tracked. For example, graphing date versus days tracked would create a cloud of points for common tracked times, and it would create more visual load on the reader to understand the relationship. In addition, we would not be able to display the overlapping relationship between cats tracked over the same time range which is important information.
 
 ### Plot 2
 
@@ -416,11 +560,23 @@ A LOESS smoother was overlayed on the data to capture potential trends. The data
 The NSD plots and movement tracks per animal were displayed side-by-side for easy comparison.
 The colours from Plot 2 were reused so the user can associate between colours and coding of the sex variable. Consistent colours were used horizontally so the user can make comparisons between the cats.
 
-The movement tracks were plotted using the same size area so the relative distances can be visually compared. Keeping a consistent scale in the movement tracks did make it difficult to see the details of Moscows tracks and the graph occupies a lot of empty space, however zooming in on Moscows track would mislead the reader about relative distances. Although perception of area is lower on the Cleveland hierarchy, it was important to be able to view the spatial tracks to relate to the NSD values. The latitude and longitude data was removed from the axis of the track plots as it did not provide any helpful information.
+The movement tracks were plotted using the same size area so the relative distances can be visually compared. Keeping a consistent scale in the movement tracks did make it difficult to see the details of Moscow's tracks and the graph occupies a lot of empty space, however zooming in on Moscow's track would mislead the reader about relative distances. Although perception of area is lower on the Cleveland hierarchy, it was important to be able to view the spatial tracks to relate to the NSD values. The latitude and longitude data was removed from the axis of the track plots as it did not provide any helpful information.
 
-The exact time scale was removed from the NSD plots as this was not as important to the interpretaion of the plots. The axis label indicates each cat was tracked for seven days which is sufficient information for interpretation.
+The exact time scale was removed from the NSD plots as this was not as important to the interpretation of the plots. The axis label indicates each cat was tracked for seven days which is sufficient information for interpretation.
+
+
+### Plot 4
+
+ dBBM model calls require certain projections, so Robinson Projection was used instead of the more standard Pseudo-Mercator projection that is default in most methods. 
+ 
+ The magma colormap was picked because (1) it is colorblind friendly, (2), it fades to white as probability falls to zero, and (3), it is sequential, not diverging, which is perfect for heatmaps. 
+ 
+Streets, state lines, and the coast are added to the plot to give a sense of scale --- satellite imagery doesn't work well with coordinate transforms, and neither do the dBBM dataframes we pass into 'geom_tile()'. These geoms assume square or rectangular tiles, and projections distort this in a way that ggplot can't understand. Leaving the background as white, while lighter on ink, is significantly less interpretable. 
+ 
 
 
  
 ## References
+
+
 
