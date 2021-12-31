@@ -1,0 +1,21 @@
+Good, clear graphical and aesthetic choices throughout.
+
+## Plot 1
+
+The plot is cool and the tooltips work well, as does the combination of histograms and individual traces.
+
+It would be good to have labels on both axes (density or count on the lower one, and individuals on the upper), it's fine not to have tick marks or values.
+
+The histogram gets weird when I resize the main panel, not sure why.
+
+## Plot 2
+
+Average distance travelled is not really explained. Per hour? Per episode? What happens to averages if the cat is not moving? What are the advantages and disadvantages of using a log scale? The plot is clearly drawn and well labelled.
+
+## Plot 3
+
+It is not clear what you (or your source) mean by "distance between the starting location of a movement path and each subsequent location". Is each distance measured back to the start? When and how is the start defined? Why are we squaring if we're not adding anything up? Units are not given on either the left or right plots and the numbers are super-small.
+
+## Plot 4
+
+I would have appreciated a scale here as well.
